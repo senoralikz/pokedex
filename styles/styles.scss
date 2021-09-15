@@ -1,0 +1,30 @@
+body {
+  background-color: #dfe6e9;
+  margin: 0;
+}
+h1 {
+  color: #000;
+}
+
+// .container {
+//   background-color: #dfe6e9;
+// }
+
+.card {
+  // padding: 40px;
+  // background-color: #fff;
+  // color: #222;
+  width: 10rem;
+  margin: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// #pokedex {
+//   padding-inline-start: 0;
+//   display: grid;
+//   grid-template-columns: repeat(autofit, minmax(320px, 1fr));
+//   grid-gap: 20px;
+// }
