@@ -1,5 +1,6 @@
 const pokedex = $("#pokedex");
-
+let startingId = 1;
+let endingId = 151;
 let pokemon = [];
 
 const fetchPokemon = () => {
@@ -7,7 +8,7 @@ const fetchPokemon = () => {
   const promises = [];
 
   // get url for pokemon id up to 151
-  for (let i = 1; i <= 151; i++) {
+  for (let i = startingId; i <= endingId; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
 
     // fetch the information received from the pokemon url and then format it to json
@@ -89,6 +90,44 @@ const sortingOptions = () => {
   }
 };
 
+const genSelection = () => {
+  let genValue = $("#genOptions").val();
+
+  if (genValue === "1") {
+    startingId = 1;
+    endingId = 151;
+    fetchPokemon();
+  } else if (genValue === "2") {
+    startingId = 152;
+    endingId = 251;
+    fetchPokemon();
+  } else if (genValue === "3") {
+    startingId = 252;
+    endingId = 386;
+    fetchPokemon();
+  } else if (genValue === "4") {
+    startingId = 387;
+    endingId = 493;
+    fetchPokemon();
+  } else if (genValue === "5") {
+    startingId = 494;
+    endingId = 649;
+    fetchPokemon();
+  } else if (genValue === "6") {
+    startingId = 650;
+    endingId = 721;
+    fetchPokemon();
+  } else if (genValue === "7") {
+    startingId = 722;
+    endingId = 809;
+    fetchPokemon();
+  } else if (genValue === "8") {
+    startingId = 810;
+    endingId = 898;
+    fetchPokemon();
+  }
+};
+
 $(document).ready(function () {
   $("#searchPokemon").on("keyup", function () {
     let value = $(this).val().toLowerCase();
@@ -100,3 +139,4 @@ $(document).ready(function () {
 
 fetchPokemon();
 $("#sortOptions").on("change", sortingOptions);
+$("#genOptions").on("change", genSelection);
