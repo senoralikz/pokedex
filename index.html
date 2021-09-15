@@ -21,6 +21,21 @@
   </head>
   <body>
     <h1>Pokedex</h1>
+    <div class="d-flex justify-content-center">
+      <form class="dropSearch">
+        <b>Sort Pokemon By: </b>
+        <select class="dropdown" id="sortOptions">
+          <option>------------------------</option>
+          <option value="1">Name (A &#8594 Z)</option>
+          <option value="2">Name (Z &#8594 A)</option>
+          <option value="3">ID (1 &#8594 151)</option>
+          <option value="4">ID (151 &#8594 1)</option>
+        </select>
+      </form>
+      <form class="dropSearch">
+        <input type="text" id="searchPokemon" placeholder="Search Pokemon">
+      </form>
+    </div>
     <div class="container">
       <div class="row d-flex justify-content-center" id="pokedex"></div>
     </div>

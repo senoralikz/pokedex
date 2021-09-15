@@ -7,6 +7,10 @@ h1 {
   color: #000;
 }
 
+form {
+  margin: 5px;
+}
+
 .card {
   width: 10rem;
   margin: 10px;
