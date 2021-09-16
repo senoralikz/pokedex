@@ -22,7 +22,8 @@
   <body>
     <h1>Pokedex</h1>
     <div class="container">
-    <div class="row d-flex justify-content-center">
+    <div class="row">
+      <div class="d-flex justify-content-evenly">
       <form class="dropSearch">
         <b>Sort Pokemon By: </b>
         <select class="dropdown" id="sortOptions">
@@ -52,9 +53,11 @@
       </form>
     </div>
     </div>
+    </div>
     <div class="container">
       <div class="row d-flex justify-content-center" id="pokedex"></div>
     </div>
+    <div id='loading' class='d-flex justify-content-center'></div>
 
     <!-- jQuery first, then Popper.js and Bootstrap JS bundle -->
     <script
