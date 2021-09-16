@@ -3,6 +3,10 @@ let startingId = 1;
 let endingId = 151;
 let pokemon = [];
 
+pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
 const fetchPokemon = () => {
   // initialize array that will be filled with each pokemons url
   const promises = [];
@@ -96,34 +100,83 @@ const genSelection = () => {
   if (genValue === "1") {
     startingId = 1;
     endingId = 151;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "2") {
     startingId = 152;
     endingId = 251;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "3") {
     startingId = 252;
     endingId = 386;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "4") {
     startingId = 387;
     endingId = 493;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "5") {
     startingId = 494;
     endingId = 649;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "6") {
     startingId = 650;
     endingId = 721;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "7") {
     startingId = 722;
     endingId = 809;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   } else if (genValue === "8") {
     startingId = 810;
     endingId = 898;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
+    fetchPokemon();
+  } else if (genValue === "9") {
+    startingId = 1;
+    endingId = 898;
+
+    pokedex.html(`
+  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  `);
+
     fetchPokemon();
   }
 };
