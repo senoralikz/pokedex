@@ -2,6 +2,7 @@ const pokedex = $("#pokedex");
 let startingId = 1;
 let endingId = 151;
 let pokemon = [];
+let capsPokemon = [];
 
 const loading = `
   <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
@@ -36,24 +37,26 @@ const fetchPokemon = () => {
     }));
     displayPokemon();
     console.log(pokemon);
-    console.log(pokemon[5].type);
-    console.log(pokemon[5].type[1]);
   });
 };
 
 const displayPokemon = () => {
   let pokemonHtml;
 
+  // capsPokemon = pokemon.map(name => {
+  //   name.name
+  // })
+
   pokemonHtml = pokemon.map(
     (pokemon) =>
       `
       <div class='card'>
-        <p class='pokemon-id'>#${pokemon.id}</p>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
         <img class='card-img' src='${pokemon.sprite}' />
-        <h5 class='card-title'>${pokemon.name}</h5>
+        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
         <div class='d-flex justify-content-start'>
-          <span class='type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
-          <span id='type2' class='type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
+          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
+          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
         </div>
       </div>
     `
@@ -63,11 +66,11 @@ const displayPokemon = () => {
     if (pokemon[i].type.length === 1) {
       pokemonHtml[i] = `
       <div class='card'>
-        <p class='pokemon-id'>#${pokemon[i].id}</p>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon[i].id}</span></p>
         <img class='card-img' src='${pokemon[i].sprite}' />
-        <h5 class='card-title'>${pokemon[i].name}</h5>
+        <h5 class='pokemon-name card-title'>${pokemon[i].name}</h5>
         <div class='d-flex justify-content-start'>
-          <span class='type ${pokemon[i].type[0]}'><span class='type-text'>${pokemon[i].type[0]}</span></span>
+          <span class='type-span type ${pokemon[i].type[0]}'><span class='type-text'>${pokemon[i].type[0]}</span></span>
         </div>
       </div>
     `;
