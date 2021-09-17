@@ -2,10 +2,10 @@ const pokedex = $("#pokedex");
 let startingId = 1;
 let endingId = 151;
 let pokemon = [];
-let capsPokemon = [];
+let pokemonHtml;
 
 const loading = `
-  <img class='loading' src='./loading-image/pikachu - loading.gif' alt='pikachu_loading' />
+  <img class='loading' src='./images/pikachu - loading.gif' alt='pikachu_loading' />
   `;
 
 pokedex.html(loading);
@@ -41,12 +41,6 @@ const fetchPokemon = () => {
 };
 
 const displayPokemon = () => {
-  let pokemonHtml;
-
-  // capsPokemon = pokemon.map(name => {
-  //   name.name
-  // })
-
   pokemonHtml = pokemon.map(
     (pokemon) =>
       `
@@ -191,6 +185,132 @@ const genSelection = () => {
 
     fetchPokemon();
   }
+  $(".dropdown").not("#genOptions").val(0).not("#genOptions");
+};
+
+const typeSelection = () => {
+  let typeValue1 = $("#typeOptions1 option:selected").text().toLowerCase();
+  let typeValue2 = $("#typeOptions2 option:selected").text().toLowerCase();
+  let filteredPokemon;
+  let doubleFilteredPokemon;
+
+  if ($("#typeOptions1").val() > "0") {
+    filteredPokemon = pokemon.filter(
+      (pokemon) =>
+        typeValue1 === pokemon.type[0] || typeValue1 === pokemon.type[1]
+    );
+
+    pokemonHtml = filteredPokemon.map(
+      (pokemon) =>
+        `
+      <div class='card'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
+        <img class='card-img' src='${pokemon.sprite}' />
+        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
+        <div class='d-flex justify-content-start'>
+          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
+          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
+        </div>
+      </div>
+    `
+    );
+
+    for (let i = 0; i < filteredPokemon.length; i++) {
+      if (filteredPokemon[i].type.length === 1) {
+        pokemonHtml[i] = `
+      <div class='card'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${filteredPokemon[i].id}</span></p>
+        <img class='card-img' src='${filteredPokemon[i].sprite}' />
+        <h5 class='pokemon-name card-title'>${filteredPokemon[i].name}</h5>
+        <div class='d-flex justify-content-start'>
+          <span class='type-span type ${filteredPokemon[i].type[0]}'><span class='type-text'>${filteredPokemon[i].type[0]}</span></span>
+        </div>
+      </div>
+    `;
+      }
+    }
+
+    pokedex.html(pokemonHtml);
+  } else if ($("#typeOptions2").val() > "0") {
+    filteredPokemon = pokemon.filter(
+      (pokemon) =>
+        typeValue2 === pokemon.type[0] || typeValue2 === pokemon.type[1]
+    );
+
+    pokemonHtml = filteredPokemon.map(
+      (pokemon) =>
+        `
+      <div class='card'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
+        <img class='card-img' src='${pokemon.sprite}' />
+        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
+        <div class='d-flex justify-content-start'>
+          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
+          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
+        </div>
+      </div>
+    `
+    );
+
+    for (let i = 0; i < filteredPokemon.length; i++) {
+      if (filteredPokemon[i].type.length === 1) {
+        pokemonHtml[i] = `
+      <div class='card'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${filteredPokemon[i].id}</span></p>
+        <img class='card-img' src='${filteredPokemon[i].sprite}' />
+        <h5 class='pokemon-name card-title'>${filteredPokemon[i].name}</h5>
+        <div class='d-flex justify-content-start'>
+          <span class='type-span type ${filteredPokemon[i].type[0]}'><span class='type-text'>${filteredPokemon[i].type[0]}</span></span>
+        </div>
+      </div>
+    `;
+      }
+    }
+
+    pokedex.html(pokemonHtml);
+  }
+
+  if ($("#typeOptions1").val() > "0" && $("#typeOptions2").val() > "0") {
+    doubleFilteredPokemon = filteredPokemon.filter(
+      (pokemon) =>
+        typeValue2 === pokemon.type[0] || typeValue2 === pokemon.type[1]
+    );
+    pokemonHtml = doubleFilteredPokemon.map(
+      (pokemon) =>
+        `
+      <div class='card'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
+        <img class='card-img' src='${pokemon.sprite}' />
+        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
+        <div class='d-flex justify-content-start'>
+          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
+          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
+        </div>
+      </div>
+    `
+    );
+
+    for (let i = 0; i < doubleFilteredPokemon.length; i++) {
+      if (doubleFilteredPokemon[i].type.length === 1) {
+        pokemonHtml[i] = `
+      <div class='card'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${doubleFilteredPokemon[i].id}</span></p>
+        <img class='card-img' src='${doubleFilteredPokemon[i].sprite}' />
+        <h5 class='pokemon-name card-title'>${doubleFilteredPokemon[i].name}</h5>
+        <div class='d-flex justify-content-start'>
+          <span class='type-span type ${doubleFilteredPokemon[i].type[0]}'><span class='type-text'>${doubleFilteredPokemon[i].type[0]}</span></span>
+        </div>
+      </div>
+    `;
+      }
+    }
+    pokedex.html(pokemonHtml);
+  } else if (
+    $("#typeOptions1").val() === "0" &&
+    $("#typeOptions2").val() === "0"
+  ) {
+    displayPokemon();
+  }
 };
 
 $(document).ready(function () {
@@ -205,3 +325,5 @@ $(document).ready(function () {
 fetchPokemon();
 $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
+$("#typeOptions1").on("change", typeSelection);
+$("#typeOptions2").on("change", typeSelection);
