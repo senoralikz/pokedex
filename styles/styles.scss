@@ -47,6 +47,16 @@ form {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
+.card-enlarge {
+  transform: scale(3);
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card:focus {
+  transform: scale(3);
+  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
 .card-img {
   margin-top: -60px;
 }
@@ -68,7 +78,8 @@ form {
   // font-size: x-large;
 }
 
-.pokemon-name {
+.pokemon-name,
+.modal-title {
   text-transform: capitalize;
 }
 
@@ -91,6 +102,14 @@ form {
   font-weight: 400;
   text-transform: capitalize;
 }
+
+// .modal-card-background {
+//   background: url("../images/pokeball-black-white.png");
+//   // background: url("../images/pokeball2.png");
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: 200%;
+// }
 
 .normal {
   background-color: #a8a878;

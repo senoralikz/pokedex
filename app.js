@@ -34,17 +34,19 @@ const fetchPokemon = () => {
       // type: res.types,
       // type: res.types.map((type) => type.type.name).join(", "),
       type: res.types.map((type) => type.type.name),
+      abilities: res.abilities.map((ability) => ability),
+      stats: res.stats.map((ability) => ability),
     }));
-    displayPokemon();
+    displayPokemon(pokemon);
     console.log(pokemon);
   });
 };
 
-const displayPokemon = () => {
-  pokemonHtml = pokemon.map(
+const displayPokemon = (array) => {
+  pokemonHtml = array.map(
     (pokemon) =>
       `
-      <div class='card'>
+      <div class='card pokemon-card' onclick='morePokemonInfo(${pokemon.id})' data-id:'${pokemon.id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
         <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
         <img class='card-img' src='${pokemon.sprite}' />
         <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
@@ -56,22 +58,20 @@ const displayPokemon = () => {
     `
   );
 
-  for (let i = 0; i < pokemon.length; i++) {
-    if (pokemon[i].type.length === 1) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].type.length === 1) {
       pokemonHtml[i] = `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon[i].id}</span></p>
-        <img class='card-img' src='${pokemon[i].sprite}' />
-        <h5 class='pokemon-name card-title'>${pokemon[i].name}</h5>
+      <div class='card pokemon-card' onclick='morePokemonInfo(${array[i].id})' data-id:'${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${array[i].id}</span></p>
+        <img class='card-img' src='${array[i].sprite}' />
+        <h5 class='pokemon-name card-title'>${array[i].name}</h5>
         <div class='d-flex justify-content-start'>
-          <span class='type-span type ${pokemon[i].type[0]}'><span class='type-text'>${pokemon[i].type[0]}</span></span>
+          <span class='type-span type ${array[i].type[0]}'><span class='type-text'>${array[i].type[0]}</span></span>
         </div>
       </div>
     `;
     }
   }
-
-  // .join("");
 
   pokedex.html(pokemonHtml);
 };
@@ -79,7 +79,7 @@ const displayPokemon = () => {
 const sortPokemonName = () => {
   pokemon.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
-  displayPokemon();
+  displayPokemon(pokemon);
 };
 
 const reversePokemonName = () => {
@@ -87,13 +87,13 @@ const reversePokemonName = () => {
 
   pokemon.reverse();
 
-  displayPokemon();
+  displayPokemon(pokemon);
 };
 
 const sortPokemonId = () => {
   pokemon.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
 
-  displayPokemon();
+  displayPokemon(pokemon);
 };
 
 const reversePokemonId = () => {
@@ -101,7 +101,7 @@ const reversePokemonId = () => {
 
   pokemon.reverse();
 
-  displayPokemon();
+  displayPokemon(pokemon);
 };
 
 const sortingOptions = () => {
@@ -200,74 +200,14 @@ const typeSelection = () => {
         typeValue1 === pokemon.type[0] || typeValue1 === pokemon.type[1]
     );
 
-    pokemonHtml = filteredPokemon.map(
-      (pokemon) =>
-        `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
-        <img class='card-img' src='${pokemon.sprite}' />
-        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
-          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
-        </div>
-      </div>
-    `
-    );
-
-    for (let i = 0; i < filteredPokemon.length; i++) {
-      if (filteredPokemon[i].type.length === 1) {
-        pokemonHtml[i] = `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${filteredPokemon[i].id}</span></p>
-        <img class='card-img' src='${filteredPokemon[i].sprite}' />
-        <h5 class='pokemon-name card-title'>${filteredPokemon[i].name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${filteredPokemon[i].type[0]}'><span class='type-text'>${filteredPokemon[i].type[0]}</span></span>
-        </div>
-      </div>
-    `;
-      }
-    }
-
-    pokedex.html(pokemonHtml);
+    displayPokemon(filteredPokemon);
   } else if ($("#typeOptions2").val() > "0") {
     filteredPokemon = pokemon.filter(
       (pokemon) =>
         typeValue2 === pokemon.type[0] || typeValue2 === pokemon.type[1]
     );
 
-    pokemonHtml = filteredPokemon.map(
-      (pokemon) =>
-        `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
-        <img class='card-img' src='${pokemon.sprite}' />
-        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
-          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
-        </div>
-      </div>
-    `
-    );
-
-    for (let i = 0; i < filteredPokemon.length; i++) {
-      if (filteredPokemon[i].type.length === 1) {
-        pokemonHtml[i] = `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${filteredPokemon[i].id}</span></p>
-        <img class='card-img' src='${filteredPokemon[i].sprite}' />
-        <h5 class='pokemon-name card-title'>${filteredPokemon[i].name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${filteredPokemon[i].type[0]}'><span class='type-text'>${filteredPokemon[i].type[0]}</span></span>
-        </div>
-      </div>
-    `;
-      }
-    }
-
-    pokedex.html(pokemonHtml);
+    displayPokemon(filteredPokemon);
   }
 
   if ($("#typeOptions1").val() > "0" && $("#typeOptions2").val() > "0") {
@@ -275,41 +215,13 @@ const typeSelection = () => {
       (pokemon) =>
         typeValue2 === pokemon.type[0] || typeValue2 === pokemon.type[1]
     );
-    pokemonHtml = doubleFilteredPokemon.map(
-      (pokemon) =>
-        `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
-        <img class='card-img' src='${pokemon.sprite}' />
-        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
-          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
-        </div>
-      </div>
-    `
-    );
 
-    for (let i = 0; i < doubleFilteredPokemon.length; i++) {
-      if (doubleFilteredPokemon[i].type.length === 1) {
-        pokemonHtml[i] = `
-      <div class='card'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${doubleFilteredPokemon[i].id}</span></p>
-        <img class='card-img' src='${doubleFilteredPokemon[i].sprite}' />
-        <h5 class='pokemon-name card-title'>${doubleFilteredPokemon[i].name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${doubleFilteredPokemon[i].type[0]}'><span class='type-text'>${doubleFilteredPokemon[i].type[0]}</span></span>
-        </div>
-      </div>
-    `;
-      }
-    }
-    pokedex.html(pokemonHtml);
+    displayPokemon(doubleFilteredPokemon);
   } else if (
     $("#typeOptions1").val() === "0" &&
     $("#typeOptions2").val() === "0"
   ) {
-    displayPokemon();
+    displayPokemon(pokemon);
   }
 };
 
@@ -322,8 +234,58 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(() => {
+  console.log("document ready");
+});
+
+console.log("ready!");
+
+const morePokemonInfo = (x) => {
+  console.log("finally");
+  // let id = $(this).data("id");
+  console.log(x);
+
+  $(".modal-title").html(pokemon[x - 1].name);
+  $(".modal-body").html(`
+  <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${
+    pokemon[x - 1].id
+  }</span></p>
+  <img class='card-img' src='${pokemon[x - 1].sprite}' />
+  <div class='d-flex justify-content-start'>
+    <span class='type-span type ${
+      pokemon[x - 1].type[0]
+    }'><span class='type-text'>${pokemon[x - 1].type[0]}</span></span>
+    <span class='type-span type ${
+      pokemon[x - 1].type[1]
+    }'><span class='type-text'>${pokemon[x - 1].type[1]}</span></span>
+  </div>
+  `);
+
+  for (let i = 0; i < pokemon.length; i++) {
+    if (pokemon[x - 1].type.length === 1) {
+      $(".modal-body").html(`
+  <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${
+    pokemon[x - 1].id
+  }</span></p>
+  <img class='card-img' src='${pokemon[x - 1].sprite}' />
+  <div class='d-flex justify-content-start'>
+    <span class='type-span type ${
+      pokemon[x - 1].type[0]
+    }'><span class='type-text'>${pokemon[x - 1].type[0]}</span></span>
+  </div>
+  `);
+    }
+  }
+};
+
 fetchPokemon();
 $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
 $("#typeOptions1").on("change", typeSelection);
 $("#typeOptions2").on("change", typeSelection);
+// $(".more-info").on("click", morePokemonInfo);
+// $("#pokedex").on("click", ".pokemon-card", morePokemonInfo);
+// $("#pokedex").on("click", ".pokemon-card", function () {
+//   let dataId = $(this).data("id");
+//   console.log(dataId);
+// });

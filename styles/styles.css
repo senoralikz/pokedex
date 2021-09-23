@@ -40,6 +40,14 @@ form {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
+.card-enlarge {
+  transform: scale(3);
+}
+
+.card:focus {
+  transform: scale(3);
+}
+
 .card-img {
   margin-top: -60px;
 }
@@ -60,7 +68,8 @@ form {
   font-size: 50px;
 }
 
-.pokemon-name {
+.pokemon-name,
+.modal-title {
   text-transform: capitalize;
 }
 
