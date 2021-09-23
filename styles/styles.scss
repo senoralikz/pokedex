@@ -28,10 +28,6 @@ form {
   // align-items: end;
 }
 
-.type-span {
-  margin-bottom: 5px;
-}
-
 .card {
   width: 10rem;
   margin: 10px;
@@ -61,6 +57,11 @@ form {
   margin-top: -60px;
 }
 
+.modal-pokemon-img {
+  margin-top: -100px;
+  // margin-right: -100px;
+}
+
 .loading {
   width: 30%;
   height: 30%;
@@ -75,12 +76,27 @@ form {
 .pokemon-id {
   color: #a9a9a9;
   font-size: 50px;
-  // font-size: x-large;
+}
+
+.modal-hash {
+  color: #a9a9a9;
+  font-size: 70px;
+  margin-top: -20px;
+}
+
+.modal-pokemon-id {
+  color: #a9a9a9;
+  font-size: 100px;
+  margin-top: -5px;
 }
 
 .pokemon-name,
 .modal-title {
   text-transform: capitalize;
+}
+
+.type-span {
+  margin-bottom: 5px;
 }
 
 .type {
@@ -95,9 +111,29 @@ form {
   margin-right: 5px;
 }
 
+.modal-type {
+  border-style: solid none;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-variant: small-caps;
+  font-size: 16pt;
+  text-shadow: 0 1px 1px #807870;
+  margin-right: 5px;
+}
+
 .type-text {
   color: #f8f8f8;
   font-size: 13px;
+  font-family: "Roboto:400", sans-serif !important;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.modal-type-text {
+  color: #f8f8f8;
+  font-size: 20px;
   font-family: "Roboto:400", sans-serif !important;
   font-weight: 400;
   text-transform: capitalize;
