@@ -1,6 +1,7 @@
 const pokedex = $("#pokedex");
 let startingId = 1;
 let endingId = 151;
+let ability = [];
 let pokemon = [];
 let pokemonHtml;
 
@@ -35,10 +36,35 @@ const fetchPokemon = () => {
       // type: res.types.map((type) => type.type.name).join(", "),
       type: res.types.map((type) => type.type.name),
       abilities: res.abilities.map((ability) => ability),
-      stats: res.stats.map((ability) => ability),
+      stats: res.stats.map((stat) => stat),
     }));
     displayPokemon(pokemon);
     console.log(pokemon);
+  });
+};
+
+const fetchAbilities = () => {
+  // initialize array that will be filled with each abilities url
+  const promises = [];
+
+  // get url for ability id
+  for (let i = 1; i <= 267; i++) {
+    const url = `https://pokeapi.co/api/v2/ability/${i}/`;
+
+    // fetch the information received from the ability url and then format it to json
+    //  and push it to the promises array
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+
+  // Using Promise.all to wait to receive all information that is requested from the ability url
+  Promise.all(promises).then((res) => {
+    // then initialize and set the properties we want to use from the response
+    ability = res.map((res) => ({
+      name: res.name,
+      id: res.id,
+      effect: res.effect_entries.map((effect) => effect.effect),
+    }));
+    console.log(ability);
   });
 };
 
@@ -255,6 +281,7 @@ const morePokemonInfo = (x) => {
 };
 
 fetchPokemon();
+fetchAbilities();
 $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
 $("#typeOptions1").on("change", typeSelection);
