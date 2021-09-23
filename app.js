@@ -245,35 +245,21 @@ const morePokemonInfo = (x) => {
   // let id = $(this).data("id");
   console.log(x);
 
-  $(".modal-title").html(pokemon[x - 1].name);
-  $(".modal-body").html(`
-  <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${
-    pokemon[x - 1].id
-  }</span></p>
-  <img class='card-img' src='${pokemon[x - 1].sprite}' />
-  <div class='d-flex justify-content-start'>
-    <span class='type-span type ${
-      pokemon[x - 1].type[0]
-    }'><span class='type-text'>${pokemon[x - 1].type[0]}</span></span>
-    <span class='type-span type ${
-      pokemon[x - 1].type[1]
-    }'><span class='type-text'>${pokemon[x - 1].type[1]}</span></span>
-  </div>
-  `);
-
   for (let i = 0; i < pokemon.length; i++) {
-    if (pokemon[x - 1].type.length === 1) {
+    if (pokemon[i].id === x) {
+      $(".modal-title").html(pokemon[i].name);
       $(".modal-body").html(`
-  <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${
-    pokemon[x - 1].id
-  }</span></p>
-  <img class='card-img' src='${pokemon[x - 1].sprite}' />
-  <div class='d-flex justify-content-start'>
-    <span class='type-span type ${
-      pokemon[x - 1].type[0]
-    }'><span class='type-text'>${pokemon[x - 1].type[0]}</span></span>
-  </div>
-  `);
+      <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon[i].id}</span></p>
+      <img class='card-img' src='${pokemon[i].sprite}' />
+      <div class='type-area d-flex justify-content-start'>
+      <span class='type-span type ${pokemon[i].type[0]}'><span class='type-text'>${pokemon[i].type[0]}</span></span>
+      </div>
+      `);
+      if (pokemon[i].type.length === 2) {
+        $(".type-area").append(
+          `<span class='type-span type ${pokemon[i].type[1]}'><span class='type-text'>${pokemon[i].type[1]}</span></span>`
+        );
+      }
     }
   }
 };
