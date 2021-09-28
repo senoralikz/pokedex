@@ -101,6 +101,10 @@ hr {
   margin-top: -5px;
 }
 
+.hp-caps {
+  text-transform: uppercase;
+}
+
 .pokemon-name,
 .modal-title {
   text-transform: capitalize;
@@ -148,6 +152,10 @@ hr {
   font-family: "Roboto:400", sans-serif !important;
   font-weight: 400;
   text-transform: capitalize;
+}
+
+.type-area {
+  margin-bottom: 10px;
 }
 
 .normal {

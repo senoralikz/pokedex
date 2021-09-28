@@ -19,7 +19,6 @@ form {
 }
 
 .searchPokemonForm {
-  // justify-self: baseline;
   align-self: end;
 }
 
@@ -32,10 +31,6 @@ form {
   width: 10rem;
   margin: 10px;
   border-radius: 15px;
-  // background-image: url("../images/pokeball2.png");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: 80%;
 }
 
 .card:hover {
@@ -52,14 +47,6 @@ form {
   margin-top: -100px;
   width: 150%;
 }
-
-// .sprite-id {
-//   background-image: url("../images/pokeball-background.png");
-//   background-size: 100%;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   margin-right: 50px;
-// }
 
 .modal-ability-info {
   border: 1px solid #000;
@@ -116,6 +103,10 @@ hr {
   margin-top: -5px;
 }
 
+.hp-caps {
+  text-transform: uppercase;
+}
+
 .pokemon-name,
 .modal-title {
   text-transform: capitalize;
@@ -165,13 +156,9 @@ hr {
   text-transform: capitalize;
 }
 
-// .modal-card-background {
-//   background: url("../images/pokeball-black-white.png");
-//   // background: url("../images/pokeball2.png");
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: 200%;
-// }
+.type-area {
+  margin-bottom: 10px;
+}
 
 .normal {
   background-color: #a8a878;

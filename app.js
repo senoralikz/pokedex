@@ -45,7 +45,13 @@ const fetchPokemon = () => {
           j
         ].ability.name.replaceAll("-", " ");
       }
+      for (let x = 0; x < pokemon[i].stats.length; x++) {
+        pokemon[i].stats[x].stat.name = pokemon[i].stats[
+          x
+        ].stat.name.replaceAll("-", " ");
+      }
     }
+
     displayPokemon(pokemon);
     console.log(pokemon);
   });
@@ -307,7 +313,7 @@ const morePokemonInfo = (x) => {
               <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
             </div>
             <div class='modal-stats'>
-              <p>${pokemon[i].stats[0].stat.name}: ${pokemon[i].stats[0].base_stat}</p>
+              <p class='hp-caps'>${pokemon[i].stats[0].stat.name}: ${pokemon[i].stats[0].base_stat}</p>
               <p>${pokemon[i].stats[1].stat.name}: ${pokemon[i].stats[1].base_stat}</p>
               <p>${pokemon[i].stats[2].stat.name}: ${pokemon[i].stats[2].base_stat}</p>
               <p>${pokemon[i].stats[3].stat.name}: ${pokemon[i].stats[3].base_stat}</p>
