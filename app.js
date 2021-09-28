@@ -179,13 +179,13 @@ const sortingOptions = () => {
   let selValue = $("#sortOptions").val();
 
   if (selValue === "1") {
-    sortPokemonName();
-  } else if (selValue === "2") {
-    reversePokemonName();
-  } else if (selValue === "3") {
     sortPokemonId();
-  } else if (selValue === "4") {
+  } else if (selValue === "2") {
     reversePokemonId();
+  } else if (selValue === "3") {
+    sortPokemonName();
+  } else if (selValue === "4") {
+    reversePokemonName();
   }
 };
 
@@ -256,7 +256,9 @@ const genSelection = () => {
 
     fetchPokemon();
   }
-  $(".dropdown").not("#genOptions").val(0).not("#genOptions");
+  $("#sortOptions").val(1);
+  $("#typeOptions1").val(0);
+  $("#typeOptions2").val(0);
 };
 
 const typeSelection = () => {
