@@ -32,6 +32,7 @@ const fetchPokemon = () => {
       name: res.name,
       id: res.id,
       sprite: res.sprites["front_default"],
+      sprite_shiny: res.sprites["front_shiny"],
       // type is an array so we join each string inside the type array to set it to one type property
       // type: res.types,
       // type: res.types.map((type) => type.type.name).join(", "),
@@ -328,7 +329,32 @@ const morePokemonInfo = (x) => {
           </div>
           <div class='sprite-id'>
             <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
-            <img class='modal-pokemon-img' src='${pokemon[i].sprite}' />
+
+            <div class='modal-pokemon-img'>
+
+              <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].name}_default">
+                    <p class='d-flex justify-content-center'>Regular</p>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].name}_shiny">
+                    <p class='d-flex justify-content-center'>Shiny</p>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+            </div>
+
           </div>
         </div>
         <div class="modal-ability-info">

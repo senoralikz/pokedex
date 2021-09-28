@@ -79,6 +79,17 @@ hr {
   width: 150%;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon,
+.carousel-indicators,
+.carousel-indicator-mark {
+  background-color: #888;
+}
+
+.carousel-caption {
+  color: #000;
+}
+
 .modal-ability-info {
   border: 1px solid #000;
   border-radius: 5px;
