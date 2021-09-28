@@ -45,85 +45,96 @@
         </div>
       </div>
     </header>
-    <div class='sort-filter-area'>
-      <div class="container">
-        <div class="row">
-            <div class='sort-filter-area d-flex justify-content-center'>
-              <form class="col-sm-5 col-4 dropSearch">
-                <b>Sort Pokemon By: </b>
-                <select class="dropdown" id="sortOptions">
-                  <option value="1" selected>ID (Low &#8594 High)</option>
-                  <option value="2">ID (High &#8594 Low)</option>
-                  <option value="3">Name (A &#8594 Z)</option>
-                  <option value="4">Name (Z &#8594 A)</option>
-                </select>
-              </form>
-              <form id='genFilter' class="col-sm-3 col dropSearch">
-                <b>Generation: </b>
-                <select class="dropdown" id="genOptions">
-                  <option value="1" selected>Gen 1 - Kanto</option>
-                  <option value="2">Gen 2 - Johto</option>
-                  <option value="3">Gen 3 - Hoenn</option>
-                  <option value="4">Gen 4 - Sinnoh</option>
-                  <option value="5">Gen 5 - Unova</option>
-                  <option value="6">Gen 6 - Kalos</option>
-                  <option value="7">Gen 7 - Alola</option>
-                  <option value="8">Gen 8 - Galar</option>
-                  <option value="9">All Pokemon</option>
-                </select>
-              </form>
-              <form class="col-sm-4 col dropSearch">
-                <b>Type 1: </b>
-                <select class="dropdown" id="typeOptions1">
-                  <option value="0">All</option>
-                  <option value="1">Normal</option>
-                  <option value="2">Fire</option>
-                  <option value="3">Water</option>
-                  <option value="4">Grass</option>
-                  <option value="5">Electric</option>
-                  <option value="6">Ice</option>
-                  <option value="7">Fighting</option>
-                  <option value="8">Poison</option>
-                  <option value="9">Ground</option>
-                  <option value="10">Flying</option>
-                  <option value="11">Psychic</option>
-                  <option value="12">Bug</option>
-                  <option value="13">Rock</option>
-                  <option value="14">Ghost</option>
-                  <option value="15">Dark</option>
-                  <option value="16">Dragon</option>
-                  <option value="17">Steel</option>
-                  <option value="18">Fairy</option>
-                </select>
-                <b>Type 2: </b>
-                <select class="dropdown" id="typeOptions2">
-                  <option value="0">All</option>
-                  <option value="1">Normal</option>
-                  <option value="2">Fire</option>
-                  <option value="3">Water</option>
-                  <option value="4">Grass</option>
-                  <option value="5">Electric</option>
-                  <option value="6">Ice</option>
-                  <option value="7">Fighting</option>
-                  <option value="8">Poison</option>
-                  <option value="9">Ground</option>
-                  <option value="10">Flying</option>
-                  <option value="11">Psychic</option>
-                  <option value="12">Bug</option>
-                  <option value="13">Rock</option>
-                  <option value="14">Ghost</option>
-                  <option value="15">Dark</option>
-                  <option value="16">Dragon</option>
-                  <option value="17">Steel</option>
-                  <option value="18">Fairy</option>
-                </select>
-              </form>
-            </div>
+
+    <div class="landing-page">
+      <h2>Welcome</h2>
+    </div>
+
+    <div class='pokemon-tab'>
+      <div class='sort-filter-area'>
+        <div class="container">
+          <div class="row">
+              <div class='sort-filter-area d-flex justify-content-center'>
+                <form class="col-sm-5 col-4 dropSearch">
+                  <b>Sort Pokemon By: </b>
+                  <select class="dropdown" id="sortOptions">
+                    <option value="1" selected>ID (Low &#8594 High)</option>
+                    <option value="2">ID (High &#8594 Low)</option>
+                    <option value="3">Name (A &#8594 Z)</option>
+                    <option value="4">Name (Z &#8594 A)</option>
+                  </select>
+                </form>
+                <form id='genFilter' class="col-sm-3 col dropSearch">
+                  <b>Generation: </b>
+                  <select class="dropdown" id="genOptions">
+                    <option value="1" selected>Gen 1 - Kanto</option>
+                    <option value="2">Gen 2 - Johto</option>
+                    <option value="3">Gen 3 - Hoenn</option>
+                    <option value="4">Gen 4 - Sinnoh</option>
+                    <option value="5">Gen 5 - Unova</option>
+                    <option value="6">Gen 6 - Kalos</option>
+                    <option value="7">Gen 7 - Alola</option>
+                    <option value="8">Gen 8 - Galar</option>
+                    <option value="9">All Pokemon</option>
+                  </select>
+                </form>
+                <form class="col-sm-4 col dropSearch">
+                  <b>Type 1: </b>
+                  <select class="dropdown" id="typeOptions1">
+                    <option value="0">All</option>
+                    <option value="1">Normal</option>
+                    <option value="2">Fire</option>
+                    <option value="3">Water</option>
+                    <option value="4">Grass</option>
+                    <option value="5">Electric</option>
+                    <option value="6">Ice</option>
+                    <option value="7">Fighting</option>
+                    <option value="8">Poison</option>
+                    <option value="9">Ground</option>
+                    <option value="10">Flying</option>
+                    <option value="11">Psychic</option>
+                    <option value="12">Bug</option>
+                    <option value="13">Rock</option>
+                    <option value="14">Ghost</option>
+                    <option value="15">Dark</option>
+                    <option value="16">Dragon</option>
+                    <option value="17">Steel</option>
+                    <option value="18">Fairy</option>
+                  </select>
+                  <b>Type 2: </b>
+                  <select class="dropdown" id="typeOptions2">
+                    <option value="0">All</option>
+                    <option value="1">Normal</option>
+                    <option value="2">Fire</option>
+                    <option value="3">Water</option>
+                    <option value="4">Grass</option>
+                    <option value="5">Electric</option>
+                    <option value="6">Ice</option>
+                    <option value="7">Fighting</option>
+                    <option value="8">Poison</option>
+                    <option value="9">Ground</option>
+                    <option value="10">Flying</option>
+                    <option value="11">Psychic</option>
+                    <option value="12">Bug</option>
+                    <option value="13">Rock</option>
+                    <option value="14">Ghost</option>
+                    <option value="15">Dark</option>
+                    <option value="16">Dragon</option>
+                    <option value="17">Steel</option>
+                    <option value="18">Fairy</option>
+                  </select>
+                </form>
+              </div>
+          </div>
         </div>
       </div>
-    <div class="container">
-      <div class="row d-flex justify-content-center" id="pokedex"></div>
+      <div class="container">
+        <div class="row d-flex justify-content-center" id="pokedex"></div>
+      </div>
     </div>
+
+    <div class="abilities-tab">abilities tab</div>
+    <div class="items-tab">items tab</div>
 
     <!-- Modal to display more info on pokemon when clicked on -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -153,6 +164,6 @@
     ></script>
 
     <!-- Optional JavaScript -->
-    <script src="app.js"></script>
+    <script type='module' src="app.js"></script>
   </body>
 </html>
