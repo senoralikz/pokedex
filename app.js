@@ -39,6 +39,13 @@ const fetchPokemon = () => {
       abilities: res.abilities.map((ability) => ability),
       stats: res.stats.map((stat) => stat),
     }));
+    for (let i = 0; i < pokemon.length; i++) {
+      for (let j = 0; j < pokemon[i].abilities.length; j++) {
+        pokemon[i].abilities[j].ability.name = pokemon[i].abilities[
+          j
+        ].ability.name.replaceAll("-", " ");
+      }
+    }
     displayPokemon(pokemon);
     console.log(pokemon);
   });
@@ -90,6 +97,9 @@ const fetchAbilities = () => {
         .join(" "),
     }));
     ability.push(...galarAbility);
+    for (let i = 0; i < ability.length; i++) {
+      ability[i].name = ability[i].name.replaceAll("-", " ");
+    }
     console.log(ability);
   });
 };
