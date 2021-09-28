@@ -81,6 +81,9 @@ const fetchAbilities = () => {
         .map((effect) => effect.effect)
         .join(" "),
     }));
+    for (let i = 0; i < ability.length; i++) {
+      ability[i].name = ability[i].name.replaceAll("-", " ");
+    }
   });
 
   promises = [];
@@ -307,18 +310,18 @@ const morePokemonInfo = (x) => {
     if (pokemon[i].id === x) {
       $(".modal-title").html(pokemon[i].name);
       $(".modal-body").html(`
-        <div class='d-flex justify-content-between'>
-          <div>
+        <div class='pokemon-info d-sm-flex justify-content-between'>
+          <div class='type-stats'>
             <div class='type-area justify-content-start'>
               <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
             </div>
             <div class='modal-stats'>
-              <p class='hp-caps'>${pokemon[i].stats[0].stat.name}: ${pokemon[i].stats[0].base_stat}</p>
-              <p>${pokemon[i].stats[1].stat.name}: ${pokemon[i].stats[1].base_stat}</p>
-              <p>${pokemon[i].stats[2].stat.name}: ${pokemon[i].stats[2].base_stat}</p>
-              <p>${pokemon[i].stats[3].stat.name}: ${pokemon[i].stats[3].base_stat}</p>
-              <p>${pokemon[i].stats[4].stat.name}: ${pokemon[i].stats[4].base_stat}</p>
-              <p>${pokemon[i].stats[5].stat.name}: ${pokemon[i].stats[5].base_stat}</p>
+              <p class='hp-caps'><b>${pokemon[i].stats[0].stat.name}:</b> ${pokemon[i].stats[0].base_stat}&emsp;</p>
+              <p><b>${pokemon[i].stats[1].stat.name}:</b> ${pokemon[i].stats[1].base_stat}&emsp;</p>
+              <p><b>${pokemon[i].stats[2].stat.name}:</b> ${pokemon[i].stats[2].base_stat}&emsp;</p>
+              <p><b>${pokemon[i].stats[3].stat.name}:</b> ${pokemon[i].stats[3].base_stat}&emsp;</p>
+              <p><b>${pokemon[i].stats[4].stat.name}:</b> ${pokemon[i].stats[4].base_stat}&emsp;</p>
+              <p><b>${pokemon[i].stats[5].stat.name}:</b> ${pokemon[i].stats[5].base_stat}&emsp;</p>
             </div>
           </div>
           <div class='sprite-id'>
@@ -355,7 +358,9 @@ const morePokemonInfo = (x) => {
         }
         if (pokemon[i].abilities.length === 2) {
           if (pokemon[i].abilities[1].ability.name === ability[j].name) {
-            $(".ability-divider").html("<hr>");
+            $(".ability-divider").html(
+              "<div class='horizontal-divider'></div>"
+            );
             $(".second-ability").html(`
           <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
           <p id='hidden-ability-slot-2' class='hidden-ability d-flex justify-content-center'></p>
@@ -367,8 +372,12 @@ const morePokemonInfo = (x) => {
           }
         } else if (pokemon[i].abilities.length === 3) {
           if (pokemon[i].abilities[1].ability.name === ability[j].name) {
-            $(".ability-divider").html("<hr>");
-            $(".third-ability-divider").html("<hr>");
+            $(".ability-divider").html(
+              "<div class='horizontal-divider'></div>"
+            );
+            $(".third-ability-divider").html(
+              "<div class='horizontal-divider'></div>"
+            );
             $(".second-ability").html(`
           <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
           <p class='ability-description'>${ability[j].effect}</p>
@@ -390,49 +399,28 @@ const morePokemonInfo = (x) => {
   }
 };
 
+function burgerMenu() {
+  var x = document.getElementById("section-buttons");
+  if (x.className === "section-pages") {
+    x.className += " responsive";
+  } else {
+    x.className = "section-pages";
+  }
+}
+
+// function burgerMenu() {
+//   var x = document.getElementById("section-buttons");
+//   if (x.className === "section-pages") {
+//     x.className += " responsive";
+//   } else {
+//     x.className = "section-pages";
+//   }
+// }
+
 fetchPokemon();
 fetchAbilities();
+burgerMenu();
 $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
 $("#typeOptions1").on("change", typeSelection);
 $("#typeOptions2").on("change", typeSelection);
-
-// {
-//   <div class="d-flex justify-content-between">
-//   <div class="first-ability">
-//     <p class="d-flex justify-content-center align-self-start">
-//       ${pokemon[i].abilities[0].ability.name}
-//     </p>
-//     <p>
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-//       tempor incididunt ut labore et dolore magna aliqua. Ac orci phasellus
-//       egestas tellus rutrum. Arcu bibendum at varius vel pharetra vel turpis.
-//       Lacus luctus accumsan tortor posuere ac ut consequat. Praesent tristique
-//       magna sit amet purus gravida quis blandit. Integer feugiat scelerisque
-//       varius morbi enim nunc faucibus a pellentesque. Volutpat ac tincidunt
-//       vitae semper quis lectus nulla at volutpat. Eu ultrices vitae auctor eu
-//       augue ut lectus. Risus sed vulputate odio ut enim. Elit scelerisque mauris
-//       pellentesque pulvinar. Sem integer vitae justo eget magna fermentum
-//       iaculis.
-//     </p>
-//   </div>
-//   <div class="vertical-line"></div>
-//   <div class="second-ability">
-//     <p class="d-flex justify-content-center align-self-start">
-//       ${pokemon[i].abilities[1].ability.name}
-//     </p>
-//     <p>
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-//       tempor incididunt ut labore et dolore magna aliqua. Ac orci phasellus
-//       egestas tellus rutrum. Arcu bibendum at varius vel pharetra vel turpis.
-//       Lacus luctus accumsan tortor posuere ac ut consequat. Praesent tristique
-//       magna sit amet purus gravida quis blandit. Integer feugiat scelerisque
-//       varius morbi enim nunc faucibus a pellentesque. Volutpat ac tincidunt
-//       vitae semper quis lectus nulla at volutpat. Eu ultrices vitae auctor eu
-//       augue ut lectus. Risus sed vulputate odio ut enim. Elit scelerisque mauris
-//       pellentesque pulvinar. Sem integer vitae justo eget magna fermentum
-//       iaculis.
-//     </p>
-//   </div>
-// </div>;
-// }

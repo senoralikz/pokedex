@@ -6,7 +6,6 @@ body {
 
 header {
   background-color: #e74c3c;
-  display: flex;
 }
 
 h1 {
@@ -17,12 +16,42 @@ form {
   margin: 5px;
 }
 
-.searchPokemonForm {
-  align-self: end;
+hr {
+  height: 3px;
+  border: 1px solid #000;
 }
 
-.searchPokemonBar {
-  justify-content: baseline;
+.pokedex-logo {
+  margin: 10px 0;
+}
+
+.top-nav {
+  background-color: #d34535;
+}
+
+.burger-menu-icon {
+  display: none;
+  background-color: inherit;
+  color: #fff;
+}
+
+.section-button {
+  background-color: #d34535;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.section-button:hover {
+  cursor: pointer;
+  background-color: #e74c3c;
+}
+
+.section-button.active {
+  background-color: #ecf0f1;
+  color: #000;
 }
 
 .card {
@@ -55,13 +84,13 @@ form {
   border-bottom: 1px solid #000;
 }
 
+.horizontal-divider {
+  border-top: 1px solid #000;
+}
+
 .hidden-ability {
   font-size: small;
   margin-top: -15px;
-}
-
-hr {
-  color: #000;
 }
 
 .ability-description {
@@ -87,6 +116,16 @@ hr {
 .pokemon-id {
   color: #a9a9a9;
   font-size: 50px;
+}
+
+.modal-title {
+  font-size: 50px;
+}
+
+.modal-header,
+.modal-ability-info {
+  background-color: #e74c3c;
+  color: #fff;
 }
 
 .modal-hash {
@@ -264,6 +303,55 @@ hr {
   background-color: #f0b6bc;
   border-top-color: #f5cad1;
   border-bottom-color: #905f63;
+}
+
+@media screen and (max-width: 600px) {
+  .pokedex-logo {
+    width: 75%;
+  }
+
+  .section-pages button:not(:nth-child(2)) {
+    display: none;
+  }
+
+  .section-pages button.burger-menu-icon {
+    float: right;
+    display: block;
+    border: none;
+  }
+
+  .section-pages.responsive {
+    position: relative;
+  }
+
+  .section-pages.responsive button.burger-menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .section-pages.responsive button {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .modal-pokemon-img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -70px;
+  }
+
+  .pokemon-info {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .modal-stats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

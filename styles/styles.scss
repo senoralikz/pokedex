@@ -7,7 +7,6 @@ body {
 
 header {
   background-color: #e74c3c;
-  display: flex;
 }
 
 h1 {
@@ -18,13 +17,52 @@ form {
   margin: 5px;
 }
 
-.searchPokemonForm {
-  align-self: end;
+hr {
+  height: 3px;
+  // background-color: #000;
+  border: 1px solid #000;
+
+  // display: block;
+  // height: 2px;
+  // border: 0;
+  // border-top: 3px solid #000;
+  // margin: 1em 0;
+  // padding: 0;
 }
 
-.searchPokemonBar {
-  justify-content: baseline;
-  // align-items: end;
+.pokedex-logo {
+  margin: 10px 0;
+}
+
+.top-nav {
+  background-color: #d34535;
+}
+
+.burger-menu-icon {
+  display: none;
+  background-color: inherit;
+  color: #fff;
+}
+
+.section-button {
+  // margin: 0 10px;
+  // background-color: #e74c3c;
+  background-color: #d34535;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.section-button:hover {
+  cursor: pointer;
+  background-color: #e74c3c;
+}
+
+.section-button.active {
+  background-color: #ecf0f1;
+  color: #000;
 }
 
 .card {
@@ -57,13 +95,13 @@ form {
   border-bottom: 1px solid #000;
 }
 
+.horizontal-divider {
+  border-top: 1px solid #000;
+}
+
 .hidden-ability {
   font-size: small;
   margin-top: -15px;
-}
-
-hr {
-  color: #000;
 }
 
 .ability-description {
@@ -89,6 +127,16 @@ hr {
 .pokemon-id {
   color: #a9a9a9;
   font-size: 50px;
+}
+
+.modal-title {
+  font-size: 50px;
+}
+
+.modal-header,
+.modal-ability-info {
+  background-color: #e74c3c;
+  color: #fff;
 }
 
 .modal-hash {
@@ -268,10 +316,50 @@ hr {
   border-bottom-color: #905f63;
 }
 
-// @media only screen and (max-width: 600px) {
-//   .modal-pokemon-img {
-//     margin-left: -20px;
-//     margin-top: -50px;
-//     width: 110%;
-//   }
-// }
+@media screen and (max-width: 600px) {
+  .pokedex-logo {
+    width: 75%;
+  }
+
+  // do not display any of the section-pages buttons except for the 2nd child
+  .section-pages button:not(:nth-child(2)) {
+    display: none;
+  }
+
+  .section-pages button.burger-menu-icon {
+    float: right;
+    display: block;
+    border: none;
+  }
+
+  .section-pages.responsive {
+    position: relative;
+  }
+  .section-pages.responsive button.burger-menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .section-pages.responsive button {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .modal-pokemon-img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -70px;
+  }
+
+  .pokemon-info {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .modal-stats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
