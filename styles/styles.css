@@ -36,20 +36,41 @@ form {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-.card-enlarge {
-  transform: scale(3);
-}
-
-.card:focus {
-  transform: scale(3);
-}
-
 .card-img {
   margin-top: -60px;
 }
 
 .modal-pokemon-img {
+  margin-left: -100px;
   margin-top: -100px;
+  width: 150%;
+}
+
+.modal-ability-info {
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.abilities-heading {
+  border-bottom: 1px solid #000;
+}
+
+.hidden-ability {
+  font-size: small;
+  margin-top: -15px;
+}
+
+hr {
+  color: #000;
+}
+
+.ability-description {
+  margin: 5px;
+}
+
+.modal-stats,
+.ability-name {
+  text-transform: capitalize;
 }
 
 .loading {

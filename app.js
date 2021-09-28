@@ -2,6 +2,7 @@ const pokedex = $("#pokedex");
 let startingId = 1;
 let endingId = 151;
 let ability = [];
+let galarAbility = [];
 let pokemon = [];
 let pokemonHtml;
 
@@ -45,10 +46,10 @@ const fetchPokemon = () => {
 
 const fetchAbilities = () => {
   // initialize array that will be filled with each abilities url
-  const promises = [];
+  let promises = [];
 
   // get url for ability id
-  for (let i = 1; i <= 267; i++) {
+  for (let i = 1; i <= 233; i++) {
     const url = `https://pokeapi.co/api/v2/ability/${i}/`;
 
     // fetch the information received from the ability url and then format it to json
@@ -62,8 +63,33 @@ const fetchAbilities = () => {
     ability = res.map((res) => ({
       name: res.name,
       id: res.id,
-      effect: res.effect_entries.map((effect) => effect.effect),
+      effect: res.effect_entries
+        .filter((effect) => effect.language.name === "en")
+        .map((effect) => effect.effect)
+        .join(" "),
     }));
+  });
+
+  promises = [];
+
+  for (let i = 234; i <= 267; i++) {
+    const url = `https://pokeapi.co/api/v2/ability/${i}/`;
+
+    // fetch the information received from the ability url and then format it to json
+    //  and push it to the promises array
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+
+  Promise.all(promises).then((res) => {
+    // then initialize and set the properties we want to use from the response
+    galarAbility = res.map((res) => ({
+      name: res.name,
+      id: res.id,
+      effect: res.flavor_text_entries
+        .map((text_entry) => text_entry.flavor_text)
+        .join(" "),
+    }));
+    ability.push(...galarAbility);
     console.log(ability);
   });
 };
@@ -265,16 +291,84 @@ const morePokemonInfo = (x) => {
     if (pokemon[i].id === x) {
       $(".modal-title").html(pokemon[i].name);
       $(".modal-body").html(`
-        <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
-        <img class='modal-pokemon-img card-img' src='${pokemon[i].sprite}' />
-        <div class='type-area d-flex justify-content-start'>
-          <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
+        <div class='d-flex justify-content-between'>
+          <div>
+            <div class='type-area justify-content-start'>
+              <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
+            </div>
+            <div class='modal-stats'>
+              <p>${pokemon[i].stats[0].stat.name}: ${pokemon[i].stats[0].base_stat}</p>
+              <p>${pokemon[i].stats[1].stat.name}: ${pokemon[i].stats[1].base_stat}</p>
+              <p>${pokemon[i].stats[2].stat.name}: ${pokemon[i].stats[2].base_stat}</p>
+              <p>${pokemon[i].stats[3].stat.name}: ${pokemon[i].stats[3].base_stat}</p>
+              <p>${pokemon[i].stats[4].stat.name}: ${pokemon[i].stats[4].base_stat}</p>
+              <p>${pokemon[i].stats[5].stat.name}: ${pokemon[i].stats[5].base_stat}</p>
+            </div>
+          </div>
+          <div class='sprite-id'>
+            <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
+            <img class='modal-pokemon-img card-img' src='${pokemon[i].sprite}' />
+          </div>
+        </div>
+        <div class="modal-ability-info">
+          <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
+          <div class="ability">
+            <div class='first-ability justify-content-center'>
+            </div>
+            <div class='ability-divider'></div>
+            <div class='second-ability justify-content-center'>
+            </div>
+            <div class='third-ability-divider'></div>
+            <div class='third-ability justify-content-center'>
+            </div>
+          </div>
         </div>
       `);
       if (pokemon[i].type.length === 2) {
         $(".type-area").append(
           `<span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>`
         );
+      }
+
+      for (let j = 0; j < ability.length; j++) {
+        if (pokemon[i].abilities[0].ability.name === ability[j].name) {
+          $(".first-ability").html(`
+          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
+          <p class='ability-description'>${ability[j].effect}</p>
+          `);
+        }
+        if (pokemon[i].abilities.length === 2) {
+          if (pokemon[i].abilities[1].ability.name === ability[j].name) {
+            $(".ability-divider").html("<hr>");
+            $(".second-ability").html(`
+          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
+          <p id='hidden-ability-slot-2' class='hidden-ability d-flex justify-content-center'></p>
+          <p class='ability-description'>${ability[j].effect}</p>
+          `);
+          }
+          if (pokemon[i].abilities[1].is_hidden === true) {
+            $("#hidden-ability-slot-2").html("(Hidden Ability)");
+          }
+        } else if (pokemon[i].abilities.length === 3) {
+          if (pokemon[i].abilities[1].ability.name === ability[j].name) {
+            $(".ability-divider").html("<hr>");
+            $(".third-ability-divider").html("<hr>");
+            $(".second-ability").html(`
+          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
+          <p class='ability-description'>${ability[j].effect}</p>
+          `);
+          }
+          if (pokemon[i].abilities[2].ability.name === ability[j].name) {
+            $(".third-ability").html(`
+          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
+          <p id='hidden-ability-slot-3' class='hidden-ability d-flex justify-content-center'></p>
+          <p class='ability-description'>${ability[j].effect}</p>
+          `);
+          }
+          if (pokemon[i].abilities[2].is_hidden === true) {
+            $("#hidden-ability-slot-3").html("(Hidden Ability)");
+          }
+        }
       }
     }
   }
@@ -286,3 +380,43 @@ $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
 $("#typeOptions1").on("change", typeSelection);
 $("#typeOptions2").on("change", typeSelection);
+
+// {
+//   <div class="d-flex justify-content-between">
+//   <div class="first-ability">
+//     <p class="d-flex justify-content-center align-self-start">
+//       ${pokemon[i].abilities[0].ability.name}
+//     </p>
+//     <p>
+//       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+//       tempor incididunt ut labore et dolore magna aliqua. Ac orci phasellus
+//       egestas tellus rutrum. Arcu bibendum at varius vel pharetra vel turpis.
+//       Lacus luctus accumsan tortor posuere ac ut consequat. Praesent tristique
+//       magna sit amet purus gravida quis blandit. Integer feugiat scelerisque
+//       varius morbi enim nunc faucibus a pellentesque. Volutpat ac tincidunt
+//       vitae semper quis lectus nulla at volutpat. Eu ultrices vitae auctor eu
+//       augue ut lectus. Risus sed vulputate odio ut enim. Elit scelerisque mauris
+//       pellentesque pulvinar. Sem integer vitae justo eget magna fermentum
+//       iaculis.
+//     </p>
+//   </div>
+//   <div class="vertical-line"></div>
+//   <div class="second-ability">
+//     <p class="d-flex justify-content-center align-self-start">
+//       ${pokemon[i].abilities[1].ability.name}
+//     </p>
+//     <p>
+//       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+//       tempor incididunt ut labore et dolore magna aliqua. Ac orci phasellus
+//       egestas tellus rutrum. Arcu bibendum at varius vel pharetra vel turpis.
+//       Lacus luctus accumsan tortor posuere ac ut consequat. Praesent tristique
+//       magna sit amet purus gravida quis blandit. Integer feugiat scelerisque
+//       varius morbi enim nunc faucibus a pellentesque. Volutpat ac tincidunt
+//       vitae semper quis lectus nulla at volutpat. Eu ultrices vitae auctor eu
+//       augue ut lectus. Risus sed vulputate odio ut enim. Elit scelerisque mauris
+//       pellentesque pulvinar. Sem integer vitae justo eget magna fermentum
+//       iaculis.
+//     </p>
+//   </div>
+// </div>;
+// }
