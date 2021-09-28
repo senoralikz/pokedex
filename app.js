@@ -326,7 +326,7 @@ const morePokemonInfo = (x) => {
           </div>
           <div class='sprite-id'>
             <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
-            <img class='modal-pokemon-img card-img' src='${pokemon[i].sprite}' />
+            <img class='modal-pokemon-img' src='${pokemon[i].sprite}' />
           </div>
         </div>
         <div class="modal-ability-info">

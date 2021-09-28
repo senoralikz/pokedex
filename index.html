@@ -39,8 +39,8 @@
         </div>
         <div id='section-buttons' class='section-pages d-flex align-items-end'>
           <button class="burger-menu-icon" onclick="burgerMenu()"><i class="fa fa-bars fa-lg"></i></button>
-          <button class='pokemon-section section-button'>Pokemon</button>
-          <button class='abilities-section section-button active'>Abilities</button>
+          <button class='pokemon-section section-button active'>Pokemon</button>
+          <button class='abilities-section section-button'>Abilities</button>
           <button class='items-section section-button'>Items</button>
         </div>
       </div>
@@ -48,7 +48,7 @@
     <div class='sort-filter-area'>
       <div class="container">
         <div class="row">
-            <div class='d-flex justify-content-center'>
+            <div class='sort-filter-area d-flex justify-content-center'>
               <form class="col-sm-5 col-4 dropSearch">
                 <b>Sort Pokemon By: </b>
                 <select class="dropdown" id="sortOptions">
@@ -59,7 +59,7 @@
                   <option value="4">ID (High &#8594 Low)</option>
                 </select>
               </form>
-              <form class="col-sm-3 col dropSearch">
+              <form id='genFilter' class="col-sm-3 col dropSearch">
                 <b>Generation: </b>
                 <select class="dropdown" id="genOptions">
                   <option value="1">Gen 1 - Kanto</option>

@@ -54,6 +54,10 @@ hr {
   color: #000;
 }
 
+.sort-filter-area {
+  margin: 10px 0;
+}
+
 .card {
   width: 10rem;
   margin: 10px;
@@ -329,6 +333,12 @@ hr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .sort-filter-area {
+    margin: 5px 0;
+    display: flex;
+    flex-flow: column wrap;
   }
 }
 
