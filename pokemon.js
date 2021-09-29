@@ -5,11 +5,12 @@ import { displayPokemon } from "./api.js";
 import { fetchPokemon } from "./api.js";
 
 export const showPokemonTab = () => {
-  console.log("importing pokemon file and showpokemontab function");
+  $("#searchPokemon").val("");
   $(".landing-page").hide();
   $(".pokemon-tab").show();
   $(".abilities-tab").hide();
   $(".items-tab").hide();
+  displayPokemon(pokemon);
 };
 
 const loading = `

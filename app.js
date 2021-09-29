@@ -3,6 +3,7 @@ import { showAbilitiesTab } from "./abilities.js";
 import { showItemsTab } from "./items.js";
 
 const homePage = () => {
+  $("#searchPokemon").val("");
   $(".landing-page").show();
   $(".pokemon-tab").hide();
   $(".abilities-tab").hide();

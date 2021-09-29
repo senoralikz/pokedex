@@ -133,6 +133,17 @@
     </div>
 
     <div class="abilities-tab">
+      <div class="d-flex justify-content-start">
+      <form class="dropSearch">
+        <b>Sort Abilities By: </b>
+        <select class="dropdown" id="sortAbilityOptions">
+          <option value="1">Ability ID (Low &#8594 High)</option>
+          <option value="2">Ability ID (High &#8594 Low)</option>
+          <option value="3">Ability Name (A &#8594 Z)</option>
+          <option value="4">Ability Name (Z &#8594 A)</option>
+        </select>
+      </form>
+      </div>
       <div id='abilities-list'>
         <table class="ability-table table table-hover">
           <thead>

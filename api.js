@@ -7,8 +7,9 @@ export let pokemon = [];
 export let ability = [];
 
 export const fetchPokemon = () => {
+  let pokemonSpecies = [];
   // initialize array that will be filled with each pokemons url
-  const promises = [];
+  let promises = [];
 
   // get url for pokemon id
   for (let i = genId.startingId; i <= genId.endingId; i++) {
@@ -23,7 +24,8 @@ export const fetchPokemon = () => {
   Promise.all(promises).then((res) => {
     // then initialize and set the properties we want to use from the response
     pokemon = res.map((res) => ({
-      name: res.name,
+      name: res.species.name,
+      form_name: res.forms.map((form) => form.name).join(" "),
       id: res.id,
       sprite: res.sprites["front_default"],
       sprite_shiny: res.sprites["front_shiny"],
@@ -49,6 +51,64 @@ export const fetchPokemon = () => {
 
     displayPokemon(pokemon);
     console.log(pokemon);
+  });
+
+  promises = [];
+
+  // get url for pokemon id
+  for (let i = 10001; i <= 10220; i++) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
+
+    // fetch the information received from the pokemon url and then format it to json
+    //  and push it to the promises array
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+
+  // Using Promise.all to wait to receive all information that is requested from the pokemon url
+  Promise.all(promises).then((res) => {
+    // then initialize and set the properties we want to use from the response
+    pokemonSpecies = res.map((res) => ({
+      name: res.species.name,
+      form_name: res.forms.map((form) => form.name).join(" "),
+      id: res.id,
+      sprite: res.sprites["front_default"],
+      sprite_shiny: res.sprites["front_shiny"],
+      // type is an array so we join each string inside the type array to set it to one type property
+      // type: res.types,
+      // type: res.types.map((type) => type.type.name).join(", "),
+      type: res.types.map((type) => type.type.name),
+      abilities: res.abilities.map((ability) => ability),
+      stats: res.stats.map((stat) => stat),
+    }));
+    for (let i = 0; i < pokemonSpecies.length; i++) {
+      // pokemonSpecies[i].form_name = pokemonSpecies[i].form_name.replaceAll(
+      //   "-",
+      //   " "
+      // );
+      for (let j = 0; j < pokemonSpecies[i].abilities.length; j++) {
+        pokemonSpecies[i].abilities[j].ability.name = pokemonSpecies[
+          i
+        ].abilities[j].ability.name.replaceAll("-", " ");
+      }
+      for (let x = 0; x < pokemonSpecies[i].stats.length; x++) {
+        pokemonSpecies[i].stats[x].stat.name = pokemonSpecies[i].stats[
+          x
+        ].stat.name.replaceAll("-", " ");
+      }
+    }
+    console.log(pokemonSpecies);
+    let testPokeI;
+    let testPokeJ;
+    for (let i = 0; i < pokemon.length; i++) {
+      for (let j = 0; j < pokemonSpecies.length; j++) {
+        if (pokemon[i].name === pokemonSpecies[j].name) {
+          testPokeI = pokemon[i];
+          testPokeJ = pokemon[j];
+        }
+      }
+    }
+    console.log(testPokeI);
+    console.log(testPokeJ);
   });
 };
 
