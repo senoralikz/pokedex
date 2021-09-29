@@ -302,25 +302,6 @@ export const morePokemonInfo = (x) => {
   }
 };
 
-function burgerMenu() {
-  var x = document.getElementById("section-buttons");
-  if (x.className === "section-pages") {
-    x.className += " responsive";
-  } else {
-    x.className = "section-pages";
-  }
-}
-
-// function burgerMenu() {
-//   var x = document.getElementById("section-buttons");
-//   if (x.className === "section-pages") {
-//     x.className += " responsive";
-//   } else {
-//     x.className = "section-pages";
-//   }
-// }
-
-burgerMenu();
 $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
 $("#typeOptions1").on("change", typeSelection);

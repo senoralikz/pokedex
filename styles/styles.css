@@ -18,6 +18,7 @@ form {
 
 .pokedex-logo {
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .top-nav {
@@ -324,8 +325,8 @@ form {
     width: 75%;
   }
 
-  .section-pages button:not(:nth-child(2)) {
-    display: none;
+  .section-button {
+    padding: 10px;
   }
 
   .modal-pokemon-img {
@@ -349,6 +350,10 @@ form {
     margin: 5px 0;
     display: flex;
     flex-flow: column wrap;
+  }
+
+  .pokemon-with-ability {
+    display: none;
   }
 }
 

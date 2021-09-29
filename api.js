@@ -155,7 +155,7 @@ export const displayAbilities = () => {
       <td><b>${ability.id}</b></td>
       <td class='ability-name'>${ability.name}</td>
       <td>${ability.effect}</td>
-      <td class='ability-name'>${ability.pokemon}</td>
+      <td class='ability-name pokemon-with-ability'>${ability.pokemon}</td>
     </tr>
     `
   );

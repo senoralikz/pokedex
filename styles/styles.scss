@@ -19,6 +19,7 @@ form {
 
 .pokedex-logo {
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .top-nav {
@@ -32,8 +33,6 @@ form {
 }
 
 .section-button {
-  // margin: 0 10px;
-  // background-color: #e74c3c;
   background-color: #d34535;
   border: none;
   color: #fff;
@@ -327,30 +326,9 @@ form {
     width: 75%;
   }
 
-  // do not display any of the section-pages buttons except for the 2nd child
-  .section-pages button:not(:nth-child(2)) {
-    display: none;
+  .section-button {
+    padding: 10px;
   }
-
-  // .section-pages button.burger-menu-icon {
-  //   float: right;
-  //   display: block;
-  //   border: none;
-  // }
-
-  // .section-pages.responsive {
-  //   position: relative;
-  // }
-  // .section-pages.responsive button.burger-menu-icon {
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0;
-  // }
-  // .section-pages.responsive button {
-  //   float: none;
-  //   display: block;
-  //   text-align: left;
-  // }
 
   .modal-pokemon-img {
     width: 100%;
@@ -375,8 +353,7 @@ form {
     flex-flow: column wrap;
   }
 
-  // #genFilter {
-  //   display: flex;
-  //   align-items: center;
-  // }
+  .pokemon-with-ability {
+    display: none;
+  }
 }

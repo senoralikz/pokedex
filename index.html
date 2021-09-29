@@ -38,15 +38,14 @@
             </form>
         </div>
         <div id='section-buttons' class='section-pages d-flex align-items-end'>
-          <button class="burger-menu-icon" onclick="burgerMenu()"><i class="fa fa-bars fa-lg"></i></button>
-          <button class='pokemon-section section-button active'>Pokemon</button>
+          <button class='pokemon-section section-button'>Pokemon</button>
           <button class='abilities-section section-button'>Abilities</button>
-          <button class='items-section section-button'>Items</button>
+          <!-- <button class='items-section section-button'>Items</button> -->
         </div>
       </div>
     </header>
 
-    <div class="landing-page">
+    <div id='welcome-page' class="landing-page">
       <h2>Welcome</h2>
     </div>
 
@@ -141,7 +140,7 @@
               <th scope="col">#</th>
               <th scope="col">Ability</th>
               <th scope="col">Description</th>
-              <th scope="col">Pokemon with Ability</th>
+              <th scope="col" class='pokemon-with-ability'>Pokemon with Ability</th>
             </tr>
           </thead>
           <tbody class='ability-table-body'>
