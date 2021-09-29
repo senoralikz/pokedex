@@ -1,5 +1,4 @@
 import { showPokemonTab } from "./pokemon.js";
-// import { morePokemonInfo } from "./pokemon.js";
 import { showAbilitiesTab } from "./abilities.js";
 import { showItemsTab } from "./items.js";
 
@@ -11,7 +10,6 @@ $(() => {
   $(".pokemon-section").on("click", showPokemonTab);
   $(".abilities-section").on("click", showAbilitiesTab);
   $(".items-section").on("click", showItemsTab);
-  // morePokemonInfo();
 });
 
 // const pokedex = $("#pokedex");

@@ -126,7 +126,7 @@ const displayPokemon = (array) => {
   pokemonHtml = array.map(
     (pokemon) =>
       `
-      <div class='card pokemon-card' data-id:'${pokemon.id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+      <div class='card pokemon-card specificPokemon${pokemon.id}' data-id='${pokemon.id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
         <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
         <img class='card-img' src='${pokemon.sprite}' />
         <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
@@ -141,7 +141,7 @@ const displayPokemon = (array) => {
   for (let i = 0; i < array.length; i++) {
     if (array[i].type.length === 1) {
       pokemonHtml[i] = `
-      <div class='card pokemon-card' data-id:'${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+      <div class='card pokemon-card' data-id='${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
         <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${array[i].id}</span></p>
         <img class='card-img' src='${array[i].sprite}' />
         <h5 class='pokemon-name card-title'>${array[i].name}</h5>
@@ -316,13 +316,13 @@ $(document).ready(function () {
   });
 });
 
-export const morePokemonInfo = (event) => {
+export const morePokemonInfo = (x) => {
+  let specificPokemon = $(x).data("id");
   console.log("clicking pokemon card");
-  console.log(event.target);
-  console.log($(".pokemon-card").data("id"));
+  console.log(specificPokemon);
 
   for (let i = 0; i < pokemon.length; i++) {
-    if (pokemon[i].id === pokemon.id) {
+    if (pokemon[i].id === specificPokemon) {
       $(".modal-title").html(pokemon[i].name);
       $(".modal-body").html(`
         <div class='pokemon-info d-sm-flex justify-content-between'>
@@ -464,4 +464,6 @@ $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
 $("#typeOptions1").on("change", typeSelection);
 $("#typeOptions2").on("change", typeSelection);
-$("#pokedex").on("click", ".pokemon-card", morePokemonInfo);
+$("#pokedex").on("click", ".pokemon-card", function () {
+  morePokemonInfo(this);
+});
