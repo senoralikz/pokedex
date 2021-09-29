@@ -1,8 +1,8 @@
+let pokemonHtml;
 export let genId = {
   startingId: 1,
   endingId: 151,
 };
-export let pokemonHtml;
 export let pokemon = [];
 export let ability = [];
 
