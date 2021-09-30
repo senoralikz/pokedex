@@ -109,7 +109,8 @@ form {
 }
 
 .modal-stats,
-.ability-name {
+.ability-name,
+.form-names {
   text-transform: capitalize;
 }
 
@@ -318,6 +319,10 @@ form {
 
 .ability-table {
   margin-top: 35px;
+}
+
+#sortAbilityOptions {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 600px) {

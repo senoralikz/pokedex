@@ -1,5 +1,6 @@
 import { genId } from "./api.js";
 import { pokemon } from "./api.js";
+import { pokemonSpecies } from "./api.js";
 import { ability } from "./api.js";
 import { displayPokemon } from "./api.js";
 import { fetchPokemon } from "./api.js";
@@ -212,11 +213,11 @@ export const morePokemonInfo = (x) => {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].name}_default">
-                    <p class='d-flex justify-content-center'>Regular</p>
+                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}</p>
                   </div>
                   <div class="carousel-item">
                     <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].name}_shiny">
-                    <p class='d-flex justify-content-center'>Shiny</p>
+                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}-Shiny</p>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -238,15 +239,11 @@ export const morePokemonInfo = (x) => {
           <div class="ability">
             <div class='first-ability justify-content-center'>
             </div>
-            <div class='ability-divider'></div>
-            <div class='second-ability justify-content-center'>
-            </div>
-            <div class='third-ability-divider'></div>
-            <div class='third-ability justify-content-center'>
-            </div>
+            
           </div>
         </div>
       `);
+
       if (pokemon[i].type.length === 2) {
         $(".type-area").append(
           `<span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>`
@@ -260,43 +257,37 @@ export const morePokemonInfo = (x) => {
           <p class='ability-description'>${ability[j].effect}</p>
           `);
         }
-        if (pokemon[i].abilities.length === 2) {
-          if (pokemon[i].abilities[1].ability.name === ability[j].name) {
-            $(".ability-divider").html(
-              "<div class='horizontal-divider'></div>"
-            );
-            $(".second-ability").html(`
-          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
-          <p id='hidden-ability-slot-2' class='hidden-ability d-flex justify-content-center'></p>
-          <p class='ability-description'>${ability[j].effect}</p>
+        if (pokemon[i].abilities.length > 1) {
+          for (let h = 1; h < pokemon[i].abilities.length; h++) {
+            if (pokemon[i].abilities[h].ability.name === ability[j].name) {
+              $(".ability").append(`
+                <div class='horizontal-divider'></div>
+                <div>
+                  <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
+                  <p  class='hidden-ability d-flex justify-content-center' id='hidden-ability-slot-${j}'></p>
+                  <p class='ability-description'>${ability[j].effect}</p>
+                </div>
+              `);
+              if (pokemon[i].abilities[h].is_hidden === true) {
+                $("#hidden-ability-slot-" + j).html("(Hidden Ability)");
+              }
+            }
+          }
+        }
+      }
+
+      for (let j = 0; j < pokemonSpecies.length; j++) {
+        if (pokemon[i].name === pokemonSpecies[j].name) {
+          $(".carousel-inner").append(`
+            <div class="carousel-item">
+              <img src="${pokemonSpecies[j].sprite}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}">
+              <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name}</p>
+            </div>
+            <div class="carousel-item">
+              <img src="${pokemonSpecies[j].sprite_shiny}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_shiny">
+              <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name}-Shiny</p>
+            </div>
           `);
-          }
-          if (pokemon[i].abilities[1].is_hidden === true) {
-            $("#hidden-ability-slot-2").html("(Hidden Ability)");
-          }
-        } else if (pokemon[i].abilities.length === 3) {
-          if (pokemon[i].abilities[1].ability.name === ability[j].name) {
-            $(".ability-divider").html(
-              "<div class='horizontal-divider'></div>"
-            );
-            $(".third-ability-divider").html(
-              "<div class='horizontal-divider'></div>"
-            );
-            $(".second-ability").html(`
-          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
-          <p class='ability-description'>${ability[j].effect}</p>
-          `);
-          }
-          if (pokemon[i].abilities[2].ability.name === ability[j].name) {
-            $(".third-ability").html(`
-          <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
-          <p id='hidden-ability-slot-3' class='hidden-ability d-flex justify-content-center'></p>
-          <p class='ability-description'>${ability[j].effect}</p>
-          `);
-          }
-          if (pokemon[i].abilities[2].is_hidden === true) {
-            $("#hidden-ability-slot-3").html("(Hidden Ability)");
-          }
         }
       }
     }
