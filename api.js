@@ -38,6 +38,8 @@ export const fetchPokemon = () => {
       stats: res.stats.map((stat) => stat),
     }));
     for (let i = 0; i < pokemon.length; i++) {
+      pokemon[i].name = pokemon[i].name.replaceAll("-", " ");
+      pokemon[i].form_name = pokemon[i].form_name.replaceAll("-", " ");
       for (let j = 0; j < pokemon[i].abilities.length; j++) {
         pokemon[i].abilities[j].ability.name = pokemon[i].abilities[
           j
@@ -82,10 +84,11 @@ export const fetchPokemon = () => {
       stats: res.stats.map((stat) => stat),
     }));
     for (let i = 0; i < pokemonSpecies.length; i++) {
-      // pokemonSpecies[i].form_name = pokemonSpecies[i].form_name.replaceAll(
-      //   "-",
-      //   " "
-      // );
+      pokemonSpecies[i].name = pokemonSpecies[i].name.replaceAll("-", " ");
+      pokemonSpecies[i].form_name = pokemonSpecies[i].form_name.replaceAll(
+        "-",
+        " "
+      );
       for (let j = 0; j < pokemonSpecies[i].abilities.length; j++) {
         pokemonSpecies[i].abilities[j].ability.name = pokemonSpecies[
           i

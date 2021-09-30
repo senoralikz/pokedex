@@ -217,7 +217,7 @@ export const morePokemonInfo = (x) => {
                   </div>
                   <div class="carousel-item">
                     <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].name}_shiny">
-                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}-Shiny</p>
+                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name} (Shiny)</p>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -285,7 +285,7 @@ export const morePokemonInfo = (x) => {
             </div>
             <div class="carousel-item">
               <img src="${pokemonSpecies[j].sprite_shiny}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_shiny">
-              <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name}-Shiny</p>
+              <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name} (Shiny)</p>
             </div>
           `);
         }
