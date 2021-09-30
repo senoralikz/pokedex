@@ -11,6 +11,7 @@ export const showPokemonTab = () => {
   $(".pokemon-tab").show();
   $(".abilities-tab").hide();
   $(".items-tab").hide();
+  $(".moves-tab").hide();
   displayPokemon(pokemon);
 };
 

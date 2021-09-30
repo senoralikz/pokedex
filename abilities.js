@@ -8,6 +8,8 @@ export const showAbilitiesTab = () => {
   $(".abilities-tab").show();
   $("#abilities-list").show();
   $(".items-tab").hide();
+  $(".moves-tab").hide();
+
   displayAbilities();
 
   console.log(ability);

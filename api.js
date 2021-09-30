@@ -1,4 +1,3 @@
-let pokemonHtml;
 export let genId = {
   startingId: 1,
   endingId: 151,
@@ -6,6 +5,8 @@ export let genId = {
 export let pokemon = [];
 export let pokemonSpecies = [];
 export let ability = [];
+export let moves = [];
+let pokemonHtml;
 
 export const fetchPokemon = () => {
   // initialize array that will be filled with each pokemons url
@@ -194,9 +195,6 @@ export const fetchAbilities = () => {
         .join(" "),
       pokemon: res.pokemon.map((pokemon) => pokemon.pokemon.name).join(", "),
     }));
-    for (let i = 0; i < ability.length; i++) {
-      ability[i].name = ability[i].name.replaceAll("-", " ");
-    }
   });
 
   promises = [];
@@ -219,12 +217,54 @@ export const fetchAbilities = () => {
         .join(" "),
       pokemon: res.pokemon.map((pokemon) => pokemon.pokemon.name).join(", "),
     }));
+
     ability.push(...galarAbility);
+
     for (let i = 0; i < ability.length; i++) {
       ability[i].name = ability[i].name.replaceAll("-", " ");
     }
+
     displayAbilities();
     console.log(ability);
+  });
+};
+
+export const fetchMoves = () => {
+  // initialize array that will be filled with each abilities url
+  let promises = [];
+
+  // get url for ability id
+  for (let i = 1; i <= 826; i++) {
+    const url = `https://pokeapi.co/api/v2/move/${i}/`;
+
+    // fetch the information received from the ability url and then format it to json
+    //  and push it to the promises array
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+
+  // Using Promise.all to wait to receive all information that is requested from the ability url
+  Promise.all(promises).then((res) => {
+    // then initialize and set the properties we want to use from the response
+    moves = res.map((res) => ({
+      name: res.name,
+      id: res.id,
+      type: res.type.name,
+      accuracy: res.accuracy,
+      pp: res.pp,
+      power: res.power,
+      priority: res.priority,
+      damage_class: res.damage_class,
+      effect: res.effect_entries.map((effect) => effect.effect).join(" "),
+      pokemon: res.learned_by_pokemon.map((pokemon) => pokemon.name).join(", "),
+    }));
+
+    for (let i = 0; i < moves.length; i++) {
+      moves[i].name = moves[i].name.replaceAll("-", " ");
+      moves[i].pokemon = moves[i].pokemon.replaceAll("-", " ");
+    }
+
+    console.log(moves);
+    displayMoves();
   });
 };
 
@@ -278,5 +318,32 @@ export const displayAbilities = () => {
   $(".ability-table-body").html(abilitiesHtml);
 };
 
+export const displayMoves = () => {
+  let movesHtml = moves.map(
+    (move) =>
+      `
+    <tr>
+      <td><b>${move.id}</b></td>
+      <td class='move-caps'>${move.name}</td>
+      <td>
+        <ol class='move-stats'>
+          <li class='move-caps'><b>Type:</b> ${move.type}</li>
+          <li class='move-caps'><b>Damage Class:</b> ${move.damage_class}</li>
+          <li><b>Power:</b> ${move.power}</li>
+          <li><b>Accuracy:</b> ${move.accuracy}</li>
+          <li><b>PP:</b> ${move.pp}</li>
+          <li><b>Priority:</b> ${move.priority}</li>
+        </ol>
+      </td>
+      <td>${move.effect}</td>
+      <td class='move-caps pokemon-with-move'>${move.pokemon}</td>
+    </tr>
+    `
+  );
+
+  $(".move-table-body").html(movesHtml);
+};
+
 fetchPokemon();
 fetchAbilities();
+fetchMoves();

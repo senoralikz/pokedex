@@ -110,6 +110,7 @@ form {
 
 .modal-stats,
 .ability-name,
+.move-caps,
 .form-names {
   text-transform: capitalize;
 }
@@ -325,6 +326,10 @@ form {
   margin-top: 20px;
 }
 
+ol.move-stats li {
+  list-style-type: none;
+}
+
 @media screen and (max-width: 600px) {
   .pokedex-logo {
     width: 75%;
@@ -357,7 +362,8 @@ form {
     flex-flow: column wrap;
   }
 
-  .pokemon-with-ability {
+  .pokemon-with-ability,
+.pokemon-with-move {
     display: none;
   }
 }
