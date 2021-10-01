@@ -258,13 +258,37 @@ export const fetchMoves = () => {
       pokemon: res.learned_by_pokemon.map((pokemon) => pokemon.name).join(", "),
     }));
 
+    for (let i = 756; i <= 773; i++) {
+      moves[i].accuracy = "-";
+      moves[i].damage_class = "-";
+      moves[i].power = "-";
+      moves[i].pp = "-";
+    }
+
     for (let i = 0; i < moves.length; i++) {
       moves[i].name = moves[i].name.replaceAll("-", " ");
       moves[i].pokemon = moves[i].pokemon.replaceAll("-", " ");
+      if (moves[i].damage_class !== "-") {
+        moves[i].damage_class = moves[i].damage_class.name;
+      }
+      // moves[i].forEach(function(obj) {
+
+      // })
     }
 
+    moves.forEach((obj) => {
+      for (let i in obj) {
+        if (obj[i] === null || obj[i] === "") {
+          obj[i] = "-";
+        }
+      }
+    });
+
     console.log(moves);
+
     displayMoves();
+
+    console.log(moves);
   });
 };
 
@@ -319,6 +343,81 @@ export const displayAbilities = () => {
 };
 
 export const displayMoves = () => {
+  moves[756].effect =
+    "Inflicts damage and creates harsh sunlight. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[756].pokemon =
+    "Any Dynamax Pokémon can use Max Flare if it knows a damaging Fire-type move.";
+  moves[757].effect =
+    "Inflicts damage and then decreases the target's and its ally's Special Attack by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[757].pokemon =
+    "Any Dynamax Pokémon can use Max Flutterby if it knows a damaging Bug-type move.";
+  moves[758].effect =
+    "Inflicts damage and causes the battlefield to become Electric Terrain. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[758].pokemon =
+    "Any Dynamax Pokémon can use Max Lightning if it knows a damaging Electric-type move.";
+  moves[759].effect =
+    "Inflicts damage to a target and lowers the Speed of all opponents by one stage. Its power and whether it is a special or physical move depends on the move it is based on. If Max Strike is used with Multi-Attack or Techno Blast as its base move while the user is holding a Memory or a Drive, respectively, Max Strike turns into the Max Move of the type corresponding to the type of Memory or Drive held by the user. If Max Strike is used during weather with Weather Ball as its base move, it turns into the Max Move of the type corresponding to the type Weather Ball would be in that weather. In a similar way, if Max Strike is used during terrain with Terrain Pulse as its base move, it turns into the Max Move of the type corresponding to the type Terrain Pulse would be in that terrain. If Max Strike is used by a Pokémon with Aerilate, Galvanize, Pixilate, or Refrigerate, it turns into the Max Move of the type corresponding to the Pokémon's Ability.";
+  moves[759].pokemon =
+    "Any Dynamax Pokémon can use Max Strike if it knows a damaging Normal-type move.";
+  moves[760].effect =
+    "Inflicts damage and increases the Attack of the user and its allies by one stage. Its power and whether it is a special or physical move depends on the move it is based on. Compared to other Max Moves, it usually has less power.";
+  moves[760].pokemon =
+    "Any Dynamax Pokémon can use Max Knuckle if it knows a damaging Fighting-type move.";
+  moves[761].effect =
+    "Inflicts damage and lowers the target's and its ally's Defense by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[761].pokemon =
+    "Any Dynamax Pokémon can use Max Phantasm if it knows a damaging Ghost-type move.";
+  moves[762].effect =
+    "Inflicts damage and creates hail. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[762].pokemon =
+    "Any Dynamax Pokémon can use Max Hailstorm if it knows a damaging Ice-type move.";
+  moves[763].effect =
+    "Inflicts damage and then raises the user's and its ally's Special Attack by one stage. Its power and whether it is a special or physical move depends on the move it is based on. Compared to the other Max Moves, it usually has less power.";
+  moves[763].pokemon =
+    "Any Dynamax Pokémon can use Max Ooze if it knows a damaging Poison-type move.";
+  moves[764].effect =
+    "Inflicts damage and creates rain. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[764].pokemon =
+    "Any Dynamax Pokémon can use Max Geyser if it knows a damaging Water-type move.";
+  moves[765].effect =
+    "Inflicts damage and raises the user's and its ally's Speed by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[765].pokemon =
+    "Any Dynamax Pokémon can use Max Airstream if it knows a damaging Flying-type move.";
+  moves[766].effect =
+    "Inflicts damage and causes the battlefield to become Misty Terrain. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[766].pokemon =
+    "Any Dynamax Pokémon can use Max Starfall if it knows a damaging Fairy-type move.";
+  moves[767].effect =
+    "Inflicts damage and lowers the target's and its ally's Attack by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[767].pokemon =
+    "Any Dynamax Pokémon can use Max Wyrmwind if it knows a damaging Dragon-type move.";
+  moves[768].effect =
+    "Inflicts damage and causes the battlefield to become Psychic Terrain. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[768].pokemon =
+    "Any Dynamax Pokémon can use Max Mindstorm if it knows a damaging Psychic-type move.";
+  moves[769].effect =
+    "Inflicts damage and creates a sandstorm. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[769].pokemon =
+    "Any Dynamax Pokémon can use Max Rockfall if it knows a damaging Rock-type move.";
+  moves[770].effect =
+    "Inflicts damage and raises the user's and its ally's Special Defense by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[770].pokemon =
+    "Any Dynamax Pokémon can use Max Quake if it knows a damaging Ground-type move.";
+  moves[771].effect =
+    "Inflicts damage and lowers the target's and its ally's Special Defense by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[771].pokemon =
+    "Any Dynamax Pokémon can use this move if it knows a damaging Dark-type move.";
+  moves[772].effect =
+    "Inflicts damage and causes the battlefield to become Grassy Terrain. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[772].pokemon =
+    "Any Dynamax Pokémon can use Max Overgrowth if it knows a damaging Grass-type move.";
+  moves[773].effect =
+    "Inflicts damage and raises the user's and its ally's Defense by one stage. Its power and whether it is a special or physical move depends on the move it is based on.";
+  moves[773].pokemon =
+    "Any Dynamax Pokémon can use Max Steelspike if it knows a damaging Steel-type move.";
+  moves[774].effect =
+    "Raises the user's Attack, Defense, Special Attack, Special Defense and Speed by one stage each, at the cost of 1/3 of its maximum HP. If all of the user's stats mentioned above are at +6 stages, or its remaining HP is less than or equal to 1/3 of its maximum, Clangorous Soul fails. Clangorous Soul will become a Water-type move when used by a Pokémon with the Ability Liquid Voice. If the user is affected by Throat Chop, it will be unable to use this move for two turns.If the user is holding a Throat Spray, the item will be consumed and the user's Special Attack stat will raise by one stage.";
+
   let movesHtml = moves.map(
     (move) =>
       `

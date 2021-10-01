@@ -15,3 +15,13 @@ export const showMovesTab = () => {
 
   console.log(moves);
 };
+
+// search bar functionality
+$(document).ready(function () {
+  $("#searchPokemon").on("keyup", function () {
+    let value = $(this).val().toLowerCase();
+    $(".move-table-body tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
