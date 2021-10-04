@@ -476,7 +476,7 @@ ol.move-stats li {
     width: 100%;
   }
 
-  #section-buttons.show {
+  .show {
     display: flex;
   }
 

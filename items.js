@@ -1,7 +1,8 @@
 export const showItemsTab = () => {
-  console.log("importing item file and showitemstab function");
+  $("#searchPokemon").val("");
   $(".landing-page").hide();
   $(".pokemon-tab").hide();
   $(".abilities-tab").hide();
+  $(".moves-tab").hide();
   $(".items-tab").show();
 };

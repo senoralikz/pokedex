@@ -8,8 +8,8 @@ const homePage = () => {
   $(".landing-page").show();
   $(".pokemon-tab").hide();
   $(".abilities-tab").hide();
-  $(".items-tab").hide();
   $(".moves-tab").hide();
+  $(".items-tab").hide();
 };
 
 $(() => {
@@ -24,6 +24,9 @@ $(() => {
   $(".items-section").on("click", showItemsTab);
   $(".moves-section").on("click", showMovesTab);
   $("#hamburger").on("click", function () {
-    $("#section-buttons").toggleClass("show");
+    $(".section-pages").toggleClass("show");
+  });
+  $(".section-pages li").on("click", function () {
+    $(".section-pages").removeClass("show");
   });
 });

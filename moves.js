@@ -6,11 +6,10 @@ export const showMovesTab = () => {
   $(".landing-page").hide();
   $(".pokemon-tab").hide();
   $(".abilities-tab").hide();
-  $("#abilities-list").hide();
-  $(".items-tab").hide();
   $(".moves-tab").show();
+  $(".items-tab").hide();
 
-  displayMoves();
+  displayMoves(moves);
 
   console.log(moves);
 };

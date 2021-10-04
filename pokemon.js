@@ -30,8 +30,9 @@ export const showPokemonTab = () => {
   $(".landing-page").hide();
   $(".pokemon-tab").show();
   $(".abilities-tab").hide();
-  $(".items-tab").hide();
   $(".moves-tab").hide();
+  $(".items-tab").hide();
+
   displayPokemon(pokemon);
 };
 

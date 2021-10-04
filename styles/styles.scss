@@ -453,7 +453,11 @@ ol.move-stats li {
     width: 100%;
   }
 
-  #section-buttons.show {
+  // #section-buttons.show {
+  //   display: flex;
+  // }
+
+  .show {
     display: flex;
   }
 
