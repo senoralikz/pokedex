@@ -122,6 +122,7 @@ form {
 .hidden-ability {
   font-size: small;
   margin-top: -15px;
+  text-transform: capitalize;
 }
 
 .ability-description {
@@ -800,6 +801,10 @@ ol.move-stats li {
   // .dual-type-bg-radius {
   //   padding: 0, 10px, 10px, 10px;
   // }
+}
+
+.alt-form-ability {
+  text-transform: capitalize;
 }
 
 // **************************** END DUAL TYPE TESTING ****************************

@@ -291,7 +291,7 @@ export const fetchMoves = () => {
 
     for (let i = 0; i < moves.length; i++) {
       if (moves[i].pokemon === "-" || moves[i].pokemon === "") {
-        console.log(moves[i]);
+        // console.log(moves[i]);
       }
     }
   });

@@ -147,6 +147,7 @@ form {
 .hidden-ability {
   font-size: small;
   margin-top: -15px;
+  text-transform: capitalize;
 }
 
 .ability-description {
@@ -635,6 +636,10 @@ ol.move-stats li {
   background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(240, 182, 188, 0.15) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
+}
+
+.alt-form-ability {
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 700px) {

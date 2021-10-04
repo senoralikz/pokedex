@@ -6,6 +6,8 @@ import { displayPokemon } from "./api.js";
 import { fetchPokemon } from "./api.js";
 // import variables from "./styles/_export.scss";
 
+// let mergedRegGalarAbilities = [];
+
 export const showPokemonTab = () => {
   $("#searchPokemon").val("");
   $(".landing-page").hide();
@@ -261,19 +263,13 @@ export const morePokemonInfo = (x) => {
         $(".type-area").append(
           `<span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>`
         );
-        // $("div.pokemon-info").removeClass(
-        //   `pokemon-bg-${pokemon[i].type[0]}`
-        // );
-        // $("div.pokemon-info").css(
-        //   "background",
-        //   `linear-gradient(135deg, ${fireTypeBg} 50%, ${waterTypeBg} 50%);`
-        // );
       }
 
       for (let j = 0; j < ability.length; j++) {
         if (pokemon[i].abilities[0].ability.name === ability[j].name) {
           $(".first-ability").html(`
           <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
+          <p class='hidden-ability reg-form-ability-${pokemon[i].id}-${ability[j].id} d-flex justify-content-center' id='hidden-ability-slot-${j}'>(${pokemon[i].form_name})</p>
           <p class='ability-description'>${ability[j].effect}</p>
           `);
         }
@@ -284,12 +280,18 @@ export const morePokemonInfo = (x) => {
                 <div class='horizontal-divider'></div>
                 <div>
                   <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
-                  <p  class='hidden-ability d-flex justify-content-center' id='hidden-ability-slot-${j}'></p>
+                  <p class='hidden-ability reg-form-ability-${pokemon[i].id}-${ability[j].id} d-flex justify-content-center' id='hidden-ability-slot-${j}'></p>
                   <p class='ability-description'>${ability[j].effect}</p>
                 </div>
               `);
               if (pokemon[i].abilities[h].is_hidden === true) {
-                $("#hidden-ability-slot-" + j).html("(Hidden Ability)");
+                $(`.reg-form-ability-${pokemon[i].id}-${ability[j].id}`).html(
+                  `(${pokemon[i].name} Hidden Ability)`
+                );
+              } else {
+                $(`.reg-form-ability-${pokemon[i].id}-${ability[j].id}`).html(
+                  `(${pokemon[i].form_name})`
+                );
               }
             }
           }
@@ -310,6 +312,47 @@ export const morePokemonInfo = (x) => {
           `);
         }
       }
+
+      // append any unique abilities that alter forms of a pokemon may have to the ability area
+      // for (let j = 0; j < pokemonSpecies.length; j++) {
+      //   if (pokemon[i].name === pokemonSpecies[j].name) {
+      //     for (let h = 0; h < pokemon[i].abilities.length; h++) {
+      //       for (let k = 0; k < pokemonSpecies[j].abilities.length; k++) {
+      //         if (
+      //           pokemon[i].abilities[h].ability.name !==
+      //           pokemonSpecies[j].abilities[k].ability.name
+      //         ) {
+      //           // console.log(pokemon[i].abilities[h].ability.name);
+      //           // console.log(pokemonSpecies[j].abilities[k].ability.name);
+      //           for (let y = 0; y < ability.length; y++) {
+      //             if (
+      //               pokemonSpecies[j].abilities[k].ability.name ===
+      //               ability[y].name
+      //             ) {
+      //               $(".ability").append(`
+      //               <div class='horizontal-divider'></div>
+      //               <div>
+      //                 <p class="ability-name d-flex justify-content-center"><b>${ability[y].name}</b></p>
+      //                 <p class='alt-ability-${pokemonSpecies[j].id}-${ability[y].id} hidden-ability d-flex justify-content-center'></p>
+      //                 <p class='ability-description'>${ability[y].effect}</p>
+      //               </div>
+      //             `);
+      //               if (pokemonSpecies[j].abilities[k].is_hidden === true) {
+      //                 $(
+      //                   `.alt-ability-${pokemonSpecies[j].id}-${ability[y].id}`
+      //                 ).html(`(${pokemonSpecies[j].form_name} Hidden Ability)`);
+      //               } else {
+      //                 $(
+      //                   `.alt-ability-${pokemonSpecies[j].id}-${ability[y].id}`
+      //                 ).html(`(${pokemonSpecies[j].form_name})`);
+      //               }
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 };
