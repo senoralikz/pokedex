@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import "variables";
 
 body {
   background-color: #ecf0f1;
@@ -22,34 +23,52 @@ form {
   cursor: pointer;
 }
 
+// ------------------ HAMBURGER MENU TESTING START! --------------------------
 .top-nav {
   background-color: #d34535;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.burger-menu-icon {
-  display: none;
-  background-color: inherit;
-  color: #fff;
+.section-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
 }
 
-.section-button {
-  background-color: #d34535;
+.section-pages .section-button {
+  // background-color: #d34535;
+  display: inline-block;
   border: none;
   color: #fff;
   padding: 10px 20px;
   text-align: center;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .section-button:hover {
   cursor: pointer;
-  background-color: #e74c3c;
+  // background-color: #e74c3c;
 }
 
-.section-button.active {
-  background-color: #ecf0f1;
-  color: #000;
+.hamburger {
+  background-color: transparent;
+  border: none;
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
 }
+
+// .hamburger:focus {
+//   outline: none;
+// }
+// ------------------ HAMBURGER MENU TESTING END! --------------------------
 
 .sort-filter-area {
   margin: 10px 0;
@@ -87,12 +106,12 @@ form {
   color: #000;
 }
 
-.modal-ability-info {
-  border: 1px solid #000;
-  border-radius: 5px;
-}
+// .modal-ability-info {
+//   border: 1px solid #000;
+// }
 
 .abilities-heading {
+  border-top: 1px solid #000;
   border-bottom: 1px solid #000;
 }
 
@@ -212,111 +231,115 @@ form {
 }
 
 .normal {
-  background-color: #a8a878;
+  background-color: $normal-type;
   border-top-color: #d8d8d0;
   border-bottom-color: #705848;
 }
 
 .fire {
-  background-color: #f08030;
+  background-color: $fire-type;
   border-top-color: #f8d030;
   border-bottom-color: #c03028;
 }
 
 .water {
-  background-color: #6890f0;
+  background-color: $water-type;
   border-top-color: #98d8d8;
   border-bottom-color: #807870;
 }
 
 .grass {
-  background-color: #78c850;
+  background-color: $grass-type;
   border-top-color: #c0f860;
   border-bottom-color: #588040;
 }
 
 .electric {
-  background-color: #f8d030;
+  background-color: $electric-type;
   border-top-color: #f8f878;
   border-bottom-color: #b8a038;
 }
 
 .ice {
-  background-color: #98d8d8;
+  background-color: $ice-type;
   border-top-color: #d0f8e8;
   border-bottom-color: #9090a0;
 }
 
 .fighting {
-  background-color: #c03028;
+  background-color: $fighting-type;
   border-top-color: #f08030;
   border-bottom-color: #484038;
 }
 
 .poison {
-  background-color: #a040a0;
+  background-color: $poison-type;
   border-top-color: #d880b8;
   border-bottom-color: #483850;
 }
 
 .ground {
-  background-color: #e0c068;
+  background-color: $ground-type;
   border-top-color: #f8f878;
   border-bottom-color: #886830;
 }
 
 .flying {
-  background-color: #a890f0;
+  background-color: $flying-type;
   border-top-color: #c8c0f8;
   border-bottom-color: #705898;
 }
 
 .psychic {
-  background-color: #f85888;
+  background-color: $psychic-type;
   border-top-color: #f8c0b0;
   border-bottom-color: #789010;
 }
 
 .bug {
-  background-color: #a8b820;
+  background-color: $bug-type;
   border-top-color: #d8e030;
   border-bottom-color: #a8b820;
 }
 
 .rock {
-  background-color: #b8a038;
+  background-color: $rock-type;
   border-top-color: #e0c068;
   border-bottom-color: #886830;
 }
 
 .ghost {
-  background-color: #705898;
+  background-color: $ghost-type;
   border-top-color: #a890f0;
   border-bottom-color: #483850;
 }
 
 .dark {
-  background-color: #705848;
+  background-color: $dark-type;
   border-top-color: #a8a878;
   border-bottom-color: #484038;
 }
 
 .dragon {
-  background-color: #7038f8;
+  background-color: $dragon-type;
   border-top-color: #b8a0f8;
   border-bottom-color: #483890;
 }
 
 .steel {
-  background-color: #b8b8d0;
+  background-color: $steel-type;
   border-top-color: #d8d8c0;
   border-bottom-color: #807870;
 }
 
 .fairy {
-  background-color: #f0b6bc;
+  background-color: $fairy-type;
   border-top-color: #f5cad1;
   border-bottom-color: #905f63;
+}
+
+.dual-type-bg {
+  background: linear-gradient(135deg, $fire-type-bg 50%, $water-type-bg 50%);
 }
 
 .ability-table {
@@ -327,11 +350,93 @@ form {
   margin-top: 20px;
 }
 
+ol.move-stats {
+  padding-left: 0;
+}
+
 ol.move-stats li {
   list-style-type: none;
 }
 
-@media screen and (max-width: 600px) {
+.move-table-body tr,
+.ability-table-body tr {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.pokemon-background-normal {
+  background: $normal-type-bg;
+}
+
+.pokemon-background-fire {
+  background: $fire-type-bg;
+}
+
+.pokemon-background-water {
+  background: $water-type-bg;
+}
+
+.pokemon-background-grass {
+  background: $grass-type-bg;
+}
+
+.pokemon-background-electric {
+  background: $electric-type-bg;
+}
+
+.pokemon-background-ice {
+  background: $ice-type-bg;
+}
+
+.pokemon-background-fighting {
+  background: $fighting-type-bg;
+}
+
+.pokemon-background-poison {
+  background: $poison-type-bg;
+}
+
+.pokemon-background-ground {
+  background: $ground-type-bg;
+}
+
+.pokemon-background-flying {
+  background: $flying-type-bg;
+}
+
+.pokemon-background-psychic {
+  background: $psychic-type-bg;
+}
+
+.pokemon-background-bug {
+  background: $bug-type-bg;
+}
+
+.pokemon-background-rock {
+  background: $rock-type-bg;
+}
+
+.pokemon-background-ghost {
+  background: $ghost-type-bg;
+}
+
+.pokemon-background-dark {
+  background: $dark-type-bg;
+}
+
+.pokemon-background-dragon {
+  background: $dragon-type-bg;
+}
+
+.pokemon-background-steel {
+  background: $steel-type-bg;
+}
+
+.pokemon-background-fairy {
+  background: $fairy-type-bg;
+}
+
+@media screen and (max-width: 700px) {
   .pokedex-logo {
     width: 75%;
   }
@@ -339,6 +444,23 @@ ol.move-stats li {
   .section-button {
     padding: 10px;
   }
+
+  // ********************** HAMBURGER MENU TESTING **********************
+
+  .section-pages {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #section-buttons.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  // ********************** HAMBURGER MENU TESTING **********************
 
   .modal-pokemon-img {
     width: 100%;
@@ -363,8 +485,10 @@ ol.move-stats li {
     flex-flow: column wrap;
   }
 
-  .pokemon-with-ability,
-  .pokemon-with-move {
+  // .pokemon-with-ability,
+  .ability-id,
+  .pokemon-with-move,
+  .move-id {
     display: none;
   }
 }

@@ -23,4 +23,7 @@ $(() => {
   $(".abilities-section").on("click", showAbilitiesTab);
   $(".items-section").on("click", showItemsTab);
   $(".moves-section").on("click", showMovesTab);
+  $("#hamburger").on("click", function () {
+    $("#section-buttons").toggleClass("show");
+  });
 });

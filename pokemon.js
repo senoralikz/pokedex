@@ -4,6 +4,26 @@ import { pokemonSpecies } from "./api.js";
 import { ability } from "./api.js";
 import { displayPokemon } from "./api.js";
 import { fetchPokemon } from "./api.js";
+// import variables from "./styles/_export.scss";
+
+// let normalTypeBg = "rgba(168, 168, 120, 0.15)";
+// let fireTypeBg = rgba(240, 128, 48, 0.15);
+// let waterTypeBg = rgba(104, 144, 240, 0.15);
+// let grassTypeBg = "rgba(120, 200, 80, 0.15)";
+// let electricTypeBg = "rgba(248, 208, 48, 0.15)";
+// let iceTypeBg = "rgba(152, 216, 216, 0.15)";
+// let fightingTypeBg = "rgba(192, 48, 40, 0.15)";
+// let poisonTypeBg = "rgba(160, 64, 160, 0.15)";
+// let groundTypeBg = "rgba(224, 192, 104, 0.15)";
+// let flyingTypeBg = "rgba(168, 144, 240, 0.15)";
+// let psychicTypeBg = "rgba(248, 88, 136, 0.15)";
+// let bugTypeBg = "rgba(168, 184, 32, 0.15)";
+// let rockTypeBg = "rgba(184, 160, 56, 0.15)";
+// let ghostTypeBg = "rgba(112, 88, 152, 0.15)";
+// let darkTypeBg = "rgba(201, 188, 179, 0.15)";
+// let dragonTypeBg = "rgba(112, 56, 248, 0.15)";
+// let steelTypeBg = "rgba(184, 184, 208, 0.15)";
+// let fairyTypeBg = "rgba(240, 182, 188, 0.15)";
 
 export const showPokemonTab = () => {
   $("#searchPokemon").val("");
@@ -191,7 +211,7 @@ export const morePokemonInfo = (x) => {
     if (pokemon[i].id === specificPokemon) {
       $(".modal-title").html(pokemon[i].name);
       $(".modal-body").html(`
-        <div class='pokemon-info d-sm-flex justify-content-between'>
+        <div class='pokemon-info pokemon-background-${pokemon[i].type[0]} d-sm-flex justify-content-between p-2'>
           <div class='type-stats'>
             <div class='type-area justify-content-start'>
               <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
@@ -240,7 +260,6 @@ export const morePokemonInfo = (x) => {
           <div class="ability">
             <div class='first-ability justify-content-center'>
             </div>
-            
           </div>
         </div>
       `);
@@ -249,6 +268,13 @@ export const morePokemonInfo = (x) => {
         $(".type-area").append(
           `<span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>`
         );
+        // $("div.pokemon-info").removeClass(
+        //   `pokemon-background-${pokemon[i].type[0]}`
+        // );
+        // $("div.pokemon-info").css(
+        //   "background",
+        //   `linear-gradient(135deg, ${fireTypeBg} 50%, ${waterTypeBg} 50%);`
+        // );
       }
 
       for (let j = 0; j < ability.length; j++) {
