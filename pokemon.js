@@ -193,48 +193,50 @@ export const morePokemonInfo = (x) => {
     if (pokemon[i].id === specificPokemon) {
       $(".modal-title").html(pokemon[i].name);
       $(".modal-body").html(`
-        <div class='pokemon-info pokemon-background-${pokemon[i].type[0]} d-sm-flex justify-content-between p-2'>
-          <div class='type-stats'>
-            <div class='type-area justify-content-start'>
-              <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
+        <div class='pokemon-modal-body pokemon-bg-${pokemon[i].type[0]}'>
+          <div class='pokemon-info d-sm-flex justify-content-between p-2'>
+            <div class='type-stats'>
+              <div class='type-area justify-content-start'>
+                <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
+              </div>
+              <div class='modal-stats'>
+                <p class='hp-caps'><b>${pokemon[i].stats[0].stat.name}:</b> ${pokemon[i].stats[0].base_stat}&emsp;</p>
+                <p><b>${pokemon[i].stats[1].stat.name}:</b> ${pokemon[i].stats[1].base_stat}&emsp;</p>
+                <p><b>${pokemon[i].stats[2].stat.name}:</b> ${pokemon[i].stats[2].base_stat}&emsp;</p>
+                <p><b>${pokemon[i].stats[3].stat.name}:</b> ${pokemon[i].stats[3].base_stat}&emsp;</p>
+                <p><b>${pokemon[i].stats[4].stat.name}:</b> ${pokemon[i].stats[4].base_stat}&emsp;</p>
+                <p><b>${pokemon[i].stats[5].stat.name}:</b> ${pokemon[i].stats[5].base_stat}&emsp;</p>
+              </div>
             </div>
-            <div class='modal-stats'>
-              <p class='hp-caps'><b>${pokemon[i].stats[0].stat.name}:</b> ${pokemon[i].stats[0].base_stat}&emsp;</p>
-              <p><b>${pokemon[i].stats[1].stat.name}:</b> ${pokemon[i].stats[1].base_stat}&emsp;</p>
-              <p><b>${pokemon[i].stats[2].stat.name}:</b> ${pokemon[i].stats[2].base_stat}&emsp;</p>
-              <p><b>${pokemon[i].stats[3].stat.name}:</b> ${pokemon[i].stats[3].base_stat}&emsp;</p>
-              <p><b>${pokemon[i].stats[4].stat.name}:</b> ${pokemon[i].stats[4].base_stat}&emsp;</p>
-              <p><b>${pokemon[i].stats[5].stat.name}:</b> ${pokemon[i].stats[5].base_stat}&emsp;</p>
-            </div>
-          </div>
-          <div class='sprite-id'>
-            <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
+            <div class='sprite-id'>
+              <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
 
-            <div class='modal-pokemon-img'>
+              <div class='modal-pokemon-img'>
 
-              <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].name}_default">
-                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}</p>
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].name}_default">
+                      <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}</p>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].name}_shiny">
+                      <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name} (Shiny)</p>
+                    </div>
                   </div>
-                  <div class="carousel-item">
-                    <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].name}_shiny">
-                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name} (Shiny)</p>
-                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+
               </div>
 
             </div>
-
           </div>
         </div>
         <div class="modal-ability-info">
@@ -247,11 +249,20 @@ export const morePokemonInfo = (x) => {
       `);
 
       if (pokemon[i].type.length === 2) {
+        $(".pokemon-modal-body").removeClass(
+          `pokemon-bg-${pokemon[i].type[0]}`
+        );
+        $(".pokemon-modal-body").addClass(
+          `pokemon-bg-type-one-${pokemon[i].type[0]}`
+        );
+        $(".pokemon-info").addClass(
+          `pokemon-bg-type-two-${pokemon[i].type[1]}`
+        );
         $(".type-area").append(
           `<span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>`
         );
         // $("div.pokemon-info").removeClass(
-        //   `pokemon-background-${pokemon[i].type[0]}`
+        //   `pokemon-bg-${pokemon[i].type[0]}`
         // );
         // $("div.pokemon-info").css(
         //   "background",

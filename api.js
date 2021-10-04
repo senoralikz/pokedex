@@ -301,13 +301,15 @@ export const displayPokemon = (array) => {
   pokemonHtml = array.map(
     (pokemon) =>
       `
-      <div class='card pokemon-card pokemon-background-${pokemon.type[0]} specificPokemon${pokemon.id}' data-id='${pokemon.id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
-        <img class='card-img' src='${pokemon.sprite}' />
-        <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
-          <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
+      <div class='p-0 card pokemon-card pokemon-bg-type-one-${pokemon.type[0]} specificPokemon${pokemon.id}' data-id='${pokemon.id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+        <div class='pokemon-bg-type-two-${pokemon.type[1]}'>
+          <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
+          <img class='card-img' src='${pokemon.sprite}' />
+          <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
+          <div class='d-flex justify-content-start'>
+            <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
+            <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
+          </div>
         </div>
       </div>
     `
@@ -316,7 +318,7 @@ export const displayPokemon = (array) => {
   for (let i = 0; i < array.length; i++) {
     if (array[i].type.length === 1) {
       pokemonHtml[i] = `
-      <div class='card pokemon-card pokemon-background-${array[i].type[0]}' data-id='${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+      <div class='card pokemon-card pokemon-bg-${array[i].type[0]}' data-id='${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
         <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${array[i].id}</span></p>
         <img class='card-img' src='${array[i].sprite}' />
         <h5 class='pokemon-name card-title'>${array[i].name}</h5>
@@ -644,7 +646,7 @@ export const displayMoves = (array) => {
   let movesHtml = array.map(
     (move) =>
       `
-    <tr class='pokemon-background-${move.type}'>
+    <tr class='pokemon-bg-${move.type}'>
       <td class='move-table-font-size move-id'><b>${move.id}</b></td>
       <td class='move-table-font-size move-caps'>${move.name}</td>
       <td class='move-table-font-size col-3'>

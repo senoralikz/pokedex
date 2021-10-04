@@ -338,10 +338,6 @@ form {
   border-bottom-color: #905f63;
 }
 
-.dual-type-bg {
-  background: linear-gradient(135deg, $fire-type-bg 50%, $water-type-bg 50%);
-}
-
 .ability-table {
   margin-top: 35px;
 }
@@ -364,77 +360,449 @@ ol.move-stats li {
   border-bottom: 1px solid #000;
 }
 
-.pokemon-background-normal {
+.pokemon-bg-normal {
   background: $normal-type-bg;
 }
 
-.pokemon-background-fire {
+.pokemon-bg-fire {
   background: $fire-type-bg;
 }
 
-.pokemon-background-water {
+.pokemon-bg-water {
   background: $water-type-bg;
 }
 
-.pokemon-background-grass {
+.pokemon-bg-grass {
   background: $grass-type-bg;
 }
 
-.pokemon-background-electric {
+.pokemon-bg-electric {
   background: $electric-type-bg;
 }
 
-.pokemon-background-ice {
+.pokemon-bg-ice {
   background: $ice-type-bg;
 }
 
-.pokemon-background-fighting {
+.pokemon-bg-fighting {
   background: $fighting-type-bg;
 }
 
-.pokemon-background-poison {
+.pokemon-bg-poison {
   background: $poison-type-bg;
 }
 
-.pokemon-background-ground {
+.pokemon-bg-ground {
   background: $ground-type-bg;
 }
 
-.pokemon-background-flying {
+.pokemon-bg-flying {
   background: $flying-type-bg;
 }
 
-.pokemon-background-psychic {
+.pokemon-bg-psychic {
   background: $psychic-type-bg;
 }
 
-.pokemon-background-bug {
+.pokemon-bg-bug {
   background: $bug-type-bg;
 }
 
-.pokemon-background-rock {
+.pokemon-bg-rock {
   background: $rock-type-bg;
 }
 
-.pokemon-background-ghost {
+.pokemon-bg-ghost {
   background: $ghost-type-bg;
 }
 
-.pokemon-background-dark {
+.pokemon-bg-dark {
   background: $dark-type-bg;
 }
 
-.pokemon-background-dragon {
+.pokemon-bg-dragon {
   background: $dragon-type-bg;
 }
 
-.pokemon-background-steel {
+.pokemon-bg-steel {
   background: $steel-type-bg;
 }
 
-.pokemon-background-fairy {
+.pokemon-bg-fairy {
   background: $fairy-type-bg;
 }
+
+// **************************** DUAL TYPE TESTING ****************************
+
+// **************************** TYPE 1 ****************************
+
+.pokemon-bg-type-one-normal {
+  // background: $normal-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $normal-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-fire {
+  // background: $fire-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $fire-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-water {
+  // background: $water-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $water-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-grass {
+  // background: $grass-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $grass-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-electric {
+  // background: $electric-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $electric-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-ice {
+  // background: $ice-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $ice-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-fighting {
+  // background: $fighting-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $fighting-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-poison {
+  // background: $poison-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $poison-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-ground {
+  // background: $ground-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $ground-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-flying {
+  // background: $flying-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $flying-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-psychic {
+  // background: $psychic-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $psychic-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-bug {
+  // background: $bug-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $bug-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-rock {
+  // background: $rock-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $rock-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-ghost {
+  // background: $ghost-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $ghost-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-dark {
+  // background: $dark-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $dark-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-dragon {
+  // background: $dragon-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $dragon-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-steel {
+  // background: $steel-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $steel-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+.pokemon-bg-type-one-fairy {
+  // background: $fairy-type-one-bg;
+  background: linear-gradient(
+    135deg,
+    $fairy-type-one-bg 50%,
+    rgba(160, 64, 160, 0) 50%
+  );
+}
+
+//  **************************** TYPE 2 ****************************
+
+.pokemon-bg-type-two-normal {
+  // background: $normal-type-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $normal-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-fire {
+  // background: $fire-type-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $fire-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-water {
+  // background: $water-type-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $water-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-grass {
+  // background: $grass-type-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $grass-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-electric {
+  // background: $electric-type-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $electric-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-ice {
+  // background: $ice-type-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $ice-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-fighting {
+  // background: $fighting-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $fighting-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-poison {
+  // background: $poison-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $poison-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-ground {
+  // background: $ground-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $ground-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-flying {
+  // background: $flying-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $flying-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-psychic {
+  // background: $psychic-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $psychic-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-bug {
+  // background: $bug-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $bug-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-rock {
+  // background: $rock-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $rock-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-ghost {
+  // background: $ghost-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $ghost-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-dark {
+  // background: $dark-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $dark-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-dragon {
+  // background: $dragon-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $dragon-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-steel {
+  // background: $steel-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $steel-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+}
+
+.pokemon-bg-type-two-fairy {
+  // background: $fairy-type-two-bg;
+  background: linear-gradient(
+    135deg,
+    rgba(120, 200, 80, 0) 50%,
+    $fairy-type-two-bg 50%
+  );
+  border-radius: 15px;
+  padding: 0 12px 12px 12px;
+
+  // .dual-type-bg-radius {
+  //   padding: 0, 10px, 10px, 10px;
+  // }
+}
+
+// **************************** END DUAL TYPE TESTING ****************************
 
 @media screen and (max-width: 700px) {
   .pokedex-logo {
