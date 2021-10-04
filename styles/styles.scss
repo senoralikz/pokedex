@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-@import "variables";
+@import "./_variables.scss";
 
 body {
   background-color: #ecf0f1;
@@ -453,10 +453,6 @@ ol.move-stats li {
     width: 100%;
   }
 
-  // #section-buttons.show {
-  //   display: flex;
-  // }
-
   .show {
     display: flex;
   }
@@ -489,7 +485,6 @@ ol.move-stats li {
     flex-flow: column wrap;
   }
 
-  // .pokemon-with-ability,
   .ability-id,
   .pokemon-with-move,
   .move-id {

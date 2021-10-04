@@ -6,25 +6,6 @@ import { displayPokemon } from "./api.js";
 import { fetchPokemon } from "./api.js";
 // import variables from "./styles/_export.scss";
 
-// let normalTypeBg = "rgba(168, 168, 120, 0.15)";
-// let fireTypeBg = rgba(240, 128, 48, 0.15);
-// let waterTypeBg = rgba(104, 144, 240, 0.15);
-// let grassTypeBg = "rgba(120, 200, 80, 0.15)";
-// let electricTypeBg = "rgba(248, 208, 48, 0.15)";
-// let iceTypeBg = "rgba(152, 216, 216, 0.15)";
-// let fightingTypeBg = "rgba(192, 48, 40, 0.15)";
-// let poisonTypeBg = "rgba(160, 64, 160, 0.15)";
-// let groundTypeBg = "rgba(224, 192, 104, 0.15)";
-// let flyingTypeBg = "rgba(168, 144, 240, 0.15)";
-// let psychicTypeBg = "rgba(248, 88, 136, 0.15)";
-// let bugTypeBg = "rgba(168, 184, 32, 0.15)";
-// let rockTypeBg = "rgba(184, 160, 56, 0.15)";
-// let ghostTypeBg = "rgba(112, 88, 152, 0.15)";
-// let darkTypeBg = "rgba(201, 188, 179, 0.15)";
-// let dragonTypeBg = "rgba(112, 56, 248, 0.15)";
-// let steelTypeBg = "rgba(184, 184, 208, 0.15)";
-// let fairyTypeBg = "rgba(240, 182, 188, 0.15)";
-
 export const showPokemonTab = () => {
   $("#searchPokemon").val("");
   $(".landing-page").hide();

@@ -14,7 +14,7 @@
   bugType: #a8b820;
   rockType: #b8a038;
   ghostType: #705898;
-  darkType: #c9bcb3;
+  darkType: #705848;
   dragonType: #7038f8;
   steelType: #b8b8d0;
   fairyType: #f0b6bc;
@@ -32,7 +32,7 @@
   bugTypeBg: rgba(168, 184, 32, 0.15);
   rockTypeBg: rgba(184, 160, 56, 0.15);
   ghostTypeBg: rgba(112, 88, 152, 0.15);
-  darkTypeBg: rgba(201, 188, 179, 0.15);
+  darkTypeBg: rgba(112, 88, 72, 0.15);
   dragonTypeBg: rgba(112, 56, 248, 0.15);
   steelTypeBg: rgba(184, 184, 208, 0.15);
   fairyTypeBg: rgba(240, 182, 188, 0.15);
@@ -340,7 +340,7 @@ form {
 }
 
 .dark {
-  background-color: #c9bcb3;
+  background-color: #705848;
   border-top-color: #a8a878;
   border-bottom-color: #484038;
 }
@@ -446,7 +446,7 @@ ol.move-stats li {
 }
 
 .pokemon-background-dark {
-  background: rgba(201, 188, 179, 0.15);
+  background: rgba(112, 88, 72, 0.15);
 }
 
 .pokemon-background-dragon {
