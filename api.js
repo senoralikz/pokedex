@@ -645,9 +645,9 @@ export const displayMoves = (array) => {
     (move) =>
       `
     <tr class='pokemon-background-${move.type}'>
-      <td class='move-id'><b>${move.id}</b></td>
-      <td class='move-caps'>${move.name}</td>
-      <td class='col-3'>
+      <td class='move-table-font-size move-id'><b>${move.id}</b></td>
+      <td class='move-table-font-size move-caps'>${move.name}</td>
+      <td class='move-table-font-size col-3'>
         <ol class='move-stats'>
           <li class='move-caps'><b>Type:</b> <span class='type-span type ${move.type}'><span class='type-text'>${move.type}</span></span></li>
           <li class='move-caps'><b>Damage Class:</b> ${move.damage_class}</li>
@@ -657,8 +657,8 @@ export const displayMoves = (array) => {
           <li><b>Priority:</b> ${move.priority}</li>
         </ol>
       </td>
-      <td>${move.effect}</td>
-      <td class='move-caps pokemon-with-move'>${move.pokemon}</td>
+      <td class='move-table-font-size '>${move.effect}</td>
+      <td class='move-table-font-size move-caps pokemon-with-move'>${move.pokemon}</td>
     </tr>
     `
   );
