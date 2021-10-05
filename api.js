@@ -6,6 +6,8 @@ export let pokemon = [];
 export let pokemonSpecies = [];
 export let ability = [];
 export let moves = [];
+export let items = [];
+export let berries = [];
 let pokemonHtml;
 
 export const fetchPokemon = () => {
@@ -27,7 +29,7 @@ export const fetchPokemon = () => {
     pokemon = res.map((res) => ({
       name: res.species.name,
       form_name: res.forms.map((form) => form.name).join(" "),
-      alt_forms: [],
+      // alt_forms: [],
       id: res.id,
       sprite: res.sprites["front_default"],
       sprite_shiny: res.sprites["front_shiny"],
@@ -54,7 +56,7 @@ export const fetchPokemon = () => {
     }
 
     displayPokemon(pokemon);
-    console.log(pokemon);
+    // console.log(pokemon);
   });
 
   promises = [];
@@ -101,7 +103,12 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
-    console.log(pokemonSpecies);
+    // console.log(pokemonSpecies);
+
+    // pokemon.push(...pokemonSpecies);
+
+    // console.log(pokemonSpecies);
+    // console.log(pokemon);
 
     // ARRAY WITH POKEMON ALT FORMS DATA!
     // for (let i = 0; i < pokemon.length; i++) {
@@ -226,7 +233,7 @@ export const fetchAbilities = () => {
     }
 
     displayAbilities();
-    console.log(ability);
+    // console.log(ability);
   });
 };
 
@@ -251,9 +258,9 @@ export const fetchMoves = () => {
       id: res.id,
       type: res.type.name,
       accuracy: res.accuracy,
+      effect_chance: res.effect_chance,
       pp: res.pp,
       power: res.power,
-      priority: res.priority,
       damage_class: res.damage_class,
       effect: res.effect_entries.map((effect) => effect.effect).join(" "),
       pokemon: res.learned_by_pokemon.map((pokemon) => pokemon.name).join(", "),
@@ -269,6 +276,10 @@ export const fetchMoves = () => {
     for (let i = 0; i < moves.length; i++) {
       moves[i].name = moves[i].name.replaceAll("-", " ");
       moves[i].pokemon = moves[i].pokemon.replaceAll("-", " ");
+      moves[i].effect = moves[i].effect.replaceAll(
+        "$effect_chance",
+        moves[i].effect_chance
+      );
       if (moves[i].damage_class !== "-") {
         moves[i].damage_class = moves[i].damage_class.name;
       }
@@ -287,13 +298,44 @@ export const fetchMoves = () => {
 
     displayMoves(moves);
 
-    console.log(moves);
+    // console.log(moves);
 
     for (let i = 0; i < moves.length; i++) {
       if (moves[i].pokemon === "-" || moves[i].pokemon === "") {
         // console.log(moves[i]);
       }
     }
+  });
+};
+
+export const fetchItems = () => {
+  // initialize array that will be filled with each items url
+  let promises = [];
+
+  // get url for item id
+  for (let i = 1; i <= 954; i++) {
+    const url = `https://pokeapi.co/api/v2/item/${i}/`;
+
+    // fetch the information received from the item url and then format it to json
+    //  and push it to the promises array
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+
+  // Using Promise.all to wait to receive all information that is requested from the item url
+  Promise.all(promises).then((res) => {
+    // then initialize and set the properties we want to use from the response
+    items = res.map((res) => ({
+      name: res.name,
+      id: res.id,
+      effect: res.effect_entries.map((effect) => effect.effect).join(" "),
+      sprite: res.sprites.default,
+    }));
+
+    // for (let i = 0; i < items.length; i++) {
+    //   items[i].name = items[i].name.replaceAll("-", " ");
+    // }
+
+    console.log(items);
   });
 };
 
@@ -656,7 +698,7 @@ export const displayMoves = (array) => {
           <li><b>Power:</b> ${move.power}</li>
           <li><b>Accuracy:</b> ${move.accuracy}</li>
           <li><b>PP:</b> ${move.pp}</li>
-          <li><b>Priority:</b> ${move.priority}</li>
+          <li><b>Effect Chance:</b> ${move.effect_chance}</li>
         </ol>
       </td>
       <td class='move-table-font-size '>${move.effect}</td>
@@ -671,3 +713,4 @@ export const displayMoves = (array) => {
 fetchPokemon();
 fetchAbilities();
 fetchMoves();
+// fetchItems();

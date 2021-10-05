@@ -18,24 +18,24 @@
   dragonType: #7038f8;
   steelType: #b8b8d0;
   fairyType: #f0b6bc;
-  normalTypeBg: rgba(168, 168, 120, 0.15);
-  fireTypeBg: rgba(240, 128, 48, 0.15);
-  waterTypeBg: rgba(104, 144, 240, 0.15);
-  grassTypeBg: rgba(120, 200, 80, 0.15);
-  electricTypeBg: rgba(248, 208, 48, 0.15);
-  iceTypeBg: rgba(152, 216, 216, 0.15);
-  fightingTypeBg: rgba(192, 48, 40, 0.15);
-  poisonTypeBg: rgba(160, 64, 160, 0.15);
-  groundTypeBg: rgba(224, 192, 104, 0.15);
-  flyingTypeBg: rgba(168, 144, 240, 0.15);
-  psychicTypeBg: rgba(248, 88, 136, 0.15);
-  bugTypeBg: rgba(168, 184, 32, 0.15);
-  rockTypeBg: rgba(184, 160, 56, 0.15);
-  ghostTypeBg: rgba(112, 88, 152, 0.15);
-  darkTypeBg: rgba(112, 88, 72, 0.15);
-  dragonTypeBg: rgba(112, 56, 248, 0.15);
-  steelTypeBg: rgba(184, 184, 208, 0.15);
-  fairyTypeBg: rgba(240, 182, 188, 0.15);
+  normalTypeBg: rgba(168, 168, 120, 0.25);
+  fireTypeBg: rgba(240, 128, 48, 0.25);
+  waterTypeBg: rgba(104, 144, 240, 0.25);
+  grassTypeBg: rgba(120, 200, 80, 0.25);
+  electricTypeBg: rgba(248, 208, 48, 0.25);
+  iceTypeBg: rgba(152, 216, 216, 0.25);
+  fightingTypeBg: rgba(192, 48, 40, 0.25);
+  poisonTypeBg: rgba(160, 64, 160, 0.25);
+  groundTypeBg: rgba(224, 192, 104, 0.25);
+  flyingTypeBg: rgba(168, 144, 240, 0.25);
+  psychicTypeBg: rgba(248, 88, 136, 0.25);
+  bugTypeBg: rgba(168, 184, 32, 0.25);
+  rockTypeBg: rgba(184, 160, 56, 0.25);
+  ghostTypeBg: rgba(112, 88, 152, 0.25);
+  darkTypeBg: rgba(112, 88, 72, 0.25);
+  dragonTypeBg: rgba(112, 56, 248, 0.25);
+  steelTypeBg: rgba(184, 184, 208, 0.25);
+  fairyTypeBg: rgba(240, 182, 188, 0.25);
 }
 
 body {
@@ -387,253 +387,253 @@ ol.move-stats li {
 }
 
 .pokemon-bg-normal {
-  background: rgba(168, 168, 120, 0.15);
+  background: rgba(168, 168, 120, 0.25);
 }
 
 .pokemon-bg-fire {
-  background: rgba(240, 128, 48, 0.15);
+  background: rgba(240, 128, 48, 0.25);
 }
 
 .pokemon-bg-water {
-  background: rgba(104, 144, 240, 0.15);
+  background: rgba(104, 144, 240, 0.25);
 }
 
 .pokemon-bg-grass {
-  background: rgba(120, 200, 80, 0.15);
+  background: rgba(120, 200, 80, 0.25);
 }
 
 .pokemon-bg-electric {
-  background: rgba(248, 208, 48, 0.15);
+  background: rgba(248, 208, 48, 0.25);
 }
 
 .pokemon-bg-ice {
-  background: rgba(152, 216, 216, 0.15);
+  background: rgba(152, 216, 216, 0.25);
 }
 
 .pokemon-bg-fighting {
-  background: rgba(192, 48, 40, 0.15);
+  background: rgba(192, 48, 40, 0.25);
 }
 
 .pokemon-bg-poison {
-  background: rgba(160, 64, 160, 0.15);
+  background: rgba(160, 64, 160, 0.25);
 }
 
 .pokemon-bg-ground {
-  background: rgba(224, 192, 104, 0.15);
+  background: rgba(224, 192, 104, 0.25);
 }
 
 .pokemon-bg-flying {
-  background: rgba(168, 144, 240, 0.15);
+  background: rgba(168, 144, 240, 0.25);
 }
 
 .pokemon-bg-psychic {
-  background: rgba(248, 88, 136, 0.15);
+  background: rgba(248, 88, 136, 0.25);
 }
 
 .pokemon-bg-bug {
-  background: rgba(168, 184, 32, 0.15);
+  background: rgba(168, 184, 32, 0.25);
 }
 
 .pokemon-bg-rock {
-  background: rgba(184, 160, 56, 0.15);
+  background: rgba(184, 160, 56, 0.25);
 }
 
 .pokemon-bg-ghost {
-  background: rgba(112, 88, 152, 0.15);
+  background: rgba(112, 88, 152, 0.25);
 }
 
 .pokemon-bg-dark {
-  background: rgba(112, 88, 72, 0.15);
+  background: rgba(112, 88, 72, 0.25);
 }
 
 .pokemon-bg-dragon {
-  background: rgba(112, 56, 248, 0.15);
+  background: rgba(112, 56, 248, 0.25);
 }
 
 .pokemon-bg-steel {
-  background: rgba(184, 184, 208, 0.15);
+  background: rgba(184, 184, 208, 0.25);
 }
 
 .pokemon-bg-fairy {
-  background: rgba(240, 182, 188, 0.15);
+  background: rgba(240, 182, 188, 0.25);
 }
 
 .pokemon-bg-type-one-normal {
-  background: linear-gradient(135deg, rgba(168, 168, 120, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(168, 168, 120, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-fire {
-  background: linear-gradient(135deg, rgba(240, 128, 48, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(240, 128, 48, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-water {
-  background: linear-gradient(135deg, rgba(104, 144, 240, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(104, 144, 240, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-grass {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-electric {
-  background: linear-gradient(135deg, rgba(248, 208, 48, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(248, 208, 48, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-ice {
-  background: linear-gradient(135deg, rgba(152, 216, 216, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(152, 216, 216, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-fighting {
-  background: linear-gradient(135deg, rgba(192, 48, 40, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(192, 48, 40, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-poison {
-  background: linear-gradient(135deg, rgba(160, 64, 160, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(160, 64, 160, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-ground {
-  background: linear-gradient(135deg, rgba(224, 192, 104, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(224, 192, 104, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-flying {
-  background: linear-gradient(135deg, rgba(168, 144, 240, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(168, 144, 240, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-psychic {
-  background: linear-gradient(135deg, rgba(248, 88, 136, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(248, 88, 136, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-bug {
-  background: linear-gradient(135deg, rgba(168, 184, 32, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(168, 184, 32, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-rock {
-  background: linear-gradient(135deg, rgba(184, 160, 56, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(184, 160, 56, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-ghost {
-  background: linear-gradient(135deg, rgba(112, 88, 152, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(112, 88, 152, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-dark {
-  background: linear-gradient(135deg, rgba(112, 88, 72, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(112, 88, 72, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-dragon {
-  background: linear-gradient(135deg, rgba(112, 56, 248, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(112, 56, 248, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-steel {
-  background: linear-gradient(135deg, rgba(184, 184, 208, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(184, 184, 208, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-one-fairy {
-  background: linear-gradient(135deg, rgba(240, 182, 188, 0.15) 50%, rgba(160, 64, 160, 0) 50%);
+  background: linear-gradient(135deg, rgba(240, 182, 188, 0.25) 50%, rgba(160, 64, 160, 0) 50%);
 }
 
 .pokemon-bg-type-two-normal {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(168, 168, 120, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(168, 168, 120, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-fire {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(240, 128, 48, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(240, 128, 48, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-water {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(104, 144, 240, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(104, 144, 240, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-grass {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(120, 200, 80, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(120, 200, 80, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-electric {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(248, 208, 48, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(248, 208, 48, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-ice {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(152, 216, 216, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(152, 216, 216, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-fighting {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(192, 48, 40, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(192, 48, 40, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-poison {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(160, 64, 160, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(160, 64, 160, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-ground {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(224, 192, 104, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(224, 192, 104, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-flying {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(168, 144, 240, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(168, 144, 240, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-psychic {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(248, 88, 136, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(248, 88, 136, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-bug {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(168, 184, 32, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(168, 184, 32, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-rock {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(184, 160, 56, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(184, 160, 56, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-ghost {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(112, 88, 152, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(112, 88, 152, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-dark {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(112, 88, 72, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(112, 88, 72, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-dragon {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(112, 56, 248, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(112, 56, 248, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-steel {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(184, 184, 208, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(184, 184, 208, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }
 
 .pokemon-bg-type-two-fairy {
-  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(240, 182, 188, 0.15) 50%);
+  background: linear-gradient(135deg, rgba(120, 200, 80, 0) 50%, rgba(240, 182, 188, 0.25) 50%);
   border-radius: 15px;
   padding: 0 12px 12px 12px;
 }

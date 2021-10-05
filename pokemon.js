@@ -313,17 +313,61 @@ export const morePokemonInfo = (x) => {
         }
       }
 
+      // changing pokemon type and stats being displayed based on its form *********
+      // if ($(`.id-${pokemonSpecies[j].id}`).parent().hasClass("active")) {
+      //   $(".type-area").html(`
+      //   <span class='modal-type type-span ${pokemonSpecies[j].type[0]}'><span class='modal-type-text'>${pokemonSpecies[j].type[0]}</span></span>
+      //   `);
+      //   $(".pokemon-modal-body").removeClass(
+      //     `pokemon-bg-${pokemon[i].type[0]}`
+      //   );
+      //   $(".pokemon-modal-body").addClass(
+      //     `pokemon-bg-${pokemonSpecies[j].type[0]}`
+      //   );
+      //   if (pokemonSpecies[j].type.length === 2) {
+      //     $(".pokemon-modal-body").removeClass(
+      //       `pokemon-bg-${pokemon[i].type[0]}`
+      //     );
+      //     $(".pokemon-modal-body").addClass(
+      //       `pokemon-bg-type-one-${pokemonSpecies[j].type[0]}`
+      //     );
+      //     $(".pokemon-info").addClass(
+      //       `pokemon-bg-type-two-${pokemonSpecies[j].type[1]}`
+      //     );
+      //     $(".type-area").append(
+      //       `<span class='modal-type type-span ${pokemonSpecies[j].type[1]}'><span class='modal-type-text'>${pokemonSpecies[j].type[1]}</span></span>`
+      //     );
+      //   }
+      //   $(".modal-stats").html(`
+      //   <p class='hp-caps'><b>${pokemonSpecies[j].stats[0].stat.name}:</b> ${pokemonSpecies[j].stats[0].base_stat}&emsp;</p>
+      //   <p><b>${pokemonSpecies[j].stats[1].stat.name}:</b> ${pokemonSpecies[j].stats[1].base_stat}&emsp;</p>
+      //   <p><b>${pokemonSpecies[j].stats[2].stat.name}:</b> ${pokemonSpecies[j].stats[2].base_stat}&emsp;</p>
+      //   <p><b>${pokemonSpecies[j].stats[3].stat.name}:</b> ${pokemonSpecies[j].stats[3].base_stat}&emsp;</p>
+      //   <p><b>${pokemonSpecies[j].stats[4].stat.name}:</b> ${pokemonSpecies[j].stats[4].base_stat}&emsp;</p>
+      //   <p><b>${pokemonSpecies[j].stats[5].stat.name}:</b> ${pokemonSpecies[j].stats[5].base_stat}&emsp;</p>
+      // `);
+      // }
+      // ******************************************************************************
+
       // append any unique abilities that alter forms of a pokemon may have to the ability area
       // for (let j = 0; j < pokemonSpecies.length; j++) {
       //   if (pokemon[i].name === pokemonSpecies[j].name) {
       //     for (let h = 0; h < pokemon[i].abilities.length; h++) {
       //       for (let k = 0; k < pokemonSpecies[j].abilities.length; k++) {
+      //         // ************************************************************
       //         if (
-      //           pokemon[i].abilities[h].ability.name !==
-      //           pokemonSpecies[j].abilities[k].ability.name
+      //           !pokemonSpecies[j].abilities.includes(pokemon[i].abilities[h])
+      //           // !pokemon[i].abilities.includes(pokemonSpecies[j].abilities[k])
       //         ) {
       //           // console.log(pokemon[i].abilities[h].ability.name);
-      //           // console.log(pokemonSpecies[j].abilities[k].ability.name);
+      //           console.log(pokemonSpecies[j].abilities[k].ability.name);
+      //           uniqueAltAbilities = pokemonSpecies[j].abilities.slice(
+      //             k,
+      //             k + 1
+      //           );
+      //           console.log(pokemonSpecies[j].abilities);
+      //           console.log(uniqueAltAbilities);
+      //           // ************************************************************
       //           for (let y = 0; y < ability.length; y++) {
       //             if (
       //               pokemonSpecies[j].abilities[k].ability.name ===
@@ -353,6 +397,54 @@ export const morePokemonInfo = (x) => {
       //     }
       //   }
       // }
+
+      // **************************************************************************
+      // for (let j = pokemon.length - 220; j < pokemon.length; j++) {
+      // if (pokemon[i].name === pokemon[j].name) {
+      // for (let h = 0; h < pokemon[i].abilities.length; h++) {
+      // for (let k = 0; k < pokemon[j].abilities.length; k++) {
+      // ************************************************************
+      // if (
+      // !pokemon[j].abilities.includes(pokemon[i].abilities[h].ability)
+      // !pokemon[i].abilities.includes(
+      //   pokemon[j].abilities[k].ability
+      // )
+      // ) {
+      // console.log(pokemon[i].abilities[h].ability);
+      // console.log(pokemon[j].abilities[k].ability);
+      // uniqueAltAbilities = pokemon[j].abilities.slice(k, k + 1);
+      // console.log(pokemon[j].abilities);
+      // console.log(uniqueAltAbilities);
+      // ************************************************************
+      // for (let y = 0; y < ability.length; y++) {
+      //   if (
+      //     pokemon[j].abilities[k].ability.name === ability[y].name
+      //   ) {
+      //     $(".ability").append(`
+      //     <div class='horizontal-divider'></div>
+      //     <div>
+      //       <p class="ability-name d-flex justify-content-center"><b>${ability[y].name}</b></p>
+      //       <p class='alt-ability-${pokemon[j].id}-${ability[y].id} hidden-ability d-flex justify-content-center'></p>
+      //       <p class='ability-description'>${ability[y].effect}</p>
+      //     </div>
+      //   `);
+      //     if (pokemon[j].abilities[k].is_hidden === true) {
+      //       $(`.alt-ability-${pokemon[j].id}-${ability[y].id}`).html(
+      //         `(${pokemon[j].form_name} Hidden Ability)`
+      //       );
+      //     } else {
+      //       $(`.alt-ability-${pokemon[j].id}-${ability[y].id}`).html(
+      //         `(${pokemon[j].form_name})`
+      //       );
+      //     }
+      //   }
+      // }
+      // }
+      // }
+      // }
+      // }
+      // }
+      // **************************************************************************
     }
   }
 };
