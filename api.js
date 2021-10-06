@@ -43,6 +43,18 @@ export const fetchPokemon = () => {
     for (let i = 0; i < pokemon.length; i++) {
       pokemon[i].name = pokemon[i].name.replaceAll("-", " ");
       pokemon[i].form_name = pokemon[i].form_name.replaceAll("-", " ");
+      if (
+        pokemon[i].form_name ===
+        "silvally normal silvally fighting silvally flying silvally poison silvally ground silvally rock silvally bug silvally ghost silvally steel silvally fire silvally water silvally grass silvally electric silvally psychic silvally ice silvally dragon silvally dark silvally fairy"
+      ) {
+        pokemon[i].form_name = "silvally";
+      }
+      if (
+        pokemon[i].form_name ===
+        "arceus normal arceus bug arceus dark arceus dragon arceus electric arceus fighting arceus fire arceus flying arceus ghost arceus grass arceus ground arceus ice arceus poison arceus psychic arceus rock arceus steel arceus water arceus unknown arceus fairy"
+      ) {
+        pokemon[i].form_name = "arceus";
+      }
       for (let j = 0; j < pokemon[i].abilities.length; j++) {
         pokemon[i].abilities[j].ability.name = pokemon[i].abilities[
           j
@@ -107,71 +119,8 @@ export const fetchPokemon = () => {
 
     // pokemon.push(...pokemonSpecies);
 
-    // console.log(pokemonSpecies);
-    // console.log(pokemon);
-
-    // ARRAY WITH POKEMON ALT FORMS DATA!
-    // for (let i = 0; i < pokemon.length; i++) {
-    //   for (let j = 0; j < pokemonSpecies.length; j++) {
-    //     if (pokemon[i].name === pokemonSpecies[j].name) {
-    //       console.log(pokemon[i]);
-    //       console.log(pokemonSpecies[j]);
-
-    //       pokemon[i].alt_forms.push(pokemonSpecies[j]);
-    //     }
-    //   }
-    // }
-
-    // console.log(pokemon);
-
-    // testing to merge both pokemon and pokemonSpecies array
-    // let testPokemon = pokemon;
-    // let testSpecies = pokemonSpecies;
-    // let testArray = [];
-
-    // // testArray = testPokemon.map((obj) => Object.values(obj));
-
-    // for (let i = 0; i < testPokemon.length; i++) {
-    //   for (let j = 0; j < testSpecies.length; j++) {
-    //     if (testPokemon[i].name === testSpecies[j].name) {
-    //       console.log(testPokemon[i]);
-    //       console.log(testSpecies[j]);
-
-    //       // testPokemon[i] += testSpecies[j];
-    //     }
-    //   }
-    // }
-
-    // console.log(pokemon);
-    // console.log(testPokemon);
-    // console.log(testArray);
-
-    // let mergedArrays;
-
-    // for (let i = 0; i < pokemon.length; i++) {
-    //   for (let j = 0; j < pokemonSpecies.length; j++) {
-    //     if (pokemon[i].name === pokemonSpecies[j].name) {
-    //       console.log(pokemon[i]);
-    //       console.log(pokemonSpecies[j]);
-
-    //       mergedArrays = pokemon.concat(pokemonSpecies);
-    //     }
-    //   }
-    // }
-
-    // console.log(mergedArrays);
-
-    // for (let i = 0; i < mergedArrays.length - 220; i++) {
-    //   for (let j = mergedArrays.length - 220; j < mergedArrays.length; j++) {
-    //     if (mergedArrays[i].name === mergedArrays[j].name) {
-    //       // console.log(mergedArrays[i].name);
-    //       // console.log(mergedArrays[j].name);
-
-    //       mergedArrays.splice(i, 0, mergedArrays[j]);
-    //     }
-    //   }
-    // }
-    // console.log(mergedArrays);
+    console.log(pokemon);
+    console.log(pokemonSpecies);
   });
 };
 
