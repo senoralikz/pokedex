@@ -21,16 +21,6 @@ const loading = `
 
 $("#pokedex").html(loading);
 
-// search bar functionality
-$(document).ready(function () {
-  $("#searchPokemon").on("keyup", function () {
-    let value = $(this).val().toLowerCase();
-    $("#pokedex div").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-    });
-  });
-});
-
 const sortPokemonName = () => {
   pokemon.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 

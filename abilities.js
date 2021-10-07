@@ -9,19 +9,7 @@ export const showAbilitiesTab = () => {
   $(".moves-tab").hide();
 
   displayAbilities();
-
-  console.log(ability);
 };
-
-// search bar functionality
-$(document).ready(function () {
-  $("#searchPokemon").on("keyup", function () {
-    let value = $(this).val().toLowerCase();
-    $(".ability-table-body tr").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-    });
-  });
-});
 
 const sortAbilityId = () => {
   ability.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));

@@ -31,6 +31,11 @@ form {
   justify-content: space-between;
 }
 
+.searchPokemonBar {
+  border-radius: 30px;
+  padding: 0 10px;
+}
+
 .section-pages {
   display: flex;
   align-items: center;
@@ -48,6 +53,10 @@ form {
   text-align: center;
   font-size: 16px;
   text-decoration: none;
+}
+
+.section-button {
+  margin-bottom: -20px;
 }
 
 .section-button:hover {

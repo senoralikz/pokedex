@@ -1,6 +1,5 @@
 import { showPokemonTab } from "./pokemon.js";
 import { showAbilitiesTab } from "./abilities.js";
-import { showItemsTab } from "./items.js";
 import { showMovesTab } from "./moves.js";
 
 const homePage = () => {
@@ -11,6 +10,21 @@ const homePage = () => {
   $(".moves-tab").hide();
   $(".items-tab").hide();
 };
+
+$(document).ready(function () {
+  $("#searchPokemon").on("keyup", function () {
+    let value = $(this).val().toLowerCase();
+    $("#pokedex div").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+    $(".ability-table-body tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+    $(".move-table-body tr").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
 
 $(() => {
   $(".pokemon-tab").hide();

@@ -9,19 +9,7 @@ export const showMovesTab = () => {
   $(".moves-tab").show();
 
   displayMoves(moves);
-
-  console.log(moves);
 };
-
-// search bar functionality
-$(document).ready(function () {
-  $("#searchPokemon").on("keyup", function () {
-    let value = $(this).val().toLowerCase();
-    $(".move-table-body tr").filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-    });
-  });
-});
 
 const sortMoveId = () => {
   moves.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
