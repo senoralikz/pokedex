@@ -203,7 +203,9 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
+                  <div class='spotlight'>
                     <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].form_name}_default">
+                    </div>
                     <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}</p>
                   </div>
                 </div>
@@ -230,7 +232,9 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
+                  <div class='spotlight'>
                     <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].form_name}_shiny">
+                    </div>
                     <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name} (Shiny)</p>
                   </div>
                 </div>
@@ -293,7 +297,9 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
+                  <div class='spotlight'>
                     <img src="${pokemonSpecies[j].sprite}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_default">
+                    </div>
                     <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name}</p>
                   </div>
                 </div>
@@ -320,7 +326,9 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
+                  <div class='spotlight'>
                     <img src="${pokemonSpecies[j].sprite_shiny}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_shiny">
+                    </div>
                     <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name} (Shiny)</p>
                   </div>
                 </div>
