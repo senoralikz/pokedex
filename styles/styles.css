@@ -112,6 +112,10 @@ form {
   margin: 10px 0;
 }
 
+.typeOptions1 {
+  margin: 0 15px 0 10px;
+}
+
 .card {
   width: 10rem;
   margin: 10px;
@@ -123,14 +127,20 @@ form {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-.card-img {
-  margin-top: -60px;
+.spotlight {
+  background: #fff;
+  height: 120%;
+  width: 100%;
+  margin-top: -40px;
+  border-radius: 100px;
+}
+
+.pokemon-card {
+  height: fit-content;
 }
 
 .modal-pokemon-img {
-  margin-left: -100px;
   margin-top: -100px;
-  width: 150%;
 }
 
 .carousel-control-prev-icon,
@@ -676,12 +686,6 @@ ol.move-stats li {
 
   .hamburger {
     display: block;
-  }
-
-  .modal-pokemon-img {
-    width: 100%;
-    margin-left: 0;
-    margin-top: -70px;
   }
 
   .pokemon-info {

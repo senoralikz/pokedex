@@ -203,7 +203,7 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
-                    <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].name}_default">
+                    <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].form_name}_default">
                     <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}</p>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
-                    <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].name}_shiny">
+                    <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].form_name}_shiny">
                     <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name} (Shiny)</p>
                   </div>
                 </div>
@@ -293,7 +293,7 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
-                    <img src="${pokemonSpecies[j].sprite}" class="d-block w-100" alt="${pokemonSpecies[j].name}_default">
+                    <img src="${pokemonSpecies[j].sprite}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_default">
                     <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name}</p>
                   </div>
                 </div>
@@ -320,7 +320,7 @@ export const morePokemonInfo = (x) => {
                 <div class='sprite-id'>
                   <p class='modal-hash d-flex justify-content-end'>#<span class='modal-pokemon-id'>${pokemon[i].id}</span></p>
                   <div class='modal-pokemon-img'>
-                    <img src="${pokemonSpecies[j].sprite_shiny}" class="d-block w-100" alt="${pokemonSpecies[j].name}_shiny">
+                    <img src="${pokemonSpecies[j].sprite_shiny}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_shiny">
                     <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name} (Shiny)</p>
                   </div>
                 </div>
@@ -414,7 +414,7 @@ export const morePokemonInfo = (x) => {
               `);
               if (pokemon[i].abilities[h].is_hidden === true) {
                 $(`.reg-form-ability-${pokemon[i].id}-${ability[j].id}`).html(
-                  `(${pokemon[i].name} Hidden Ability)`
+                  `(${pokemon[i].form_name} Hidden Ability)`
                 );
               } else {
                 $(`.reg-form-ability-${pokemon[i].id}-${ability[j].id}`).html(

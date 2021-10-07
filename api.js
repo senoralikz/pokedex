@@ -31,7 +31,7 @@ export const fetchPokemon = () => {
       form_name: res.forms.map((form) => form.name).join(" "),
       // alt_forms: [],
       id: res.id,
-      sprite: res.sprites["front_default"],
+      sprite: "",
       sprite_shiny: res.sprites["front_shiny"],
       // type is an array so we join each string inside the type array to set it to one type property
       // type: res.types,
@@ -43,6 +43,22 @@ export const fetchPokemon = () => {
     for (let i = 0; i < pokemon.length; i++) {
       pokemon[i].name = pokemon[i].name.replaceAll("-", " ");
       pokemon[i].form_name = pokemon[i].form_name.replaceAll("-", " ");
+      pokemon[i].sprite = `./images/pokemon-3d-sprites/${pokemon[i].id}.png`;
+      pokemon[
+        i
+      ].sprite_shiny = `./images/pokemon-3d-shiny/${pokemon[i].id}.png`;
+      if (
+        pokemon[i].form_name ===
+        "unown a unown b unown c unown d unown e unown f unown g unown h unown i unown j unown k unown l unown m unown n unown o unown p unown q unown r unown s unown t unown u unown v unown w unown x unown y unown z unown exclamation unown question"
+      ) {
+        pokemon[i].form_name = "unown";
+      }
+      if (
+        pokemon[i].form_name ===
+        "arceus normal arceus bug arceus dark arceus dragon arceus electric arceus fighting arceus fire arceus flying arceus ghost arceus grass arceus ground arceus ice arceus poison arceus psychic arceus rock arceus steel arceus water arceus unknown arceus fairy"
+      ) {
+        pokemon[i].form_name = "arceus";
+      }
       if (
         pokemon[i].form_name ===
         "silvally normal silvally fighting silvally flying silvally poison silvally ground silvally rock silvally bug silvally ghost silvally steel silvally fire silvally water silvally grass silvally electric silvally psychic silvally ice silvally dragon silvally dark silvally fairy"
@@ -51,9 +67,15 @@ export const fetchPokemon = () => {
       }
       if (
         pokemon[i].form_name ===
-        "arceus normal arceus bug arceus dark arceus dragon arceus electric arceus fighting arceus fire arceus flying arceus ghost arceus grass arceus ground arceus ice arceus poison arceus psychic arceus rock arceus steel arceus water arceus unknown arceus fairy"
+        "deerling spring deerling summer deerling autumn deerling winter"
       ) {
-        pokemon[i].form_name = "arceus";
+        pokemon[i].form_name = "deerling";
+      }
+      if (
+        pokemon[i].form_name ===
+        "sawsbuck spring sawsbuck summer sawsbuck autumn sawsbuck winter"
+      ) {
+        pokemon[i].form_name = "sawsbuck";
       }
       for (let j = 0; j < pokemon[i].abilities.length; j++) {
         pokemon[i].abilities[j].ability.name = pokemon[i].abilities[
@@ -66,9 +88,6 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
-
-    displayPokemon(pokemon);
-    // console.log(pokemon);
   });
 
   promises = [];
@@ -89,11 +108,8 @@ export const fetchPokemon = () => {
       name: res.species.name,
       form_name: res.forms.map((form) => form.name).join(" "),
       id: res.id,
-      sprite: res.sprites["front_default"],
-      sprite_shiny: res.sprites["front_shiny"],
-      // type is an array so we join each string inside the type array to set it to one type property
-      // type: res.types,
-      // type: res.types.map((type) => type.type.name).join(", "),
+      sprite: "",
+      sprite_shiny: "",
       type: res.types.map((type) => type.type.name),
       abilities: res.abilities.map((ability) => ability),
       stats: res.stats.map((stat) => stat),
@@ -104,6 +120,12 @@ export const fetchPokemon = () => {
         "-",
         " "
       );
+      pokemonSpecies[
+        i
+      ].sprite = `./images/pokemon-3d-sprites/${pokemonSpecies[i].id}.png`;
+      pokemonSpecies[
+        i
+      ].sprite_shiny = `./images/pokemon-3d-shiny/${pokemonSpecies[i].id}.png`;
       for (let j = 0; j < pokemonSpecies[i].abilities.length; j++) {
         pokemonSpecies[i].abilities[j].ability.name = pokemonSpecies[
           i
@@ -115,6 +137,7 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
+    displayPokemon(pokemon);
   });
 };
 
@@ -251,9 +274,11 @@ export const displayPokemon = (array) => {
       <div class='p-0 card pokemon-card pokemon-bg-type-one-${pokemon.type[0]} specificPokemon${pokemon.id}' data-id='${pokemon.id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
         <div class='pokemon-bg-type-two-${pokemon.type[1]}'>
           <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${pokemon.id}</span></p>
-          <img class='card-img' src='${pokemon.sprite}' />
+          <div class='spotlight'>
+            <img class='card-img' src='${pokemon.sprite}' />
+          </div>
           <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
-          <div class='d-flex justify-content-start'>
+          <div class='pokemon-card-type d-flex justify-content-start'>
             <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
             <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
           </div>
@@ -265,12 +290,16 @@ export const displayPokemon = (array) => {
   for (let i = 0; i < array.length; i++) {
     if (array[i].type.length === 1) {
       pokemonHtml[i] = `
-      <div class='card pokemon-card pokemon-bg-${array[i].type[0]}' data-id='${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-        <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${array[i].id}</span></p>
-        <img class='card-img' src='${array[i].sprite}' />
-        <h5 class='pokemon-name card-title'>${array[i].name}</h5>
-        <div class='d-flex justify-content-start'>
-          <span class='type-span type ${array[i].type[0]}'><span class='type-text'>${array[i].type[0]}</span></span>
+      <div class='p-0 card pokemon-card pokemon-bg-type-one-${array[i].type[0]} specificPokemon${array[i].id}' data-id='${array[i].id}' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+        <div class='pokemon-bg-type-two-${array[i].type[0]}'>
+          <p class='hash d-flex justify-content-end'>#<span class='pokemon-id'>${array[i].id}</span></p>
+          <div class='spotlight'>
+            <img class='card-img' src='${array[i].sprite}' />
+          </div>
+          <h5 class='pokemon-name card-title'>${array[i].name}</h5>
+          <div class='pokemon-card-type d-flex justify-content-start'>
+            <span class='type-span type ${array[i].type[0]}'><span class='type-text'>${array[i].type[0]}</span></span>
+          </div>
         </div>
       </div>
     `;
