@@ -115,12 +115,6 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
-    // console.log(pokemonSpecies);
-
-    // pokemon.push(...pokemonSpecies);
-
-    console.log(pokemon);
-    console.log(pokemonSpecies);
   });
 };
 
@@ -182,7 +176,6 @@ export const fetchAbilities = () => {
     }
 
     displayAbilities();
-    // console.log(ability);
   });
 };
 
@@ -232,9 +225,6 @@ export const fetchMoves = () => {
       if (moves[i].damage_class !== "-") {
         moves[i].damage_class = moves[i].damage_class.name;
       }
-      // moves[i].forEach(function(obj) {
-
-      // })
     }
 
     moves.forEach((obj) => {
@@ -247,11 +237,8 @@ export const fetchMoves = () => {
 
     displayMoves(moves);
 
-    // console.log(moves);
-
     for (let i = 0; i < moves.length; i++) {
       if (moves[i].pokemon === "-" || moves[i].pokemon === "") {
-        // console.log(moves[i]);
       }
     }
   });

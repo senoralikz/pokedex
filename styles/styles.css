@@ -181,6 +181,10 @@ form {
   font-size: 50px;
 }
 
+.modal-header {
+  border-bottom: 1px solid #000;
+}
+
 .modal-header,
 .modal-ability-info {
   background-color: #e74c3c;
