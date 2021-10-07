@@ -603,29 +603,6 @@ export const morePokemonInfo = (x) => {
     }
   }
 };
-for (let j = 0; j < pokemonSpecies.length; j++) {
-  if (pokemonSpecies[j].form_name === "persian alola") {
-    $(".pokemon-modal-body").addClass(`pokemon-bg-dark`);
-    $(".pokemon-modal-body").removeClass(`pokemon-bg-normal`);
-    $(".type-area").html(`
-      <span class='modal-type type-span dark'><span class='modal-type-text'>Dark</span></span>
-    `);
-  }
-  if (pokemon[i].form_name === "meowth alola") {
-    $(".pokemon-modal-body").addClass(`pokemon-bg-dark`);
-    $(".pokemon-modal-body").removeClass(`pokemon-bg-normal pokemon-bg-steel`);
-    $(".type-area").html(`
-      <span class='modal-type type-span dark'><span class='modal-type-text'>Dark</span></span>
-    `);
-  }
-  if (pokemon[i].form_name === "meowth galar") {
-    $(".pokemon-modal-body").addClass(`pokemon-bg-steel`);
-    $(".pokemon-modal-body").removeClass(`pokemon-bg-normal`);
-    $(".type-area").html(`
-      <span class='modal-type type-span steel'><span class='modal-type-text'>Steel</span></span>
-    `);
-  }
-}
 
 $("#sortOptions").on("change", sortingOptions);
 $("#genOptions").on("change", genSelection);
