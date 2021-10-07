@@ -197,10 +197,10 @@ export const morePokemonInfo = (x) => {
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class='pokemon-modal-body pokemon-bg-type-one-${pokemon[i].type[0]}'>
-              <div class='pokemon-info d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemon[i].type[1]}'>
+            <div class='pokemon-modal-body specific-poke-type-${pokemon[i].id} pokemon-bg-type-one-${pokemon[i].type[0]}'>
+              <div class='pokemon-info specific-poke-type-two-${pokemon[i].id} d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemon[i].type[1]}'>
                 <div class='type-stats'>
-                  <div class='type-area justify-content-start'>
+                  <div class='type-area specific-type-area-${pokemon[i].id} justify-content-start'>
                     <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
                     <span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>
                   </div>
@@ -222,12 +222,19 @@ export const morePokemonInfo = (x) => {
                 </div>
               </div>
             </div>
+            <div class="modal-ability-info">
+              <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
+              <div class="ability-reg-${pokemon[i].id}">
+                <div class='first-ability-reg-${pokemon[i].id} justify-content-center'>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="carousel-item">
-            <div class='pokemon-modal-body pokemon-bg-type-one-${pokemon[i].type[0]}'>
-              <div class='pokemon-info d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemon[i].type[1]}'>
+            <div class='pokemon-modal-body specific-poke-type-${pokemon[i].id} pokemon-bg-type-one-${pokemon[i].type[0]}'>
+              <div class='pokemon-info specific-poke-type-two-${pokemon[i].id} d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemon[i].type[1]}'>
                 <div class='type-stats'>
-                  <div class='type-area justify-content-start'>
+                  <div class='type-area specific-type-area-${pokemon[i].id} justify-content-start'>
                     <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
                     <span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>
                   </div>
@@ -249,6 +256,13 @@ export const morePokemonInfo = (x) => {
                 </div>
               </div>
             </div>
+            <div class="modal-ability-info">
+              <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
+              <div class="ability-reg-${pokemon[i].id}">
+                <div class='first-ability-reg-${pokemon[i].id} justify-content-center'>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -260,54 +274,30 @@ export const morePokemonInfo = (x) => {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div class="modal-ability-info">
-        <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
-        <div class="ability">
-          <div class='first-ability justify-content-center'>
-          </div>
-        </div>
-      </div>
       `);
       if (pokemon[i].type.length === 1) {
-        $(".pokemon-modal-body").removeClass(
+        $(`.specific-poke-type-${pokemon[i].id}`).removeClass(
           `pokemon-bg-type-one-${pokemon[i].type[0]}`
         );
-        $(".pokemon-info").removeClass(
+        $(`.specific-poke-type-two-${pokemon[i].id}`).removeClass(
           `pokemon-bg-type-two-${pokemon[i].type[1]}`
         );
-        $(".pokemon-modal-body").addClass(`pokemon-bg-${pokemon[i].type[0]}`);
-        $(".type-area").html(`
+        $(`.specific-poke-type-${pokemon[i].id}`).addClass(
+          `pokemon-bg-${pokemon[i].type[0]}`
+        );
+        $(`.specific-type-area-${pokemon[i].id}`).html(`
           <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
         `);
       }
-
-      // else if (pokemon[i].type.length === 2) {
-      //   $(".pokemon-modal-body").removeClass(
-      //     `pokemon-bg-${pokemon[i].type[0]} pokemon-bg-type-one-${pokemon[i].type[0]}`
-      //   );
-      //   $(".pokemon-info").removeClass(
-      //     `pokemon-bg-type-two-${pokemon[i].type[0]}`
-      //   );
-      //   $(".pokemon-modal-body").addClass(
-      //     `pokemon-bg-type-one-${pokemon[i].type[0]}`
-      //   );
-      //   $(".pokemon-info").addClass(
-      //     `pokemon-bg-type-two-${pokemon[i].type[1]}`
-      //   );
-      //   $(".type-area").html(`
-      //     <span class='modal-type type-span ${pokemon[i].type[0]}'><span class='modal-type-text'>${pokemon[i].type[0]}</span></span>
-      //     <span class='modal-type type-span ${pokemon[i].type[1]}'><span class='modal-type-text'>${pokemon[i].type[1]}</span></span>
-      //   `);
-      // }
 
       for (let j = 0; j < pokemonSpecies.length; j++) {
         if (pokemon[i].name === pokemonSpecies[j].name) {
           $(".carousel-inner").append(`
           <div class="carousel-item">
-            <div class='pokemon-modal-body pokemon-bg-type-one-${pokemonSpecies[j].type[0]}'>
-              <div class='pokemon-info d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemonSpecies[j].type[1]}'>
+            <div class='pokemon-modal-body specific-alt-type-${pokemonSpecies[j].id} pokemon-bg-type-one-${pokemonSpecies[j].type[0]}'>
+              <div class='pokemon-info specific-alt-type-two-${pokemonSpecies[j].id} d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemonSpecies[j].type[1]}'>
                 <div class='type-stats'>
-                  <div class='type-area justify-content-start'>
+                  <div class='type-area specific-alt-area-${pokemonSpecies[j].id} justify-content-start'>
                     <span class='modal-type type-span ${pokemonSpecies[j].type[0]}'><span class='modal-type-text'>${pokemonSpecies[j].type[0]}</span></span>
                     <span class='modal-type type-span ${pokemonSpecies[j].type[1]}'><span class='modal-type-text'>${pokemonSpecies[j].type[1]}</span></span>
                   </div>
@@ -329,12 +319,19 @@ export const morePokemonInfo = (x) => {
                 </div>
               </div>
             </div>
+            <div class="modal-ability-info">
+              <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
+              <div class="ability-alt-${pokemonSpecies[j].id}">
+                <div class='first-ability-alt-${pokemonSpecies[j].id} justify-content-center'>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="carousel-item">
-            <div class='pokemon-modal-body pokemon-bg-type-one-${pokemonSpecies[j].type[0]}'>
-              <div class='pokemon-info d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemonSpecies[j].type[1]}'>
+            <div class='pokemon-modal-body specific-alt-type-${pokemonSpecies[j].id} pokemon-bg-type-one-${pokemonSpecies[j].type[0]}'>
+              <div class='pokemon-info specific-alt-type-two-${pokemonSpecies[j].id} d-sm-flex justify-content-between p-2 pokemon-bg-type-two-${pokemonSpecies[j].type[1]}'>
                 <div class='type-stats'>
-                  <div class='type-area justify-content-start'>
+                  <div class='type-area specific-alt-area-${pokemonSpecies[j].id} justify-content-start'>
                     <span class='modal-type type-span ${pokemonSpecies[j].type[0]}'><span class='modal-type-text'>${pokemonSpecies[j].type[0]}</span></span>
                     <span class='modal-type type-span ${pokemonSpecies[j].type[1]}'><span class='modal-type-text'>${pokemonSpecies[j].type[1]}</span></span>
                   </div>
@@ -356,46 +353,74 @@ export const morePokemonInfo = (x) => {
                 </div>
               </div>
             </div>
+            <div class="modal-ability-info">
+              <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
+              <div class="ability-alt-${pokemonSpecies[j].id}">
+                <div class='first-ability-alt-${pokemonSpecies[j].id} justify-content-center'>
+                </div>
+              </div>
+            </div>
           </div>
           `);
           if (pokemonSpecies[j].type.length === 1) {
-            $(".pokemon-modal-body").removeClass(
+            $(`.specific-alt-type-${pokemonSpecies[j].id}`).removeClass(
               `pokemon-bg-type-one-${pokemonSpecies[j].type[0]}`
             );
-            $(".pokemon-info").removeClass(
+            $(`.specific-alt-type-two-${pokemonSpecies[j].id}`).removeClass(
               `pokemon-bg-type-two-${pokemonSpecies[j].type[1]}`
             );
-            $(".pokemon-modal-body").addClass(
+            $(`.specific-alt-type-${pokemonSpecies[j].id}`).addClass(
               `pokemon-bg-${pokemonSpecies[j].type[0]}`
             );
-            $(".type-area").html(`
+            $(`.specific-alt-area-${pokemonSpecies[j].id}`).html(`
               <span class='modal-type type-span ${pokemonSpecies[j].type[0]}'><span class='modal-type-text'>${pokemonSpecies[j].type[0]}</span></span>
             `);
           }
-          // else if (pokemonSpecies[j].type.length === 2) {
-          //   $(".pokemon-modal-body").removeClass(
-          //     `pokemon-bg-${pokemonSpecies[j].type[0]} pokemon-bg-${pokemon[i].type[0]} pokemon-bg-type-one-${pokemonSpecies[j].type[0]} pokemon-bg-type-one-${pokemon[i].type[0]}`
-          //   );
-          //   $(".pokemon-info").removeClass(
-          //     `pokemon-bg-type-two-${pokemonSpecies[j].type[0]} pokemon-bg-type-two-${pokemon[i].type[0]}`
-          //   );
-          //   $(".pokemon-modal-body").addClass(
-          //     `pokemon-bg-type-one-${pokemonSpecies[j].type[0]}`
-          //   );
-          //   $(".pokemon-info").addClass(
-          //     `pokemon-bg-type-two-${pokemonSpecies[j].type[1]}`
-          //   );
-          //   $(".type-area").html(`
-          // <span class='modal-type type-span ${pokemonSpecies[j].type[0]}'><span class='modal-type-text'>${pokemonSpecies[j].type[0]}</span></span>
-          // <span class='modal-type type-span ${pokemonSpecies[j].type[1]}'><span class='modal-type-text'>${pokemonSpecies[j].type[1]}</span></span>
-          //   `);
-          // }
+
+          for (let k = 0; k < ability.length; k++) {
+            if (
+              pokemonSpecies[j].abilities[0].ability.name === ability[k].name
+            ) {
+              $(`.first-ability-alt-${pokemonSpecies[j].id}`).html(`
+              <p class="ability-name d-flex justify-content-center"><b>${ability[k].name}</b></p>
+              <p class='hidden-ability alt-form-ability-${pokemonSpecies[j].id}-${ability[k].id} d-flex justify-content-center' id='hidden-ability-slot-${k}'>(${pokemonSpecies[j].form_name})</p>
+              <p class='ability-description'>${ability[k].effect}</p>
+              <div class='horizontal-divider'></div>
+              `);
+            }
+            if (pokemonSpecies[j].abilities.length > 1) {
+              for (let h = 1; h < pokemonSpecies[j].abilities.length; h++) {
+                if (
+                  pokemonSpecies[j].abilities[h].ability.name ===
+                  ability[k].name
+                ) {
+                  $(`.ability-alt-${pokemonSpecies[j].id}`).append(`
+                    <div>
+                      <p class="ability-name d-flex justify-content-center"><b>${ability[k].name}</b></p>
+                      <p class='hidden-ability alt-form-ability-${pokemonSpecies[j].id}-${ability[k].id} d-flex justify-content-center' id='hidden-ability-slot-${j}'></p>
+                      <p class='ability-description'>${ability[k].effect}</p>
+                    </div>
+                    <div class='horizontal-divider'></div>
+                  `);
+                  if (pokemonSpecies[j].abilities[h].is_hidden === true) {
+                    $(
+                      `.alt-form-ability-${pokemonSpecies[j].id}-${ability[k].id}`
+                    ).html(`(${pokemonSpecies[j].name} Hidden Ability)`);
+                  } else {
+                    $(
+                      `.alt-form-ability-${pokemonSpecies[j].id}-${ability[k].id}`
+                    ).html(`(${pokemonSpecies[j].form_name})`);
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
       for (let j = 0; j < ability.length; j++) {
         if (pokemon[i].abilities[0].ability.name === ability[j].name) {
-          $(".first-ability").html(`
+          $(`.first-ability-reg-${pokemon[i].id}`).html(`
           <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
           <p class='hidden-ability reg-form-ability-${pokemon[i].id}-${ability[j].id} d-flex justify-content-center' id='hidden-ability-slot-${j}'>(${pokemon[i].form_name})</p>
           <p class='ability-description'>${ability[j].effect}</p>
@@ -405,7 +430,7 @@ export const morePokemonInfo = (x) => {
         if (pokemon[i].abilities.length > 1) {
           for (let h = 1; h < pokemon[i].abilities.length; h++) {
             if (pokemon[i].abilities[h].ability.name === ability[j].name) {
-              $(".ability").append(`
+              $(`.ability-reg-${pokemon[i].id}`).append(`
                 <div>
                   <p class="ability-name d-flex justify-content-center"><b>${ability[j].name}</b></p>
                   <p class='hidden-ability reg-form-ability-${pokemon[i].id}-${ability[j].id} d-flex justify-content-center' id='hidden-ability-slot-${j}'></p>
@@ -583,22 +608,22 @@ export const morePokemonInfo = (x) => {
       // }
       // **************************************************************************
 
-      if (pokemon[i].form_name === "meowth") {
-        $(".pokemon-modal-body").addClass(`pokemon-bg-normal`);
-        $(".pokemon-modal-body").removeClass(
-          `pokemon-bg-dark pokemon-bg-steel`
-        );
-        $(".type-area").html(`
-          <span class='modal-type type-span normal'><span class='modal-type-text'>Normal</span></span>
-        `);
-      }
-      if (pokemon[i].form_name === "persian") {
-        $(".pokemon-modal-body").addClass(`pokemon-bg-normal`);
-        $(".pokemon-modal-body").removeClass(`pokemon-bg-dark`);
-        $(".type-area").html(`
-          <span class='modal-type type-span normal'><span class='modal-type-text'>Normal</span></span>
-        `);
-      }
+      // if (pokemon[i].form_name === "meowth") {
+      //   $(".pokemon-modal-body").addClass(`pokemon-bg-normal`);
+      //   $(".pokemon-modal-body").removeClass(
+      //     `pokemon-bg-dark pokemon-bg-steel`
+      //   );
+      //   $(".type-area").html(`
+      //     <span class='modal-type type-span normal'><span class='modal-type-text'>Normal</span></span>
+      //   `);
+      // }
+      // if (pokemon[i].form_name === "persian") {
+      //   $(".pokemon-modal-body").addClass(`pokemon-bg-normal`);
+      //   $(".pokemon-modal-body").removeClass(`pokemon-bg-dark`);
+      //   $(".type-area").html(`
+      //     <span class='modal-type type-span normal'><span class='modal-type-text'>Normal</span></span>
+      //   `);
+      // }
     }
   }
 };
