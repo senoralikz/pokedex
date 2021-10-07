@@ -15,13 +15,11 @@ const homePage = () => {
 $(() => {
   $(".pokemon-tab").hide();
   $(".abilities-tab").hide();
-  $(".items-tab").hide();
   $(".moves-tab").hide();
 
   $(".pokedex-logo").on("click", homePage);
   $(".pokemon-section").on("click", showPokemonTab);
   $(".abilities-section").on("click", showAbilitiesTab);
-  $(".items-section").on("click", showItemsTab);
   $(".moves-section").on("click", showMovesTab);
   $("#hamburger").on("click", function () {
     $(".section-pages").toggleClass("show");

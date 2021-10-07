@@ -7,7 +7,6 @@ export const showMovesTab = () => {
   $(".pokemon-tab").hide();
   $(".abilities-tab").hide();
   $(".moves-tab").show();
-  $(".items-tab").hide();
 
   displayMoves(moves);
 

@@ -257,37 +257,6 @@ export const fetchMoves = () => {
   });
 };
 
-export const fetchItems = () => {
-  // initialize array that will be filled with each items url
-  let promises = [];
-
-  // get url for item id
-  for (let i = 1; i <= 954; i++) {
-    const url = `https://pokeapi.co/api/v2/item/${i}/`;
-
-    // fetch the information received from the item url and then format it to json
-    //  and push it to the promises array
-    promises.push(fetch(url).then((res) => res.json()));
-  }
-
-  // Using Promise.all to wait to receive all information that is requested from the item url
-  Promise.all(promises).then((res) => {
-    // then initialize and set the properties we want to use from the response
-    items = res.map((res) => ({
-      name: res.name,
-      id: res.id,
-      effect: res.effect_entries.map((effect) => effect.effect).join(" "),
-      sprite: res.sprites.default,
-    }));
-
-    // for (let i = 0; i < items.length; i++) {
-    //   items[i].name = items[i].name.replaceAll("-", " ");
-    // }
-
-    console.log(items);
-  });
-};
-
 export const displayPokemon = (array) => {
   pokemonHtml = array.map(
     (pokemon) =>
@@ -662,4 +631,3 @@ export const displayMoves = (array) => {
 fetchPokemon();
 fetchAbilities();
 fetchMoves();
-// fetchItems();
