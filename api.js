@@ -52,30 +52,40 @@ export const fetchPokemon = () => {
         "unown a unown b unown c unown d unown e unown f unown g unown h unown i unown j unown k unown l unown m unown n unown o unown p unown q unown r unown s unown t unown u unown v unown w unown x unown y unown z unown exclamation unown question"
       ) {
         pokemon[i].form_name = "unown";
-      }
-      if (
+      } else if (
+        pokemon[i].form_name === "burmy plant burmy sandy burmy trash"
+      ) {
+        pokemon[i].form_name = "burmy";
+      } else if (
         pokemon[i].form_name ===
         "arceus normal arceus bug arceus dark arceus dragon arceus electric arceus fighting arceus fire arceus flying arceus ghost arceus grass arceus ground arceus ice arceus poison arceus psychic arceus rock arceus steel arceus water arceus unknown arceus fairy"
       ) {
         pokemon[i].form_name = "arceus";
-      }
-      if (
+      } else if (pokemon[i].form_name === "xerneas active xerneas neutral") {
+        pokemon[i].form_name = "xerneas";
+      } else if (
         pokemon[i].form_name ===
         "silvally normal silvally fighting silvally flying silvally poison silvally ground silvally rock silvally bug silvally ghost silvally steel silvally fire silvally water silvally grass silvally electric silvally psychic silvally ice silvally dragon silvally dark silvally fairy"
       ) {
         pokemon[i].form_name = "silvally";
-      }
-      if (
+      } else if (
         pokemon[i].form_name ===
         "deerling spring deerling summer deerling autumn deerling winter"
       ) {
         pokemon[i].form_name = "deerling";
-      }
-      if (
+      } else if (
         pokemon[i].form_name ===
         "sawsbuck spring sawsbuck summer sawsbuck autumn sawsbuck winter"
       ) {
         pokemon[i].form_name = "sawsbuck";
+      } else if (
+        pokemon[i].form_name === "cramorant cramorant gulping cramorant gorging"
+      ) {
+        pokemon[i].form_name = "cramorant";
+      } else if (pokemon[i].form_name === "morpeko full belly morpeko hangry") {
+        pokemon[i].form_name = "morpeko";
+      } else if (pokemon[i].form_name === "zarude zarude dada") {
+        pokemon[i].form_name = "zarude";
       }
       for (let j = 0; j < pokemon[i].abilities.length; j++) {
         pokemon[i].abilities[j].ability.name = pokemon[i].abilities[
@@ -137,7 +147,1135 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
+    for (let h = 0; h < pokemon.length; h++) {
+      let y = 0;
+      let newPokemon = {};
+
+      if (pokemon[h].name === "unown") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " a",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-a.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-a.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " b",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-b.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-b.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " c",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-c.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-c.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " d",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-d.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-d.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " e",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-e.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-e.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " f",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-f.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-f.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " g",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-g.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-g.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " h",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-h.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-h.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " i",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-i.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-i.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " j",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-j.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-j.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " k",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-k.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-k.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " l",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-l.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-l.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " m",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-m.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-m.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " n",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-n.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-n.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " o",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-o.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-o.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " p",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-p.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-p.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " q",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-q.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-q.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " r",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-r.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-r.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " s",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-s.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-s.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " t",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-t.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-t.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " u",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-u.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-u.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " v",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-v.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-v.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " w",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-w.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-w.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " x",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-x.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-x.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " y",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-y.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-y.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " z",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-z.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-z.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " exclamation",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-exclamation.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-exclamation.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " question",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-question.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-question.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "burmy") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " plant",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-plant.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-plant.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " sandy",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-sandy.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-sandy.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " trash",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-trash.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-trash.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "cherrim") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " overcast",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-overcast.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-overcast.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " sunshine",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-sunshine.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-sunshine.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "shellos") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " east",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-east.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-east.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " west",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-west.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-west.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "gastrodon") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " east",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-east.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-east.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " west",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-west.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-west.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "arceus") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " bug",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-bug.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-bug.png`,
+          type: ["bug"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " dark",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-dark.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-dark.png`,
+          type: ["dark"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " dragon",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-dragon.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-dragon.png`,
+          type: ["dragon"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " electric",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-electric.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-electric.png`,
+          type: ["electric"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " fairy",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-fairy.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-fairy.png`,
+          type: ["fairy"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " fighting",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-fighting.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-fighting.png`,
+          type: ["fighting"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " fire",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-fire.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-fire.png`,
+          type: ["fire"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " flying",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-flying.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-flying.png`,
+          type: ["flying"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " ghost",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-ghost.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-ghost.png`,
+          type: ["ghost"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " grass",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-grass.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-grass.png`,
+          type: ["grass"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " ground",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-ground.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-ground.png`,
+          type: ["ground"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " ice",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-ice.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-ice.png`,
+          type: ["ice"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " poison",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-poison.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-poison.png`,
+          type: ["poison"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " psychic",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-psychic.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-psychic.png`,
+          type: ["psychic"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " steel",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-steel.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-steel.png`,
+          type: ["steel"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " rock",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-rock.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-rock.png`,
+          type: ["rock"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " normal",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-normal.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-normal.png`,
+          type: ["normal"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " water",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-water.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-water.png`,
+          type: ["water"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "xerneas") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " active",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-active.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-active.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " neutral",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-neutral.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-neutral.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "silvally") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " bug",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-bug.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-bug.png`,
+          type: ["bug"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " dark",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-dark.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-dark.png`,
+          type: ["dark"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " dragon",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-dragon.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-dragon.png`,
+          type: ["dragon"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " electric",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-electric.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-electric.png`,
+          type: ["electric"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " fairy",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-fairy.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-fairy.png`,
+          type: ["fairy"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " fighting",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-fighting.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-fighting.png`,
+          type: ["fighting"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " fire",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-fire.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-fire.png`,
+          type: ["fire"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " flying",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-flying.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-flying.png`,
+          type: ["flying"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " ghost",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-ghost.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-ghost.png`,
+          type: ["ghost"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " grass",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-grass.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-grass.png`,
+          type: ["grass"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " ground",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-ground.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-ground.png`,
+          type: ["ground"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " ice",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-ice.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-ice.png`,
+          type: ["ice"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " poison",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-poison.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-poison.png`,
+          type: ["poison"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " psychic",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-psychic.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-psychic.png`,
+          type: ["psychic"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " steel",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-steel.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-steel.png`,
+          type: ["steel"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " rock",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-rock.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-rock.png`,
+          type: ["rock"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " normal",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-normal.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-normal.png`,
+          type: ["normal"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " water",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-water.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-water.png`,
+          type: ["water"],
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "cramorant") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " gorging",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-gorging.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-gorging.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " gulping",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-gulping.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-gulping.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "morpeko") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " full belly",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites/${pokemon[h].id}.png`,
+          sprite_shiny: `images/pokemon-3d-shiny/${pokemon[h].id}.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " hangry",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-hangry.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-hangry.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      } else if (pokemon[h].name === "zarude") {
+        newPokemon = {
+          name: pokemon[h].name,
+          form_name: pokemon[h].name + " dada",
+          id: 20000 + pokemon[h].id + y,
+          sprite: `./images/pokemon-3d-sprites-alt/${pokemon[h].id}-dada.png`,
+          sprite_shiny: `images/pokemon-3d-shiny-alt/${pokemon[h].id}-dada.png`,
+          type: pokemon[h].type,
+          abilities: pokemon[h].abilities,
+          stats: pokemon[h].stats,
+        };
+        pokemonSpecies.push(newPokemon);
+
+        y++;
+      }
+    }
     displayPokemon(pokemon);
+    console.log(pokemon);
+    console.log(pokemonSpecies);
   });
 };
 
@@ -260,10 +1398,10 @@ export const fetchMoves = () => {
 
     displayMoves(moves);
 
-    for (let i = 0; i < moves.length; i++) {
-      if (moves[i].pokemon === "-" || moves[i].pokemon === "") {
-      }
-    }
+    // for (let i = 0; i < moves.length; i++) {
+    //   if (moves[i].pokemon === "-" || moves[i].pokemon === "") {
+    //   }
+    // }
   });
 };
 
