@@ -73,6 +73,11 @@ form {
   padding: 0 10px;
 }
 
+.dropdown {
+  border-radius: 30px;
+  padding: 2px;
+}
+
 .section-pages {
   display: flex;
   align-items: center;
@@ -91,12 +96,22 @@ form {
   text-decoration: none;
 }
 
+.section-button.active {
+  background-color: #ecf0f1;
+  color: #000;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
 .section-button {
-  margin-bottom: -20px;
+  margin-bottom: -16px;
 }
 
 .section-button:hover {
   cursor: pointer;
+  background-color: #e74c3c;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .hamburger {
@@ -113,7 +128,7 @@ form {
 }
 
 .typeOptions1 {
-  margin: 0 15px 0 10px;
+  margin: 0 10px;
 }
 
 .card {
@@ -673,11 +688,17 @@ ol.move-stats li {
 
   .section-button {
     padding: 10px;
+    align-items: end;
+  }
+
+  .section-button.active {
+    background-color: #fff;
+    color: #000;
   }
 
   .section-pages {
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
   }
 
