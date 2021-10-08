@@ -7,10 +7,16 @@ $(() => {
   $(".abilities-tab").hide();
   $(".moves-tab").hide();
 
+  // search bar function
   $(document).ready(function () {
+    // select search bar element
     $("#searchPokemon").on("keyup", function () {
+      // grab input value of search bar and save it to value variable
       let value = $(this).val().toLowerCase();
+      // select where and what you want to search and filter results to match key being pressed
       $("#pokedex div.pokemon-card").filter(function () {
+        // set input value to lowercase to match values in array and return any index value that matches key being pressed
+        // if index value returns -1 then there is nothing that matches the keys pressed and search will return empty array
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
       });
       $(".ability-table-body tr").filter(function () {

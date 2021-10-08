@@ -2,12 +2,12 @@
 @import "variables.scss";
 
 body {
-  background-color: #ecf0f1;
+  background-color: $smoke-white-bg-active;
   margin: 0;
 }
 
 header {
-  background-color: #e74c3c;
+  background-color: $poke-red;
 }
 
 h1 {
@@ -60,22 +60,22 @@ form {
   text-decoration: none;
 }
 
+.section-button {
+  margin-bottom: -16px;
+}
+
 .section-button.active {
-  background-color: #ecf0f1;
+  background-color: $smoke-white-bg-active;
   color: #000;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
 
-.section-button {
-  margin-bottom: -16px;
-}
-
-.section-button:hover {
+.section-button:hover:not(.section-button.active) {
   cursor: pointer;
-  background-color: #e74c3c;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  background-color: $poke-red;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .hamburger {
@@ -111,7 +111,7 @@ form {
 // }
 
 .spotlight {
-  background: #ecf0f1;
+  background: #fff;
   height: 120%;
   width: 100%;
   margin-top: -40px;
@@ -197,7 +197,7 @@ form {
 
 .modal-header,
 .modal-ability-info {
-  background-color: #e74c3c;
+  background-color: $poke-red;
   color: #fff;
 }
 
@@ -812,7 +812,7 @@ ol.move-stats li {
   }
 
   .section-button.active {
-    background-color: #fff;
+    background-color: $smoke-white-bg-active;
     color: #000;
     // border-radius: 0;
   }

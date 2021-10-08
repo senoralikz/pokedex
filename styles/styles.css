@@ -96,6 +96,10 @@ form {
   text-decoration: none;
 }
 
+.section-button {
+  margin-bottom: -16px;
+}
+
 .section-button.active {
   background-color: #ecf0f1;
   color: #000;
@@ -103,15 +107,11 @@ form {
   border-top-right-radius: 30px;
 }
 
-.section-button {
-  margin-bottom: -16px;
-}
-
-.section-button:hover {
+.section-button:hover:not(.section-button.active) {
   cursor: pointer;
   background-color: #e74c3c;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .hamburger {
@@ -143,7 +143,7 @@ form {
 }
 
 .spotlight {
-  background: #ecf0f1;
+  background: #fff;
   height: 120%;
   width: 100%;
   margin-top: -40px;
@@ -692,7 +692,7 @@ ol.move-stats li {
   }
 
   .section-button.active {
-    background-color: #fff;
+    background-color: #ecf0f1;
     color: #000;
   }
 

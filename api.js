@@ -136,6 +136,9 @@ export const fetchPokemon = () => {
       pokemonSpecies[
         i
       ].sprite_shiny = `./images/pokemon-3d-shiny/${pokemonSpecies[i].id}.png`;
+      if (pokemonSpecies[i].form_name.includes("totem")) {
+        pokemonSpecies.splice(i, i + 1);
+      }
       for (let j = 0; j < pokemonSpecies[i].abilities.length; j++) {
         pokemonSpecies[i].abilities[j].ability.name = pokemonSpecies[
           i
