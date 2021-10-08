@@ -206,7 +206,7 @@ export const morePokemonInfo = (x) => {
                   <div class='spotlight'>
                     <img src="${pokemon[i].sprite}" class="d-block w-100" alt="${pokemon[i].form_name}_default">
                     </div>
-                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name}</p>
+                    <p class='form-names d-flex justify-content-center'><strong>${pokemon[i].form_name}</strong></p>
                   </div>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export const morePokemonInfo = (x) => {
                   <div class='spotlight'>
                     <img src="${pokemon[i].sprite_shiny}" class="d-block w-100" alt="${pokemon[i].form_name}_shiny">
                     </div>
-                    <p class='form-names d-flex justify-content-center'>${pokemon[i].form_name} (Shiny)</p>
+                    <p class='form-names d-flex justify-content-center'><strong>${pokemon[i].form_name} (Shiny)</strong></p>
                   </div>
                 </div>
               </div>
@@ -253,7 +253,7 @@ export const morePokemonInfo = (x) => {
       </div>
       <div class="modal-ability-info">
         <p class="abilities-heading d-flex justify-content-center"><b>Abilities</b></p>
-        <div class="ability-reg-${pokemon[i].id}">
+        <div class="ability-reg-${pokemon[i].id} ability-bg">
           <div class='first-ability-reg-${pokemon[i].id} justify-content-center'>
           </div>
         </div>
@@ -300,7 +300,7 @@ export const morePokemonInfo = (x) => {
                   <div class='spotlight'>
                     <img src="${pokemonSpecies[j].sprite}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_default">
                     </div>
-                    <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name}</p>
+                    <p class='form-names d-flex justify-content-center'><strong>${pokemonSpecies[j].form_name}</strong></p>
                   </div>
                 </div>
               </div>
@@ -329,7 +329,7 @@ export const morePokemonInfo = (x) => {
                   <div class='spotlight'>
                     <img src="${pokemonSpecies[j].sprite_shiny}" class="d-block w-100" alt="${pokemonSpecies[j].form_name}_shiny">
                     </div>
-                    <p class='form-names d-flex justify-content-center'>${pokemonSpecies[j].form_name} (Shiny)</p>
+                    <p class='form-names d-flex justify-content-center'><strong>${pokemonSpecies[j].form_name} (Shiny)</strong></p>
                   </div>
                 </div>
               </div>
@@ -338,7 +338,7 @@ export const morePokemonInfo = (x) => {
           `);
 
           $(".modal-ability-info").append(`
-            <div class="ability-alt-${pokemonSpecies[j].id}">
+            <div class="ability-alt-${pokemonSpecies[j].id} ability-bg">
               <div class="first-ability-alt-${pokemonSpecies[j].id} justify-content-center">
               </div>
             </div>

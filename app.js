@@ -14,7 +14,7 @@ const homePage = () => {
 $(document).ready(function () {
   $("#searchPokemon").on("keyup", function () {
     let value = $(this).val().toLowerCase();
-    $("#pokedex div").filter(function () {
+    $("#pokedex div.pokemon-card").filter(function () {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
     $(".ability-table-body tr").filter(function () {

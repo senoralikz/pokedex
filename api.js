@@ -1415,7 +1415,7 @@ export const displayPokemon = (array) => {
           <div class='spotlight'>
             <img class='card-img' src='${pokemon.sprite}' />
           </div>
-          <h5 class='pokemon-name card-title'>${pokemon.name}</h5>
+          <h5 class='pokemon-name card-title'><strong>${pokemon.name}</strong></h5>
           <div class='pokemon-card-type d-flex justify-content-start'>
             <span class='type-span type ${pokemon.type[0]}'><span class='type-text'>${pokemon.type[0]}</span></span>
             <span class='type-span type ${pokemon.type[1]}'><span class='type-text'>${pokemon.type[1]}</span></span>
@@ -1434,7 +1434,7 @@ export const displayPokemon = (array) => {
           <div class='spotlight'>
             <img class='card-img' src='${array[i].sprite}' />
           </div>
-          <h5 class='pokemon-name card-title'>${array[i].name}</h5>
+          <h5 class='pokemon-name card-title'><strong>${array[i].name}</strong></h5>
           <div class='pokemon-card-type d-flex justify-content-start'>
             <span class='type-span type ${array[i].type[0]}'><span class='type-text'>${array[i].type[0]}</span></span>
           </div>

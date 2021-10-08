@@ -128,10 +128,11 @@ form {
 }
 
 .spotlight {
-  background: #fff;
+  background: #ecf0f1;
   height: 120%;
   width: 100%;
   margin-top: -40px;
+  margin-bottom: 10px;
   border-radius: 50%;
 }
 
