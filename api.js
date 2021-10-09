@@ -32,7 +32,7 @@ export const fetchPokemon = () => {
       // alt_forms: [],
       id: res.id,
       sprite: "",
-      sprite_shiny: res.sprites["front_shiny"],
+      sprite_shiny: "",
       // type is an array so we join each string inside the type array to set it to one type property
       // type: res.types,
       // type: res.types.map((type) => type.type.name).join(", "),
@@ -1294,7 +1294,23 @@ export const fetchAbilities = () => {
 
     // fetch the information received from the ability url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then((res) => res.json()));
+    promises.push(
+      fetch(url).then((res) => res.json())
+      // .catch((error) => {
+      //   $(".alert-message").append(`<div
+      //   class="abilities-alert alert alert-danger alert-dismissible fade show"
+      //   role="alert">
+      //   Unable to fetch all ability info
+      //   <button
+      //     type="button"
+      //     class="btn-close"
+      //     data-bs-dismiss="alert"
+      //     aria-label="Close"
+      //   ></button>
+      // </div>`);
+      //   $(".abilities-alert").delay(3000).fadeOut("slow");
+      // })
+    );
   }
 
   // Using Promise.all to wait to receive all information that is requested from the ability url
@@ -1318,7 +1334,23 @@ export const fetchAbilities = () => {
 
     // fetch the information received from the ability url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then((res) => res.json()));
+    promises.push(
+      fetch(url).then((res) => res.json())
+      // .catch((error) => {
+      //   $(".alert-message").append(`<div
+      //   class="galar-abilities-alert alert alert-danger alert-dismissible fade show"
+      //   role="alert">
+      //   Unable to fetch all ability info
+      //   <button
+      //     type="button"
+      //     class="btn-close"
+      //     data-bs-dismiss="alert"
+      //     aria-label="Close"
+      //   ></button>
+      // </div>`);
+      //   $(".galar-abilities-alert").delay(3000).fadeOut("slow");
+      // })
+    );
   }
 
   Promise.all(promises).then((res) => {
@@ -1353,7 +1385,23 @@ export const fetchMoves = () => {
 
     // fetch the information received from the ability url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then((res) => res.json()));
+    promises.push(
+      fetch(url).then((res) => res.json())
+      // .catch((error) => {
+      //   $(".alert-message").append(`<div
+      //   class="moves-alert alert alert-danger alert-dismissible fade show"
+      //   role="alert">
+      //   Unable to fetch all moveset info
+      //   <button
+      //     type="button"
+      //     class="btn-close"
+      //     data-bs-dismiss="alert"
+      //     aria-label="Close"
+      //   ></button>
+      // </div>`);
+      //   $(".moves-alert").delay(3000).fadeOut("slow");
+      // })
+    );
   }
 
   // Using Promise.all to wait to receive all information that is requested from the ability url

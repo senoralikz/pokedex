@@ -696,6 +696,12 @@ ol.move-stats li {
     color: #000;
   }
 
+  .section-button:hover:not(.section-button.active) {
+    cursor: pointer;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
   .section-pages {
     display: none;
     flex-direction: row;

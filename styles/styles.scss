@@ -50,7 +50,6 @@ form {
 }
 
 .section-pages .section-button {
-  // background-color: #d34535;
   display: inline-block;
   border: none;
   color: #fff;
@@ -815,6 +814,12 @@ ol.move-stats li {
     background-color: $smoke-white-bg-active;
     color: #000;
     // border-radius: 0;
+  }
+
+  .section-button:hover:not(.section-button.active) {
+    cursor: pointer;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 
   .section-pages {
