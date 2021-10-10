@@ -34,7 +34,7 @@ $(() => {
     $(this).addClass("active");
   });
 
-  $(".pokedex-logo").on("click", function () {
+  $(".pokedata-logo").on("click", function () {
     $(".section-button.active").removeClass("active");
     $(".section-pages").removeClass("show");
     $("#searchPokemon").val("");

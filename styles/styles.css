@@ -55,7 +55,21 @@ form {
   margin: 5px;
 }
 
-.pokedex-logo {
+.pokeapi-link {
+  text-decoration: none;
+  color: #000;
+}
+
+a.pokeapi-link:hover {
+  cursor: pointer;
+  color: #00f;
+}
+
+a.pokeapi-link:visited {
+  color: #800080;
+}
+
+.pokedata-logo {
   margin: 10px 0;
   cursor: pointer;
 }
@@ -682,7 +696,7 @@ ol.move-stats li {
 }
 
 @media screen and (max-width: 700px) {
-  .pokedex-logo {
+  .pokedata-logo {
     width: 75%;
   }
 
