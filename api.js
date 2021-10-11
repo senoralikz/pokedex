@@ -1293,7 +1293,6 @@ export const fetchPokemon = () => {
         y++;
       }
     }
-    displayPokemon(pokemon);
     console.log(pokemon);
     console.log(pokemonSpecies);
   });

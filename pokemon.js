@@ -65,55 +65,46 @@ export const genSelection = () => {
     genId.endingId = 151;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "2") {
     genId.startingId = 152;
     genId.endingId = 251;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "3") {
     genId.startingId = 252;
     genId.endingId = 386;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "4") {
     genId.startingId = 387;
     genId.endingId = 493;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "5") {
     genId.startingId = 494;
     genId.endingId = 649;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "6") {
     genId.startingId = 650;
     genId.endingId = 721;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "7") {
     genId.startingId = 722;
     genId.endingId = 809;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "8") {
     genId.startingId = 810;
     genId.endingId = 898;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   } else if (genValue === "9") {
     genId.startingId = 1;
     genId.endingId = 898;
 
     fetchPokemon();
-    // displayPokemon(pokemon);
   }
   $("#sortOptions").val(1);
   $("#typeOptions1").val(0);
