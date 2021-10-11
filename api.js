@@ -114,6 +114,7 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
+    displayPokemon(pokemon);
   });
 
   promises = [];
