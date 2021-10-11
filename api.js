@@ -23,6 +23,7 @@ const movesLoading = `<img class='loading-image' src='./images/pokeball-loading.
 
 export const fetchPokemon = () => {
   $(".fetch-pokemon-image").html(pokemonLoading);
+  $("#pokedex").html("");
 
   // initialize array that will be filled with each pokemons url
   let promises = [];
@@ -1801,3 +1802,7 @@ export const displayMoves = (array) => {
   $(".fetch-moves-image").html("");
   $(".move-table-body").html(movesHtml);
 };
+
+fetchPokemon();
+fetchAbilities();
+fetchMoves();
