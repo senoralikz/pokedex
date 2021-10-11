@@ -1,10 +1,12 @@
-export const handleError = (res) => {
+export const handleFetch = (res) => {
   if (!res.ok) {
     throw Error(res.statusText);
   } else {
     return res.json();
   }
 };
+
+const fetchErrorImage = `<img class='error-image' src='./images/ghastly-loading.gif' alt='ghastly-error-image' /><p>Error fetching data. Please refresh the page and try again.</p`;
 
 export const pokemonFetchError = () => {
   $(".pokemon-alert")
@@ -18,6 +20,7 @@ export const pokemonFetchError = () => {
     )
     .delay(3000)
     .fadeOut("slow");
+  $(".fetch-pokemon-image").html(fetchErrorImage);
 };
 
 export const abilitiesFetchError = () => {
@@ -32,6 +35,7 @@ export const abilitiesFetchError = () => {
     )
     .delay(3000)
     .fadeOut("slow");
+  $(".fetch-abilities-image").html(fetchErrorImage);
 };
 
 export const movesFetchError = () => {
@@ -46,4 +50,5 @@ export const movesFetchError = () => {
     )
     .delay(3000)
     .fadeOut("slow");
+  $(".fetch-moves-image").html(fetchErrorImage);
 };

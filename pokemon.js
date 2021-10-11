@@ -12,14 +12,8 @@ export const showPokemonTab = () => {
   $(".abilities-tab").hide();
   $(".moves-tab").hide();
 
-  displayPokemon(pokemon);
+  fetchPokemon();
 };
-
-const loading = `
-  <img class='loading' src='./images/pikachu - loading.gif' alt='pikachu_loading' />
-  `;
-
-$("#pokedex").html(loading);
 
 const sortPokemonName = () => {
   pokemon.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
@@ -70,63 +64,45 @@ export const genSelection = () => {
     genId.startingId = 1;
     genId.endingId = 151;
 
-    $("#pokedex").html(loading);
-
     fetchPokemon();
   } else if (genValue === "2") {
     genId.startingId = 152;
     genId.endingId = 251;
-
-    $("#pokedex").html(loading);
 
     fetchPokemon();
   } else if (genValue === "3") {
     genId.startingId = 252;
     genId.endingId = 386;
 
-    $("#pokedex").html(loading);
-
     fetchPokemon();
   } else if (genValue === "4") {
     genId.startingId = 387;
     genId.endingId = 493;
-
-    $("#pokedex").html(loading);
 
     fetchPokemon();
   } else if (genValue === "5") {
     genId.startingId = 494;
     genId.endingId = 649;
 
-    $("#pokedex").html(loading);
-
     fetchPokemon();
   } else if (genValue === "6") {
     genId.startingId = 650;
     genId.endingId = 721;
-
-    $("#pokedex").html(loading);
 
     fetchPokemon();
   } else if (genValue === "7") {
     genId.startingId = 722;
     genId.endingId = 809;
 
-    $("#pokedex").html(loading);
-
     fetchPokemon();
   } else if (genValue === "8") {
     genId.startingId = 810;
     genId.endingId = 898;
 
-    $("#pokedex").html(loading);
-
     fetchPokemon();
   } else if (genValue === "9") {
     genId.startingId = 1;
     genId.endingId = 898;
-
-    $("#pokedex").html(loading);
 
     fetchPokemon();
   }

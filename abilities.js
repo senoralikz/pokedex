@@ -1,4 +1,5 @@
 import { ability } from "./api.js";
+import { fetchAbilities } from "./api.js";
 import { displayAbilities } from "./api.js";
 
 export const showAbilitiesTab = () => {
@@ -8,7 +9,7 @@ export const showAbilitiesTab = () => {
   $(".abilities-tab").show();
   $(".moves-tab").hide();
 
-  displayAbilities();
+  fetchAbilities();
 };
 
 const sortAbilityId = () => {

@@ -1,4 +1,4 @@
-import { moves } from "./api.js";
+import { fetchMoves, moves } from "./api.js";
 import { displayMoves } from "./api.js";
 
 export const showMovesTab = () => {
@@ -8,7 +8,7 @@ export const showMovesTab = () => {
   $(".abilities-tab").hide();
   $(".moves-tab").show();
 
-  displayMoves(moves);
+  fetchMoves();
 };
 
 const sortMoveId = () => {
