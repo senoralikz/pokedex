@@ -1,4 +1,4 @@
-import { handleError } from "./ui-message.js";
+import { handleFetch } from "./ui-message.js";
 import { pokemonFetchError } from "./ui-message.js";
 import { abilitiesFetchError } from "./ui-message.js";
 import { movesFetchError } from "./ui-message.js";
@@ -15,7 +15,15 @@ export let items = [];
 export let berries = [];
 let pokemonHtml;
 
+const pokemonLoading = `<img class='loading' src='./images/pikachu-loading.gif' alt='pikachu_loading' /><p>Fetching Pokemon data...</p>`;
+
+const abilitiesLoading = `<img class='loading-image' src='./images/mew-loading.gif' alt='mew_loading' /><p>Fetching abilities data...</p>`;
+
+const movesLoading = `<img class='loading-image' src='./images/pokeball-loading.webp' alt='sandshrew_loading' /><p>Fetching moves data...</p>`;
+
 export const fetchPokemon = () => {
+  $(".fetch-pokemon-image").html(pokemonLoading);
+
   // initialize array that will be filled with each pokemons url
   let promises = [];
 
@@ -25,13 +33,7 @@ export const fetchPokemon = () => {
 
     // fetch the information received from the pokemon url and then format it to json
     //  and push it to the promises array
-    promises.push(
-      fetch(url)
-        // .then((res) => console.log(res))
-        .then(handleError)
-        // .then((data) => promises.push(data))
-        .catch(pokemonFetchError)
-    );
+    promises.push(fetch(url).then(handleFetch).catch(pokemonFetchError));
   }
 
   // Using Promise.all to wait to receive all information that is requested from the pokemon url
@@ -67,6 +69,8 @@ export const fetchPokemon = () => {
         pokemon[i].form_name === "burmy plant burmy sandy burmy trash"
       ) {
         pokemon[i].form_name = "burmy";
+      } else if (pokemon[i].form_name === "cherrim overcast cherrim sunshine") {
+        pokemon[i].form_name = "cherrim";
       } else if (
         pokemon[i].form_name ===
         "arceus normal arceus bug arceus dark arceus dragon arceus electric arceus fighting arceus fire arceus flying arceus ghost arceus grass arceus ground arceus ice arceus poison arceus psychic arceus rock arceus steel arceus water arceus unknown arceus fairy"
@@ -119,7 +123,7 @@ export const fetchPokemon = () => {
 
     // fetch the information received from the pokemon url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then(handleError).catch(pokemonFetchError));
+    promises.push(fetch(url).then(handleFetch).catch(pokemonFetchError));
   }
 
   // Using Promise.all to wait to receive all information that is requested from the pokemon url
@@ -1294,6 +1298,8 @@ export const fetchPokemon = () => {
 };
 
 export const fetchAbilities = () => {
+  $(".fetch-abilities-image").html(abilitiesLoading);
+
   let galarAbility = [];
 
   // initialize array that will be filled with each abilities url
@@ -1305,7 +1311,7 @@ export const fetchAbilities = () => {
 
     // fetch the information received from the ability url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then(handleError).catch(abilitiesFetchError));
+    promises.push(fetch(url).then(handleFetch).catch(abilitiesFetchError));
   }
 
   // Using Promise.all to wait to receive all information that is requested from the ability url
@@ -1329,7 +1335,7 @@ export const fetchAbilities = () => {
 
     // fetch the information received from the ability url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then(handleError).catch(abilitiesFetchError));
+    promises.push(fetch(url).then(handleFetch).catch(abilitiesFetchError));
   }
 
   Promise.all(promises).then((res) => {
@@ -1355,6 +1361,8 @@ export const fetchAbilities = () => {
 };
 
 export const fetchMoves = () => {
+  $(".fetch-moves-image").html(movesLoading);
+
   // initialize array that will be filled with each abilities url
   let promises = [];
 
@@ -1364,7 +1372,7 @@ export const fetchMoves = () => {
 
     // fetch the information received from the ability url and then format it to json
     //  and push it to the promises array
-    promises.push(fetch(url).then(handleError).catch(movesFetchError));
+    promises.push(fetch(url).then(handleFetch).catch(movesFetchError));
   }
 
   // Using Promise.all to wait to receive all information that is requested from the ability url
@@ -1411,11 +1419,6 @@ export const fetchMoves = () => {
     });
 
     displayMoves(moves);
-
-    // for (let i = 0; i < moves.length; i++) {
-    //   if (moves[i].pokemon === "-" || moves[i].pokemon === "") {
-    //   }
-    // }
   });
 };
 
@@ -1458,6 +1461,7 @@ export const displayPokemon = (array) => {
     }
   }
 
+  $(".fetch-pokemon-image").html("");
   $("#pokedex").html(pokemonHtml);
 };
 
@@ -1474,6 +1478,7 @@ export const displayAbilities = () => {
     `
   );
 
+  $(".fetch-abilities-image").html("");
   $(".ability-table-body").html(abilitiesHtml);
 };
 
@@ -1793,9 +1798,6 @@ export const displayMoves = (array) => {
     `
   );
 
+  $(".fetch-moves-image").html("");
   $(".move-table-body").html(movesHtml);
 };
-
-fetchPokemon();
-fetchAbilities();
-fetchMoves();

@@ -37,6 +37,14 @@ a.pokeapi-link:visited {
   cursor: pointer;
 }
 
+.loading-image {
+  width: 25%;
+}
+
+.error-image {
+  width: 35%;
+}
+
 .top-nav {
   background-color: #d34535;
   display: flex;
@@ -875,5 +883,13 @@ ol.move-stats li {
 
   .move-table-font-size {
     font-size: 14.75px;
+  }
+
+  .loading-image {
+    width: 50%;
+  }
+
+  .error-image {
+    width: 75%;
   }
 }
