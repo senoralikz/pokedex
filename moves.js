@@ -8,7 +8,7 @@ export const showMovesTab = () => {
   $(".abilities-tab").hide();
   $(".moves-tab").show();
 
-  displayMoves();
+  displayMoves(moves);
 };
 
 const sortMoveId = () => {
