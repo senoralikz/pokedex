@@ -9,7 +9,7 @@ export const showAbilitiesTab = () => {
   $(".abilities-tab").show();
   $(".moves-tab").hide();
 
-  fetchAbilities();
+  displayAbilities();
 };
 
 const sortAbilityId = () => {

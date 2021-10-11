@@ -12,7 +12,7 @@ export const showPokemonTab = () => {
   $(".abilities-tab").hide();
   $(".moves-tab").hide();
 
-  fetchPokemon();
+  displayPokemon(pokemon);
 };
 
 const sortPokemonName = () => {
