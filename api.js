@@ -65,9 +65,6 @@ export const fetchPokemon = () => {
       id: res.id,
       sprite: `./images/pokemon-3d-sprites/${res.id}.png`,
       sprite_shiny: `./images/pokemon-3d-shiny/${res.id}.png`,
-      // type is an array so we join each string inside the type array to set it to one type property
-      // type: res.types,
-      // type: res.types.map((type) => type.type.name).join(", "),
       type: res.types.map((type) => type.type.name),
       abilities: res.abilities.map((ability) => ability),
       stats: res.stats.map((stat) => stat),
@@ -75,10 +72,6 @@ export const fetchPokemon = () => {
     for (let i = 0; i < pokemon.length; i++) {
       pokemon[i].name = pokemon[i].name.replaceAll("-", " ");
       pokemon[i].form_name = pokemon[i].form_name.replaceAll("-", " ");
-      // pokemon[i].sprite = `./images/pokemon-3d-sprites/${pokemon[i].id}.png`;
-      // pokemon[
-      //   i
-      // ].sprite_shiny = `./images/pokemon-3d-shiny/${pokemon[i].id}.png`;
       if (
         pokemon[i].form_name ===
         "unown a unown b unown c unown d unown e unown f unown g unown h unown i unown j unown k unown l unown m unown n unown o unown p unown q unown r unown s unown t unown u unown v unown w unown x unown y unown z unown exclamation unown question"
@@ -165,12 +158,6 @@ export const fetchPokemon = () => {
         "-",
         " "
       );
-      // pokemonSpecies[
-      //   i
-      // ].sprite = `./images/pokemon-3d-sprites/${pokemonSpecies[i].id}.png`;
-      // pokemonSpecies[
-      //   i
-      // ].sprite_shiny = `./images/pokemon-3d-shiny/${pokemonSpecies[i].id}.png`;
       if (pokemonSpecies[i].form_name.includes("totem")) {
         pokemonSpecies.splice(i, 1);
       }
@@ -1311,8 +1298,6 @@ export const fetchPokemon = () => {
         y++;
       }
     }
-    console.log(pokemon);
-    console.log(pokemonSpecies);
   });
 };
 
