@@ -6,7 +6,13 @@ export const handleFetch = (res) => {
   }
 };
 
-const fetchErrorImage = `<img class='error-image' src='./images/ghastly-loading.gif' alt='ghastly-error-image' /><p>Error fetching data. Please refresh the page and try again.</p`;
+const fetchErrorImage = `
+  <div class='d-flex justify-content-center'>
+    <img class='error-image' src='./images/ghastly-loading.gif' alt='ghastly-error-image' />
+  </div>
+  <div class='d-flex justify-content-center'>
+    <p>Error fetching data. Please refresh the page and try again.</p>
+  </div>`;
 
 export const pokemonFetchError = () => {
   $(".pokemon-alert")

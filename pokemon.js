@@ -1,4 +1,4 @@
-import { genId } from "./api.js";
+import { fetchAbilities, genId } from "./api.js";
 import { pokemon } from "./api.js";
 import { pokemonSpecies } from "./api.js";
 import { ability } from "./api.js";
@@ -12,7 +12,8 @@ export const showPokemonTab = () => {
   $(".abilities-tab").hide();
   $(".moves-tab").hide();
 
-  displayPokemon(pokemon);
+  fetchPokemon();
+  fetchAbilities();
 };
 
 const sortPokemonName = () => {

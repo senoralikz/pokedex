@@ -15,11 +15,29 @@ export let items = [];
 export let berries = [];
 let pokemonHtml;
 
-const pokemonLoading = `<img class='loading' src='./images/pikachu-loading.gif' alt='pikachu_loading' /><p>Fetching Pokemon data...</p>`;
+const pokemonLoading = `
+<div class='d-flex justify-content-center'>
+  <img class='loading' src='./images/pikachu-loading.gif' alt='pikachu_loading' />
+</div>
+<div class='d-flex justify-content-center'>
+  <p>Fetching Pokemon data...</p>
+</div>`;
 
-const abilitiesLoading = `<img class='loading-image' src='./images/mew-loading.gif' alt='mew_loading' /><p>Fetching abilities data...</p>`;
+const abilitiesLoading = `
+<div class='d-flex justify-content-center'>
+  <img class='loading-image' src='./images/mew-loading.gif' alt='mew_loading' />
+</div>
+<div class='d-flex justify-content-center'>
+  <p>Fetching abilities data...</p>
+</div>`;
 
-const movesLoading = `<img class='loading-image' src='./images/pokeball-loading.webp' alt='sandshrew_loading' /><p>Fetching moves data...</p>`;
+const movesLoading = `
+<div class='d-flex justify-content-center'>
+  <img class='loading-image' src='./images/pokeball-loading.webp' alt='sandshrew_loading' />
+</div>
+<div class='d-flex justify-content-center'>
+  <p>Fetching moves data...</p>
+</div>`;
 
 export const fetchPokemon = () => {
   $(".fetch-pokemon-image").html(pokemonLoading);
@@ -30,7 +48,7 @@ export const fetchPokemon = () => {
 
   // get url for pokemon id
   for (let i = genId.startingId; i <= genId.endingId; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
+    const url = `https://pokeapi.co/api/v2/pokemo/${i}/`;
 
     // fetch the information received from the pokemon url and then format it to json
     //  and push it to the promises array
@@ -121,7 +139,7 @@ export const fetchPokemon = () => {
 
   // get url for pokemon id
   for (let i = 10001; i <= 10220; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
+    const url = `https://pokeapi.co/api/v2/pokemo/${i}/`;
 
     // fetch the information received from the pokemon url and then format it to json
     //  and push it to the promises array
@@ -1803,6 +1821,6 @@ export const displayMoves = (array) => {
   $(".move-table-body").html(movesHtml);
 };
 
-fetchPokemon();
-fetchAbilities();
-fetchMoves();
+// fetchPokemon();
+// fetchAbilities();
+// fetchMoves();
