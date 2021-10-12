@@ -48,7 +48,7 @@ export const fetchPokemon = () => {
 
   // get url for pokemon id
   for (let i = genId.startingId; i <= genId.endingId; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemo/${i}/`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
 
     // fetch the information received from the pokemon url and then format it to json
     //  and push it to the promises array
@@ -139,7 +139,7 @@ export const fetchPokemon = () => {
 
   // get url for pokemon id
   for (let i = 10001; i <= 10220; i++) {
-    const url = `https://pokeapi.co/api/v2/pokemo/${i}/`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
 
     // fetch the information received from the pokemon url and then format it to json
     //  and push it to the promises array
