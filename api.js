@@ -125,13 +125,14 @@ export const fetchPokemon = () => {
         ].stat.name.replaceAll("-", " ");
       }
     }
+    console.log(pokemon);
     displayPokemon(pokemon);
   });
 
   promises = [];
 
   // get url for pokemon id
-  for (let i = 10001; i <= 10220; i++) {
+  for (let i = 10001; i <= 10227; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
 
     // fetch the information received from the pokemon url and then format it to json
@@ -1298,6 +1299,7 @@ export const fetchPokemon = () => {
         y++;
       }
     }
+    console.log(pokemonSpecies);
   });
 };
 
